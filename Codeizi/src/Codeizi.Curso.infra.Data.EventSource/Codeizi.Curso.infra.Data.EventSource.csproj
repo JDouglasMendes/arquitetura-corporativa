@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="RavenDB.Client" Version="4.2.103" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Codeizi.Curso.Domain.SharedKernel\Codeizi.Curso.Domain.SharedKernel.csproj" />
+    <ProjectReference Include="..\Codeizi.Curso.Infra.CrossCutting.Configuration\Codeizi.Curso.Infra.CrossCutting.Configuration.csproj" />
+  </ItemGroup>
+
+</Project>

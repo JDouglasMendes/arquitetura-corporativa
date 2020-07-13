@@ -1,1 +1,1 @@
-# arquitetura-corporativa
+# curso-aplicacao-corporativa-.net-core
