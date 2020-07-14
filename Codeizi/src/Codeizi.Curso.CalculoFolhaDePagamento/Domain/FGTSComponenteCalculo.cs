@@ -8,6 +8,8 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Domain
     {
         private const byte FATORPERCENTUALFGTS = 8;
 
+        public EnumComponentesCalculo IdComponente => EnumComponentesCalculo.FGTS;
+
         public ValorComponenteCalculo Calcule(Contrato contrato, ComponentesCalculados tabela)
             => new ValorComponenteCalculo((contrato.SalarioContratual.Valor * FATORPERCENTUALFGTS) / 100);
     }

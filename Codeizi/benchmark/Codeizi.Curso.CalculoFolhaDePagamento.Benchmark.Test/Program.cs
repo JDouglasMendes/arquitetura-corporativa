@@ -9,7 +9,7 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Benchmark.Test
         static void Main(string[] args)
 #pragma warning restore IDE0060 // Remove unused parameter
         {
-            BenchmarkRunner.Run<CalculoMensalBenchmark>();            
+            BenchmarkRunner.Run<CalculoBuilderBenchmark>();            
         }
     }
 }

@@ -14,9 +14,9 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Test.Domain
         [InlineData(0, false)]
         public void AdicioneValor(double valor, bool result)
         {
-            var mock = Substitute.For<IComponenteDeCalculo>();
-            var tabela = new ComponentesCalculados();
-            tabela.AdicioneValor(mock, (ValorComponenteCalculo)valor);
+            var inss = new INSSComponenteDeCalculo();            
+            var tabela = new ComponentesCalculados(CenarioContrato.CrieCenarioConsistente(valor));
+            tabela.AdicioneValor(inss, (ValorComponenteCalculo)valor);
             Assert.True(tabela.ExisteValores == result);
         }
 
@@ -25,11 +25,11 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Test.Domain
         [InlineData(0)]
         public void ObterValorTest(double valor)
         {
-            var mock = Substitute.For<IComponenteDeCalculo>();
-            var tabela = new ComponentesCalculados();
-            tabela.AdicioneValor(mock, (ValorComponenteCalculo)valor);
+            var inss = new INSSComponenteDeCalculo();
+            var tabela = new ComponentesCalculados(CenarioContrato.CrieCenarioConsistente(valor));
+            tabela.AdicioneValor(inss, (ValorComponenteCalculo)valor);
             tabela.AdicioneValor(new FGTSComponenteCalculo(), (ValorComponenteCalculo)valor);
-            Assert.Equal((ValorComponenteCalculo)valor, tabela.Valor<FGTSComponenteCalculo>());
+            Assert.Equal((ValorComponenteCalculo)valor, tabela.Valor(EnumComponentesCalculo.FGTS));
         }
     }
 }

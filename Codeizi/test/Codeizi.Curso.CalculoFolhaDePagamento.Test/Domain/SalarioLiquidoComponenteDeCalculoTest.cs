@@ -16,7 +16,7 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Test.Domain
                             double irrf,
                             double result)
         {
-            var tabela = new ComponentesCalculados();
+            var tabela = new ComponentesCalculados(null);
             tabela.AdicioneValor(new INSSComponenteDeCalculo(), (ValorComponenteCalculo)inss);
             tabela.AdicioneValor(new IRRFComponenteDeCalculo(), (ValorComponenteCalculo)irrf);
             var contrato = CenarioContrato.CrieCenarioConsistente(salarioContratual);

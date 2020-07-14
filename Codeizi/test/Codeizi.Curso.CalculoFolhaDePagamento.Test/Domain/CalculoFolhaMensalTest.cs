@@ -17,14 +17,14 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Test.Domain
             var calculo = new CalculoFolhaMensal();
             var result = calculo.Calcule(contrato);
             Assert.True(result.ExisteValores);
-            new ValorComponenteCalculo(925).Should().Be(result.Valor<SalarioLiquidoComponenteDeCalculo>());
+            new ValorComponenteCalculo(925).Should().Be(result.Valor(EnumComponentesCalculo.SalarioLiquido));
         }
 
         [Fact]
         public void BenchmarkCalculoMensal()
             => this.ExecutionTimeOf(x => x.CalculeBenchmark())
                 .Should()
-                .BeLessOrEqualTo(600.Milliseconds());
+                .BeLessOrEqualTo(1000.Milliseconds());
                  
         private void CalculeBenchmark()
         {

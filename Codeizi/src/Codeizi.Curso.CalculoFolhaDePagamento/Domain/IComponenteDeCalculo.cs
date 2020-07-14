@@ -7,5 +7,6 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Domain
     public interface IComponenteDeCalculo
     {
         ValorComponenteCalculo Calcule(Contrato contrato, ComponentesCalculados tabela);
+        EnumComponentesCalculo IdComponente { get; }
     }
 }

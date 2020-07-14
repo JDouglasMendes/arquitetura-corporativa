@@ -4,8 +4,8 @@ using System.Text;
 
 namespace Codeizi.Curso.CalculoFolhaDePagamento.Domain
 {
-    public class Calculo
+    public interface ICalculo
     {
-
+        ComponentesCalculados Calcule(Contrato contrato);
     }
 }

@@ -6,10 +6,12 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Domain
 {
     public class SalarioLiquidoComponenteDeCalculo : IComponenteDeCalculo
     {
+        public EnumComponentesCalculo IdComponente => EnumComponentesCalculo.SalarioLiquido;
+
         public ValorComponenteCalculo Calcule(Contrato contrato, ComponentesCalculados tabela)
             => formulaSalarioLiquido(contrato.SalarioContratual,
-                                     tabela.Valor<INSSComponenteDeCalculo>(),
-                                     tabela.Valor<IRRFComponenteDeCalculo>());
+                                     tabela.Valor(EnumComponentesCalculo.Inss),
+                                     tabela.Valor(EnumComponentesCalculo.IRRF));
 
         private readonly Func<ValorComponenteCalculo, ValorComponenteCalculo,
                     ValorComponenteCalculo, ValorComponenteCalculo>

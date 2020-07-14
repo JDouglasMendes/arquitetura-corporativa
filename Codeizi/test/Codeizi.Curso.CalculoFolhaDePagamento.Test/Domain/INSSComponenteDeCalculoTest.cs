@@ -19,7 +19,7 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Test.Domain
         {
             var componente = new INSSComponenteDeCalculo();
             var contrato = CenarioContrato.CrieCenarioConsistente(salario);
-            var valorCalculado = componente.Calcule(contrato, new ComponentesCalculados());
+            var valorCalculado = componente.Calcule(contrato, new ComponentesCalculados(contrato));
             Assert.Equal((ValorComponenteCalculo)result, valorCalculado);
         }
     }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Codeizi.Curso.CalculoFolhaDePagamento.Domain
 {
-    public class CalculoFolhaMensal : BaseCalculo
+    public class CalculoFolhaMensal : BaseCalculo, ICalculo
     {
         public CalculoFolhaMensal()
         {
@@ -16,7 +16,7 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Domain
 
         public ComponentesCalculados Calcule(Contrato contrato)
         {
-            var tabela = new ComponentesCalculados();
+            var tabela = new ComponentesCalculados(contrato);
 
             foreach (var componente in Componentes)
                 tabela.AdicioneValor(componente, componente.Calcule(contrato, tabela));

@@ -16,6 +16,7 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace Codeizi.Curso.Api
 {
+    [ExcludeFromCodeCoverage]
     public class Startup
     {
         public IConfiguration Configuration { get; }
@@ -42,7 +43,6 @@ namespace Codeizi.Curso.Api
             NativeInjectorBootStrapper.RegisterServices(services);
         }
 
-        [ExcludeFromCodeCoverage]
         private void AddDbContext(IServiceCollection services)
         {
             if (!string.IsNullOrEmpty(Configuration.GetConnectionString("DefaultConnection")))
@@ -58,7 +58,6 @@ namespace Codeizi.Curso.Api
             }
         }
 
-        [ExcludeFromCodeCoverage]
         private static void AddSwaggerGen(IServiceCollection services)
         {
             services.AddSwaggerGen(s =>

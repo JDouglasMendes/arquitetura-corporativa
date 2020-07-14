@@ -8,6 +8,8 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Domain
 {
     public class IRRFComponenteDeCalculo : IComponenteDeCalculo
     {
+        public EnumComponentesCalculo IdComponente => EnumComponentesCalculo.IRRF;
+
         public ValorComponenteCalculo Calcule(Contrato contrato, ComponentesCalculados tabela)
             => TabelaDescontoIRRF.CalculeDescontoIRRF(contrato.SalarioContratual);
     }
