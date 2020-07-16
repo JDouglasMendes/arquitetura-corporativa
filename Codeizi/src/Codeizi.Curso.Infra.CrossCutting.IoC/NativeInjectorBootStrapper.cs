@@ -7,11 +7,11 @@ using Codeizi.Curso.Domain.SharedKernel.IMediatorBus;
 using Codeizi.Curso.Domain.SharedKernel.Notifications;
 using Codeizi.Curso.infra.Data.EventSource.Context;
 using Codeizi.Curso.infra.Data.EventSource.EventSource;
+using Codeizi.Curso.Infra.CrossCutting.Bus;
 using Codeizi.Curso.Infra.CrossCutting.Configuration;
 using Codeizi.Curso.Infra.Data.Context;
 using Codeizi.Curso.Infra.Data.DAO.Contracts;
 using Codeizi.Curso.Infra.Data.Repository;
-using Codeizi.Infra.CrossCutting.Bus;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -78,6 +78,5 @@ namespace Codeizi.Curso.Infra.CrossCutting.IoC
                 }
             });
         }
-
     }
 }

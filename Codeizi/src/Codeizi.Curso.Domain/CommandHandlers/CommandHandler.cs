@@ -47,7 +47,6 @@ namespace Codeizi.Curso.Domain.CommandHandlers
             {
                 Bus.RaiseEvent(new DomainNotification("Commit", "Não foi possível salvar os dados"));
                 return false;
-
             }
 #pragma warning restore CA1031 // Do not catch general exception types
         }

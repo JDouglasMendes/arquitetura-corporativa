@@ -15,6 +15,7 @@ namespace Codeizi.Infra.Data.Test.Cenarios
             colaborador.AddContrato(DateTime.Now, 1000);
             return this;
         }
+
         public ColaboradorBuilder CrieColaboradorSucesso(Guid chave)
         {
             colaborador = new Colaborador(chave, NomePessoa.Crie("Codeizi", "Treinamento"));
@@ -29,6 +30,7 @@ namespace Codeizi.Infra.Data.Test.Cenarios
                 new Contrato(colaborador, DateTime.Now, 1000),
             };
         }
+
         public Colaborador Get
         {
             get
@@ -52,6 +54,5 @@ namespace Codeizi.Infra.Data.Test.Cenarios
             }
             return contratos;
         }
-
     }
 }

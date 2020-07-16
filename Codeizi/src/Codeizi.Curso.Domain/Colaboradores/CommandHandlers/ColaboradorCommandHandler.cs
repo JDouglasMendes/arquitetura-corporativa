@@ -8,7 +8,6 @@ using Codeizi.Curso.Domain.SharedKernel.Notifications;
 using Codeizi.Curso.Domain.SharedKernel.ValueObjects;
 using MediatR;
 using System;
-using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -18,6 +17,7 @@ namespace Codeizi.Curso.Domain.Colaboradores.CommandHandlers
         IRequestHandler<AdmissaoColaboradorCommand, bool>
     {
         private readonly IColaboradorRepository _colaboradorRepository;
+
         public ColaboradorCommandHandler(IColaboradorRepository colaboradorRepository,
                                          IUnitOfWork uow,
                                          IMediatorHandler bus,

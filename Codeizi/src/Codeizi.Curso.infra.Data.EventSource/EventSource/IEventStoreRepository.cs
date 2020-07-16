@@ -8,6 +8,7 @@ namespace Codeizi.Curso.infra.Data.EventSource.EventSource
     public interface IEventStoreRepository : IDisposable
     {
         void Store(object theEvent);
+
         Task<IList<T>> All<T>(Guid aggregateId) where T : Event;
     }
 }

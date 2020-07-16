@@ -1,5 +1,4 @@
-﻿
-using Codeizi.Curso.Domain.Colaboradores;
+﻿using Codeizi.Curso.Domain.Colaboradores;
 
 namespace Codeizi.Curso.Infra.Data.DAO.Contracts
 {

@@ -1,14 +1,12 @@
-﻿using Codeizi.Curso.CalculoFolhaDePagamento.Domain;
+﻿using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Domain.Calculo;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace Codeizi.Curso.CalculoFolhaDePagamento.Test.Domain
 {
     public class ValorComponenteCalculoTest
     {
-
         [Theory]
         [MemberData(nameof(CenarioSobreCargaOperador))]
         public static void SobrecargaOperadorTest(ValorComponenteCalculo p1, ValorComponenteCalculo p2, Func<ValorComponenteCalculo, ValorComponenteCalculo, bool> func, bool result)
@@ -39,7 +37,6 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Test.Domain
                                         new object[] { (ValorComponenteCalculo)100, (ValorComponenteCalculo)1, menorIgual, false },
                                     };
 
-
         [Theory]
         [InlineData(10.5333)]
         public void SobrecargaOperadorAritmetica(double result)
@@ -55,7 +52,7 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Test.Domain
         {
             Assert.True(((ValorComponenteCalculo)100).CompareTo((ValorComponenteCalculo)1) > 0);
             Assert.True(((ValorComponenteCalculo)100).CompareTo((ValorComponenteCalculo)100) == 0);
-            Assert.True(((ValorComponenteCalculo) 100).CompareTo((ValorComponenteCalculo)1000) < 0);
+            Assert.True(((ValorComponenteCalculo)100).CompareTo((ValorComponenteCalculo)1000) < 0);
         }
 
         [Fact]
@@ -67,10 +64,9 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Test.Domain
         }
 
         [Theory]
-        [InlineData(100,100, true)]
+        [InlineData(100, 100, true)]
         [InlineData(100, 1000, false)]
         public void GetHashCodeTest(double v1, double v2, bool result)
             => Assert.True(((ValorComponenteCalculo)v1).GetHashCode() == ((ValorComponenteCalculo)v2).GetHashCode() == result);
     }
-
 }

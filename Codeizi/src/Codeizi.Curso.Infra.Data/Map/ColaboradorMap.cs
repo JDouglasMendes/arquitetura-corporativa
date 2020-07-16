@@ -13,7 +13,6 @@ namespace Codeizi.Curso.Infra.Data.Map
 
             builder.OwnsOne(x => x.Nome, nome =>
             {
-
                 nome.Property(n => n.Nome)
                         .HasColumnName("Nome")
                         .HasMaxLength(100)
@@ -34,8 +33,6 @@ namespace Codeizi.Curso.Infra.Data.Map
             builder.HasMany(x => x.Contratos)
                 .WithOne(c => c.Colaborador)
                 .OnDelete(DeleteBehavior.Cascade);
-
-
         }
     }
 }

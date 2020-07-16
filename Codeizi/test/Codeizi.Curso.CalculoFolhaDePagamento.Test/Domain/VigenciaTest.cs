@@ -1,8 +1,5 @@
-﻿using Codeizi.Curso.CalculoFolhaDePagamento.Domain;
-using NuGet.Frameworks;
+﻿using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Domain.Contratos;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace Codeizi.Curso.CalculoFolhaDePagamento.Test.Domain
@@ -12,7 +9,7 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Test.Domain
         [Fact]
         public void IgualdadeVigencias()
         {
-            var v1 = new Vigencia(new DateTime(2020, 1 ,1), new DateTime(2020, 1, 1).AddDays(100));
+            var v1 = new Vigencia(new DateTime(2020, 1, 1), new DateTime(2020, 1, 1).AddDays(100));
             var v2 = new Vigencia(new DateTime(2020, 1, 1), new DateTime(2020, 1, 1).AddDays(100));
             Assert.True(v1.Equals(v2));
             Assert.True(v1 == v2);

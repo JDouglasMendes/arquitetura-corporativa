@@ -7,11 +7,13 @@ namespace Codeizi.Curso.Domain.SharedKernel.ValueObjects
     {
         public string Nome { get; }
         public string Sobrenome { get; }
+
         public NomePessoa(string nome, string sobrenome)
         {
             Nome = nome;
             Sobrenome = sobrenome;
         }
+
         public static NomePessoa Crie(string nome, string sobrenome)
             => new NomePessoa(nome, sobrenome);
 
@@ -27,7 +29,6 @@ namespace Codeizi.Curso.Domain.SharedKernel.ValueObjects
 
         public override string ToString()
             => $"{Nome} {Sobrenome}";
-
 
         public bool Equals([AllowNull] NomePessoa other)
             => Nome == other.Nome &&

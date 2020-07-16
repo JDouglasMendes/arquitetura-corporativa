@@ -1,6 +1,5 @@
 ﻿using Codeizi.Curso.Application.Colaboradores;
 using Codeizi.Curso.Application.ViewModels;
-using Codeizi.Curso.Domain.SharedKernel.IMediatorBus;
 using Codeizi.Curso.Domain.SharedKernel.Notifications;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -14,6 +13,7 @@ namespace Codeizi.Curso.Api.Controllers
     {
         private readonly IColaboradorAppService colaboradorAppService;
         private readonly ILogger<ColaboradorController> _logger;
+
         public ColaboradorController(INotificationHandler<DomainNotification> notifications,
                                      IColaboradorAppService colaboradorAppService,
                                      ILogger<ColaboradorController> logger)

@@ -1,8 +1,6 @@
-﻿using Codeizi.Curso.Domain.SharedKernel.IMediatorBus;
-using Codeizi.Curso.Domain.SharedKernel.Notifications;
+﻿using Codeizi.Curso.Domain.SharedKernel.Notifications;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace Codeizi.Curso.Api.Controllers

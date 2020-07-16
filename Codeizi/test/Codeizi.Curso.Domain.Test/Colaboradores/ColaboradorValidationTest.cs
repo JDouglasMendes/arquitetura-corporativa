@@ -1,7 +1,6 @@
 ﻿using Codeizi.Curso.Domain.Colaboradores.Commands;
 using System;
 using System.Collections.Generic;
-using System.Xml.Xsl;
 using Xunit;
 
 namespace Codeizi.Curso.Domain.Test.Colaboradores
@@ -33,6 +32,7 @@ namespace Codeizi.Curso.Domain.Test.Colaboradores
             colaborador.IsValid();
             Assert.Equal(valido, colaborador.ValidationResult.IsValid);
         }
+
         [Theory]
         [MemberData(nameof(DataAdmissaoParaTestes))]
         public void ValideDataAdmisaoColaboradorTest(DateTime dataAdmissao, bool valido)
@@ -96,6 +96,5 @@ namespace Codeizi.Curso.Domain.Test.Colaboradores
             colaborador.IsValid();
             Assert.False(colaborador.ValidationResult.IsValid);
         }
-
     }
 }

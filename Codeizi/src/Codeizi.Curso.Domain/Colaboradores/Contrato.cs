@@ -15,10 +15,13 @@ namespace Codeizi.Curso.Domain.Colaboradores
 
         [ExcludeFromCodeCoverage]
         protected Contrato() { }
+
         [ExcludeFromCodeCoverage]
         public Colaborador Colaborador { get; }
+
         [ExcludeFromCodeCoverage]
         public Guid ColaboradorId => Colaborador.Id;
+
         public DateTime DataInicio { get; }
         public double SalarioContratual { get; }
     }

@@ -54,7 +54,6 @@ namespace Codeizi.Curso.Api
             {
                 services.AddDbContext<CodeiziContext>(options =>
                        options.UseInMemoryDatabase(databaseName: "IntegrationTest"));
-
             }
         }
 
@@ -92,14 +91,13 @@ namespace Codeizi.Curso.Api
                             Scheme = "oauth2",
                             Name = "Bearer",
                             In = ParameterLocation.Header,
-
                         },
                         new List<string>()
                     },
                 });
-
             });
         }
+
         public static void Configure(IApplicationBuilder app)
         {
             app.UseHttpsRedirection();

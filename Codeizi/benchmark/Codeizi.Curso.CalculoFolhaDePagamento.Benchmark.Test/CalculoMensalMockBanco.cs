@@ -1,14 +1,12 @@
-﻿using Codeizi.Curso.CalculoFolhaDePagamento.Domain;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Domain.Calculo;
+using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Services.Repositories;
 using System.Threading.Tasks;
 
 namespace Codeizi.Curso.CalculoFolhaDePagamento.Benchmark.Test
 {
     public class CalculoMensalMockBanco : ICalculoRepository
     {
-        public Task InsiraValoresCalculadosAsync(ComponentesCalculados componentesCalculados)
+        public Task InsiraValoresCalculados(ComponentesCalculados componentesCalculados)
             => Task.CompletedTask;
     }
 }

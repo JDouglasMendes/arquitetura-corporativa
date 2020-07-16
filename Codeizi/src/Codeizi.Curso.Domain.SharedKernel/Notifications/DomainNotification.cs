@@ -9,6 +9,7 @@ namespace Codeizi.Curso.Domain.SharedKernel.Notifications
         public string Key { get; private set; }
         public string Value { get; private set; }
         public int Version { get; private set; }
+
         public DomainNotification(string key, string value)
         {
             DomainNotificationId = Guid.NewGuid();

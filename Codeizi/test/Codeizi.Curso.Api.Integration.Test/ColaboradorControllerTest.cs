@@ -1,10 +1,10 @@
-﻿using Codeizi.Curso.Api.Integration.Cenarios;
+﻿using Codeizi.Curso.Api.Integration.Test.Cenarios;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace Codeizi.Curso.Api.Integration
+namespace Codeizi.Curso.Api.Integration.Test
 {
     public class ColaboradorControllerTest : BaseIntegrationTest
     {
@@ -36,8 +36,6 @@ namespace Codeizi.Curso.Api.Integration
             colaboradorAdmissao.DataNascimento = DateTime.Now;
             var response = await Client.PostAsync("/api/colaborador/realize-admissao", colaboradorAdmissao.ToJson());
             Assert.Equal(System.Net.HttpStatusCode.BadRequest, response.StatusCode);
-
         }
-
     }
 }

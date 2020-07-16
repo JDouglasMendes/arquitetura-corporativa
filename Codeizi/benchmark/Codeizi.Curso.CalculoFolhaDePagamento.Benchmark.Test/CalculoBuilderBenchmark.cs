@@ -1,8 +1,9 @@
 ﻿using BenchmarkDotNet.Attributes;
-using Codeizi.Curso.CalculoFolhaDePagamento.Domain;
+using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Domain.Calculo;
+using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Domain.Contratos;
+using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Services.Repositories;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Codeizi.Curso.CalculoFolhaDePagamento.Benchmark.Test
 {
@@ -16,7 +17,7 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Benchmark.Test
         [GlobalSetup]
         public void Setup()
         {
-            calculo = new CalculoBuilder(EnumFolhaDePagamento.Mensal, repository);
+            calculo = new CalculoBuilder(DateTime.Now, EnumFolhaDePagamento.Mensal, repository);
             var quantidade = 1_000_000;
             Execucoes = new List<Contrato>(quantidade);
             var id = Guid.NewGuid();
@@ -24,7 +25,7 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Benchmark.Test
             var valor = new ValorComponenteCalculo(1000);
             while (quantidade > 0)
             {
-                Execucoes.Add(new Contrato(id, vigencia, valor));
+                Execucoes.Add(new Contrato(id, Guid.NewGuid(), vigencia, valor));
                 quantidade--;
             }
             calculo.InicieCalculo(Execucoes);
@@ -32,7 +33,7 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Benchmark.Test
 
         [Benchmark]
         public void CalculeContratosParallelFor()
-            => calculo.CalculeContratosParallelFor();
+            => calculo.CalculeContratos();
 
         /*
         [Benchmark]

@@ -8,6 +8,7 @@ namespace Codeizi.Curso.Domain.SharedKernel.IMediatorBus
     {
         Task SendCommand<T>(T command)
             where T : Command;
+
         Task RaiseEvent<T>(T @event)
             where T : Event;
     }

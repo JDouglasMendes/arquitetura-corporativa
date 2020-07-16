@@ -42,13 +42,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Infra.Data.Test", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FolhaDePagamento", "FolhaDePagamento", "{EF044E45-31B1-4A8E-9159-415DCC247701}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.CalculoFolhaDePagamento", "src\Codeizi.Curso.CalculoFolhaDePagamento\Codeizi.Curso.CalculoFolhaDePagamento.csproj", "{CB1012E3-E810-47BD-9A7A-294CC6FE72AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.CalculoFolhaDePagamento.Domain", "src\Codeizi.Curso.CalculoFolhaDePagamento\Codeizi.Curso.CalculoFolhaDePagamento.Domain.csproj", "{CB1012E3-E810-47BD-9A7A-294CC6FE72AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codeizi.Curso.CalculoFolhaDePagamento.Test", "test\Codeizi.Curso.CalculoFolhaDePagamento.Test\Codeizi.Curso.CalculoFolhaDePagamento.Test.csproj", "{AB0B5149-77C3-42A3-8CD1-551176ACACCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.CalculoFolhaDePagamento.Test", "test\Codeizi.Curso.CalculoFolhaDePagamento.Test\Codeizi.Curso.CalculoFolhaDePagamento.Test.csproj", "{AB0B5149-77C3-42A3-8CD1-551176ACACCA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "benchmark", "benchmark", "{1EB582A4-F7A5-481C-B619-D37CDDC88D94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codeizi.Curso.CalculoFolhaDePagamento.Benchmark.Test", "benchmark\Codeizi.Curso.CalculoFolhaDePagamento.Benchmark.Test\Codeizi.Curso.CalculoFolhaDePagamento.Benchmark.Test.csproj", "{B67585B4-ABAA-48E1-BEC2-8C2C4E062784}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.CalculoFolhaDePagamento.Benchmark.Test", "benchmark\Codeizi.Curso.CalculoFolhaDePagamento.Benchmark.Test\Codeizi.Curso.CalculoFolhaDePagamento.Benchmark.Test.csproj", "{B67585B4-ABAA-48E1-BEC2-8C2C4E062784}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codeizi.Curso.CalculoFolhaDePagamento.Infra.Data", "src\Codeizi.Curso.CalculoFolhaDePagamento.Infra.Data\Codeizi.Curso.CalculoFolhaDePagamento.Infra.Data.csproj", "{7967892A-7CAE-4389-A26B-3D5522CF1033}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codeizi.Curso.FolhaDePagamento.Infra.BackgroundTasks", "src\Codeizi.Curso.FolhaDePagamento.Infra.BackgroundTasks\Codeizi.Curso.FolhaDePagamento.Infra.BackgroundTasks.csproj", "{44B972EF-C064-449D-89E1-7A7BB1421D1C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -124,6 +128,14 @@ Global
 		{B67585B4-ABAA-48E1-BEC2-8C2C4E062784}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B67585B4-ABAA-48E1-BEC2-8C2C4E062784}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B67585B4-ABAA-48E1-BEC2-8C2C4E062784}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7967892A-7CAE-4389-A26B-3D5522CF1033}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7967892A-7CAE-4389-A26B-3D5522CF1033}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7967892A-7CAE-4389-A26B-3D5522CF1033}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7967892A-7CAE-4389-A26B-3D5522CF1033}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44B972EF-C064-449D-89E1-7A7BB1421D1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44B972EF-C064-449D-89E1-7A7BB1421D1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44B972EF-C064-449D-89E1-7A7BB1421D1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44B972EF-C064-449D-89E1-7A7BB1421D1C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -147,6 +159,8 @@ Global
 		{CB1012E3-E810-47BD-9A7A-294CC6FE72AC} = {EF044E45-31B1-4A8E-9159-415DCC247701}
 		{AB0B5149-77C3-42A3-8CD1-551176ACACCA} = {E242A8C3-6631-4F9E-9C98-B671EB04FB83}
 		{B67585B4-ABAA-48E1-BEC2-8C2C4E062784} = {1EB582A4-F7A5-481C-B619-D37CDDC88D94}
+		{7967892A-7CAE-4389-A26B-3D5522CF1033} = {EF044E45-31B1-4A8E-9159-415DCC247701}
+		{44B972EF-C064-449D-89E1-7A7BB1421D1C} = {EF044E45-31B1-4A8E-9159-415DCC247701}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A3BB0C73-9411-4A9A-9497-176952B73246}

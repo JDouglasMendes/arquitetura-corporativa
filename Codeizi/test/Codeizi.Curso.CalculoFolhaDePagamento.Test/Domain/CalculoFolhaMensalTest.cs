@@ -1,9 +1,8 @@
-﻿using Codeizi.Curso.CalculoFolhaDePagamento.Domain;
+﻿using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Domain.Calculo;
+using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Domain.ComponentesDeCalculo;
 using FluentAssertions;
 using FluentAssertions.Extensions;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace Codeizi.Curso.CalculoFolhaDePagamento.Test.Domain
@@ -14,7 +13,7 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Test.Domain
         public void CaculeFolhaMensal()
         {
             var contrato = CenarioContrato.CrieCenarioConsistente(1000);
-            var calculo = new CalculoFolhaMensal();
+            var calculo = new CalculoFolhaMensal(DateTime.Now);
             var result = calculo.Calcule(contrato);
             Assert.True(result.ExisteValores);
             new ValorComponenteCalculo(925).Should().Be(result.Valor(EnumComponentesCalculo.SalarioLiquido));
@@ -24,19 +23,18 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Test.Domain
         public void BenchmarkCalculoMensal()
             => this.ExecutionTimeOf(x => x.CalculeBenchmark())
                 .Should()
-                .BeLessOrEqualTo(1000.Milliseconds());
-                 
+                .BeLessOrEqualTo(5000.Milliseconds());
+
         private void CalculeBenchmark()
         {
             var contrato = CenarioContrato.CrieCenarioConsistente(1000);
-            var calculo = new CalculoFolhaMensal();
+            var calculo = new CalculoFolhaMensal(DateTime.Now);
             var execucoes = 5_00_000;
             while (execucoes > 0)
             {
                 calculo.Calcule(contrato);
                 execucoes--;
             }
-            
         }
     }
 }

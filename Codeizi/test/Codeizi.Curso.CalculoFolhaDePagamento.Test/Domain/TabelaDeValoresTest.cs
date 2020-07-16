@@ -1,8 +1,6 @@
-﻿using Codeizi.Curso.CalculoFolhaDePagamento.Domain;
-using NSubstitute;
+﻿using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Domain.Calculo;
+using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Domain.ComponentesDeCalculo;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace Codeizi.Curso.CalculoFolhaDePagamento.Test.Domain
@@ -14,8 +12,8 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Test.Domain
         [InlineData(0, false)]
         public void AdicioneValor(double valor, bool result)
         {
-            var inss = new INSSComponenteDeCalculo();            
-            var tabela = new ComponentesCalculados(CenarioContrato.CrieCenarioConsistente(valor));
+            var inss = new INSSComponenteDeCalculo();
+            var tabela = new ComponentesCalculados(CenarioContrato.CrieCenarioConsistente(valor), DateTime.Now);
             tabela.AdicioneValor(inss, (ValorComponenteCalculo)valor);
             Assert.True(tabela.ExisteValores == result);
         }
@@ -26,7 +24,7 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Test.Domain
         public void ObterValorTest(double valor)
         {
             var inss = new INSSComponenteDeCalculo();
-            var tabela = new ComponentesCalculados(CenarioContrato.CrieCenarioConsistente(valor));
+            var tabela = new ComponentesCalculados(CenarioContrato.CrieCenarioConsistente(valor), DateTime.Now);
             tabela.AdicioneValor(inss, (ValorComponenteCalculo)valor);
             tabela.AdicioneValor(new FGTSComponenteCalculo(), (ValorComponenteCalculo)valor);
             Assert.Equal((ValorComponenteCalculo)valor, tabela.Valor(EnumComponentesCalculo.FGTS));

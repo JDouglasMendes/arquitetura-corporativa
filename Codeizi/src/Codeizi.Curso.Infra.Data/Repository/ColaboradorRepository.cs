@@ -12,11 +12,13 @@ namespace Codeizi.Curso.Infra.Data.Repository
     {
         private readonly IContratoDAO contratoDAO;
         private readonly IColaboradorDAO colaboradorDAO;
+
         public ColaboradorRepository(IContratoDAO contratoDAO, IColaboradorDAO colaboradorDAO)
         {
             this.contratoDAO = contratoDAO;
             this.colaboradorDAO = colaboradorDAO;
         }
+
         public IEnumerable<Contrato> BusqueTodosContratos(Guid guid)
             => contratoDAO.GetAll().AsEnumerable().Where(x => x.ColaboradorId == guid).ToList();
 

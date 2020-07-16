@@ -16,6 +16,7 @@ namespace Codeizi.Curso.Application.ViewModels
         [Required(ErrorMessage = "Data de admissão obrigatória")]
         [DataType(DataType.Date, ErrorMessage = "Data de admissão em formato inválido")]
         public DateTime DataDeAdmissao { get; set; }
+
         public double SalarioContratual { get; set; }
 
         [MaxLength(ErrorMessage = "Observação contratual deve conter no maximo 100 caracteres")]

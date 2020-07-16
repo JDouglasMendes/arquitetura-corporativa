@@ -2,7 +2,7 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace Codeizi.Curso.Api.Integration
+namespace Codeizi.Curso.Api.Integration.Test
 {
     public static class JsonToObject<T>
     {

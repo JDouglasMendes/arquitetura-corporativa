@@ -14,6 +14,7 @@ namespace Codeizi.Curso.Domain.Colaboradores.Events
             SalarioContratual = salarioContratual;
             ObservacaoContratual = observacaoContratual;
         }
+
         public string Nome { get; }
         public string Sobrenome { get; }
         public DateTime DataDeAdmissao { get; }

@@ -6,6 +6,7 @@ namespace Codeizi.Curso.Infra.Data.UnitOfWork
     public sealed class UnitOfWork : IUnitOfWork
     {
         private readonly CodeiziContext _context;
+
         public UnitOfWork(CodeiziContext context)
             => _context = context;
 

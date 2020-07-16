@@ -14,6 +14,7 @@ namespace Codeizi.Curso.Domain.SharedKernel.Test.ValueObjects
             Assert.Equal("Codeizi", nome.Nome);
             Assert.Equal("Treinamentos", nome.Sobrenome);
         }
+
         [Theory]
         [InlineData("Codeizi", "Codeizi", true)]
         [InlineData("Code", "Codeizi", false)]
@@ -33,7 +34,6 @@ namespace Codeizi.Curso.Domain.SharedKernel.Test.ValueObjects
             var nomeCompleto2 = NomePessoa.Crie(nome2, "Treinamento");
             Assert.True(nomeCompleto1.GetHashCode() == nomeCompleto2.GetHashCode() == resultado);
         }
-
 
         [Fact]
         public void ToStringTest()
@@ -60,7 +60,7 @@ namespace Codeizi.Curso.Domain.SharedKernel.Test.ValueObjects
         {
             var nomeCompleto1 = NomePessoa.Crie(nome1, "Treinamentos");
             var nomeCompleto2 = NomePessoa.Crie(nome2, "Treinamentos");
-            Assert.True(nomeCompleto1 != nomeCompleto2 == resultado);            
+            Assert.True(nomeCompleto1 != nomeCompleto2 == resultado);
         }
 
         [Theory]
@@ -93,5 +93,4 @@ namespace Codeizi.Curso.Domain.SharedKernel.Test.ValueObjects
                                         new object[] { NomePessoa.Crie("ADAA", "BBB"), NomePessoa.Crie("AAAA","CCCC"), menorIgual, false },
                                     };
     }
-
 }

@@ -27,6 +27,7 @@ namespace Codeizi.Curso.infra.Data.EventSource.Context
             Store = LazyStore.Value;
             Session = Store.OpenSession();
         }
+
         public IDocumentSession Session { get; }
 
         public void Dispose()

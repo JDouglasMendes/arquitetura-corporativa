@@ -1,7 +1,5 @@
-﻿using Codeizi.Curso.CalculoFolhaDePagamento.Domain;
+﻿using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Domain.ComponentesDeCalculo;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace Codeizi.Curso.CalculoFolhaDePagamento.Test.Domain

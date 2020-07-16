@@ -7,6 +7,7 @@ namespace Codeizi.Curso.Infra.Data.Context
     {
         public CodeiziContext(DbContextOptions<CodeiziContext> options)
             : base(options) { }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new ColaboradorMap());

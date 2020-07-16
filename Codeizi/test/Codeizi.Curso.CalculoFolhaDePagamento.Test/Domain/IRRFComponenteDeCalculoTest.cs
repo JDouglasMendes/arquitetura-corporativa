@@ -1,7 +1,6 @@
-﻿using Codeizi.Curso.CalculoFolhaDePagamento.Domain;
+﻿using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Domain.Calculo;
+using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Domain.ComponentesDeCalculo;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace Codeizi.Curso.CalculoFolhaDePagamento.Test.Domain
@@ -18,9 +17,11 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Test.Domain
         [InlineData(double.MaxValue, double.MaxValue * 27.5 / 100)]
         public void Calcule(double salario, double result)
         {
-            var componente = new IRRFComponenteDeCalculo();
             var contrato = CenarioContrato.CrieCenarioConsistente(salario);
-            var valorCalculado = componente.Calcule(contrato, new ComponentesCalculados(contrato));
+            var tabela = new ComponentesCalculados(contrato, DateTime.Now);
+            tabela.AdicioneValor(new BaseSalarioComponenteCalculo(), (ValorComponenteCalculo)salario);
+            var componente = new IRRFComponenteDeCalculo();
+            var valorCalculado = componente.Calcule(contrato, tabela);
             Assert.Equal((ValorComponenteCalculo)result, valorCalculado);
         }
     }

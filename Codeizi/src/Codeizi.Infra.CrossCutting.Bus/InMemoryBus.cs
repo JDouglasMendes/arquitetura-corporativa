@@ -4,7 +4,7 @@ using Codeizi.Curso.Domain.SharedKernel.IMediatorBus;
 using MediatR;
 using System.Threading.Tasks;
 
-namespace Codeizi.Infra.CrossCutting.Bus
+namespace Codeizi.Curso.Infra.CrossCutting.Bus
 {
     public sealed class InMemoryBus : IMediatorHandler
     {

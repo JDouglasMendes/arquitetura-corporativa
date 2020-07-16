@@ -1,8 +1,6 @@
-﻿using Codeizi.Curso.CalculoFolhaDePagamento.Domain;
-using NSubstitute;
+﻿using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Domain.Calculo;
+using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Domain.ComponentesDeCalculo;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace Codeizi.Curso.CalculoFolhaDePagamento.Test.Domain
@@ -16,15 +14,14 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Test.Domain
                             double irrf,
                             double result)
         {
-            var tabela = new ComponentesCalculados(null);
+            var tabela = new ComponentesCalculados(null, DateTime.Now);
+            tabela.AdicioneValor(new BaseSalarioComponenteCalculo(), (ValorComponenteCalculo)salarioContratual);
             tabela.AdicioneValor(new INSSComponenteDeCalculo(), (ValorComponenteCalculo)inss);
             tabela.AdicioneValor(new IRRFComponenteDeCalculo(), (ValorComponenteCalculo)irrf);
             var contrato = CenarioContrato.CrieCenarioConsistente(salarioContratual);
             var compomente = new SalarioLiquidoComponenteDeCalculo();
             var valorCalculado = compomente.Calcule(contrato, tabela);
             Assert.Equal(result, valorCalculado.Valor);
-
         }
-
     }
 }

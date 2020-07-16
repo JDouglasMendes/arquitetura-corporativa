@@ -48,6 +48,5 @@ namespace Codeizi.Curso.Api
                  {
                      webBuilder.UseStartup<Startup>();
                  });
-
     }
 }

@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Logging;
 using System;
 using System.Net;
 using System.Threading.Tasks;
@@ -25,6 +24,7 @@ namespace Codeizi.Curso.Api.Errors
                 throw;
             }
         }
+
         private static Task HandleExceptionAsync(HttpContext context)
         {
             context.Response.ContentType = "application/json";

@@ -39,6 +39,7 @@ namespace Codeizi.Curso.Domain.Test.Colaboradores
             var result = await commandAdmissao.Handle(admissaoColaborador, CancellationToken.None);
             Assert.True(result);
         }
+
         [Fact]
         public async Task AdmissaoDadosColoboradorInconsistente()
         {
@@ -62,6 +63,5 @@ namespace Codeizi.Curso.Domain.Test.Colaboradores
             var result = await commandAdmissao.Handle(admissaoColaborador, CancellationToken.None);
             Assert.False(result);
         }
-
     }
 }

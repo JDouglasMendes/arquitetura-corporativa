@@ -1,7 +1,7 @@
 ﻿using Codeizi.Curso.Application.ViewModels;
 using System;
 
-namespace Codeizi.Curso.Api.Integration.Cenarios
+namespace Codeizi.Curso.Api.Integration.Test.Cenarios
 {
     public sealed class ColaboradorViewModelBuilder
     {

@@ -2,7 +2,7 @@
 using System.Net.Http;
 using System.Text;
 
-namespace Codeizi.Curso.Api.Integration
+namespace Codeizi.Curso.Api.Integration.Test
 {
     public static class StringContentJsonHelper
     {

@@ -1,7 +1,5 @@
 ﻿using Codeizi.Curso.Domain.Colaboradores.Commands;
 using FluentValidation;
-using System;
-using System.Security.Cryptography.X509Certificates;
 
 namespace Codeizi.Curso.Domain.Colaboradores.Validations
 {
