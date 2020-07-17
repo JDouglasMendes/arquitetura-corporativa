@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Codeizi.Curso.FolhaDePagamento.Infra.BackgroundTasks.BusModel
+namespace Codeizi.Curso.CalculoFolhaDePagamento.Infra.BackgroundTasks.BusModel
 {
     public class ContratoBusModel
     {

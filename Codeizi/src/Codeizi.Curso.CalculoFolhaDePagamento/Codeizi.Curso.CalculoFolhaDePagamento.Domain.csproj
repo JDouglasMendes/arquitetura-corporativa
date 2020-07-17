@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Codeizi.Curso.Domain.SharedKernel\Codeizi.Curso.Domain.SharedKernel.csproj" />
+    <ProjectReference Include="..\Codeizi.Curso.Infra.Redis\Codeizi.Curso.Infra.Redis.csproj" />
   </ItemGroup>
 
 </Project>

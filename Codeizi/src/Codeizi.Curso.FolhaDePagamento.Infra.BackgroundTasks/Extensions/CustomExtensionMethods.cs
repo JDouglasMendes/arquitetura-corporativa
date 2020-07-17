@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Logging;
 using Serilog;
 
-namespace Codeizi.Curso.FolhaDePagamento.Infra.BackgroundTasks.Extensions
+namespace Codeizi.Curso.CalculoFolhaDePagamento.Infra.BackgroundTasks.Extensions
 {
     public static class CustomExtensionMethods
     {

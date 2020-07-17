@@ -1,4 +1,4 @@
-﻿using Codeizi.Curso.FolhaDePagamento.Infra.BackgroundTasks.Configurations;
+﻿using Codeizi.Curso.CalculoFolhaDePagamento.Infra.BackgroundTasks.Configurations;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -7,7 +7,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Codeizi.Curso.FolhaDePagamento.Infra.BackgroundTasks.Tasks
+namespace Codeizi.Curso.CalculoFolhaDePagamento.Infra.BackgroundTasks.Tasks
 {
     public class ContratoParaCalculoBackgroundService : BackgroundService
     {

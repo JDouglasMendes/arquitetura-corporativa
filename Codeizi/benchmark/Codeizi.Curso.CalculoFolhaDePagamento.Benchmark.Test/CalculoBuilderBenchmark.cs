@@ -2,6 +2,7 @@
 using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Domain.Calculo;
 using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Domain.Contratos;
 using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Services.Repositories;
+using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Services.ServiceDomain;
 using System;
 using System.Collections.Generic;
 
@@ -13,11 +14,12 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Benchmark.Test
         public List<Contrato> Execucoes;
         public CalculoBuilder calculo;
         public ICalculoRepository repository = new CalculoMensalMockBanco();
+        public IFeedbackExecucaoCalculoServiceDomain feedback = new FeedbackCalculoMock();
 
         [GlobalSetup]
         public void Setup()
         {
-            calculo = new CalculoBuilder(DateTime.Now, EnumFolhaDePagamento.Mensal, repository);
+            calculo = new CalculoBuilder(DateTime.Now, EnumFolhaDePagamento.Mensal, repository, feedback);
             var quantidade = 1_000_000;
             Execucoes = new List<Contrato>(quantidade);
             var id = Guid.NewGuid();

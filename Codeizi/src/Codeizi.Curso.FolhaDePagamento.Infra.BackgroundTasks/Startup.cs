@@ -1,11 +1,11 @@
-using Codeizi.Curso.FolhaDePagamento.Infra.BackgroundTasks.Tasks;
+using Codeizi.Curso.CalculoFolhaDePagamento.Infra.BackgroundTasks.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace Codeizi.Curso.FolhaDePagamento.Infra.BackgroundTasks
+namespace Codeizi.Curso.CalculoFolhaDePagamento.Infra.BackgroundTasks
 {
     public class Startup
     {

@@ -1,8 +1,8 @@
 ﻿using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Domain.Calculo;
 using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Domain.Contratos;
+using Codeizi.Curso.CalculoFolhaDePagamento.Infra.BackgroundTasks.BusModel;
+using Codeizi.Curso.CalculoFolhaDePagamento.Infra.BackgroundTasks.Configurations;
 using Codeizi.Curso.CalculoFolhaDePagamento.Infra.Data.Repositories;
-using Codeizi.Curso.FolhaDePagamento.Infra.BackgroundTasks.BusModel;
-using Codeizi.Curso.FolhaDePagamento.Infra.BackgroundTasks.Configurations;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
@@ -11,7 +11,7 @@ using RabbitMQ.Client.Events;
 using System;
 using System.Text;
 
-namespace Codeizi.Curso.FolhaDePagamento.Infra.BackgroundTasks.Tasks
+namespace Codeizi.Curso.CalculoFolhaDePagamento.Infra.BackgroundTasks.Tasks
 {
     // docker run -d --hostname rabbit-local --name testes-rabbitmq -p 6672:5672 -p 15672:15672 -e RABBITMQ_DEFAULT_USER=codeizi -e RABBITMQ_DEFAULT_PASS=TestesCodeizi! rabbitmq:3-management-alpine
     public class ContratoParaCalculoRabbitMQ : IDisposable

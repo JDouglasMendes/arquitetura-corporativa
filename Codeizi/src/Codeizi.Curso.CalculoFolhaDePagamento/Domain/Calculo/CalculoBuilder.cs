@@ -1,5 +1,6 @@
 ﻿using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Domain.Contratos;
 using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Services.Repositories;
+using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Services.ServiceDomain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,25 +13,27 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Domain.Domain.Calculo
     {
         private readonly ICalculo _calculo;
         private readonly ICalculoRepository _calculoRepository;
+        private readonly IFeedbackExecucaoCalculoServiceDomain _feedbackExecucaoCalculo;
         private DateTime _referencia;
         private List<Contrato> _contratos;
 
         public CalculoBuilder(DateTime referencia,
                               EnumFolhaDePagamento enumFolhaDePagamento,
-                              ICalculoRepository calculoRepository)
+                              ICalculoRepository calculoRepository,
+                              IFeedbackExecucaoCalculoServiceDomain feedbackExecucaoCalculo)
         {
             _calculo = FabricaCalculo.Crie(enumFolhaDePagamento, referencia);
             _calculoRepository = calculoRepository;
             _referencia = referencia;
+            _feedbackExecucaoCalculo = feedbackExecucaoCalculo;
         }
 
         public CalculoBuilder InicieCalculo(List<Contrato> contratos)
         {
-            _quantidadeProcessada = 0;
             _contratos = contratos;
             _quantidadeTotal = _contratos.Count();
             IdExecucao = Guid.NewGuid();
-            EmAndamento = true;
+            _feedbackExecucaoCalculo.IniciarProcessamento(IdExecucao, _quantidadeTotal);
             return this;
         }
 
@@ -39,16 +42,6 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Domain.Domain.Calculo
 
         private int _quantidadeTotal;
         private int _quantidadeProcessada;
-
-        public double PercentualExecutado
-        {
-            get
-            {
-                return _quantidadeProcessada * 100 / _quantidadeTotal;
-            }
-        }
-
-        public bool EmAndamento { get; private set; }
 
         public Guid IdExecucao { get; private set; }
 
@@ -59,17 +52,14 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Domain.Domain.Calculo
 
             await Task.Run(() =>
             {
-               Parallel.For(0, _quantidadeTotal, async index =>
-               {
-                   var valores = _calculo.Calcule(_contratos[index]);
-                   await _calculoRepository.InsiraValoresCalculados(valores);
-                   Interlocked.Increment(ref _quantidadeProcessada);
-               });
-
-               EmAndamento = false;
-
-           });
-
+                Parallel.For(0, _quantidadeTotal, async index =>
+                {
+                    var valores = _calculo.Calcule(_contratos[index]);
+                    await _calculoRepository.InsiraValoresCalculados(valores);
+                    Interlocked.Increment(ref _quantidadeProcessada);
+                    _feedbackExecucaoCalculo.AtualizarPercentualExecucao(IdExecucao, _quantidadeProcessada, _quantidadeTotal);
+                });
+            });
         }
     }
 }

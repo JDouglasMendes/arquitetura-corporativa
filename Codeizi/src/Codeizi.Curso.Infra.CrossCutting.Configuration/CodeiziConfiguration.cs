@@ -11,6 +11,8 @@ namespace Codeizi.Curso.Infra.CrossCutting.Configuration
 
         public string DatabaseRavenDB => Configuration.GetSection("RavenDB:Database").Value;
 
+        public string ConnectionStringRedis => Configuration.GetSection("Redis:Connection").Value;
+
         public CodeiziConfiguration(IHostEnvironment env)
         {
             var builder = new ConfigurationBuilder()

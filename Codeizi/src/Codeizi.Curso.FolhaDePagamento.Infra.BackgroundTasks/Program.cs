@@ -1,12 +1,11 @@
-using Autofac.Extensions.DependencyInjection;
-using Codeizi.Curso.FolhaDePagamento.Infra.BackgroundTasks.Extensions;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Serilog;
 using System.IO;
+using Codeizi.Curso.CalculoFolhaDePagamento.Infra.BackgroundTasks.Extensions;
 
-namespace Codeizi.Curso.FolhaDePagamento.Infra.BackgroundTasks
+namespace Codeizi.Curso.CalculoFolhaDePagamento.Infra.BackgroundTasks
 {
     public class Program
     {
@@ -17,7 +16,6 @@ namespace Codeizi.Curso.FolhaDePagamento.Infra.BackgroundTasks
 
         public static IHost CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .UseServiceProviderFactory(new AutofacServiceProviderFactory())
                 .ConfigureWebHostDefaults(webBuilder => webBuilder.UseStartup<Startup>())
                 .ConfigureAppConfiguration((host, builder) =>
                 {

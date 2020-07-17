@@ -51,3 +51,11 @@ Codeizi/src/Codeizi.Curso.FolhaDePagamento.Infra.BackgroundTasks/obj/*
 Codeizi/src/Codeizi.Curso.CalculoFolhaDePagamento.Infra.Data/bin/*
 Codeizi/src/Codeizi.Curso.CalculoFolhaDePagamento.Infra.Data/obj/*
 TestResults/*
+Codeizi/src/Codeizi.Curso.CalculoFolhaDePagamento.Infra.CrossCutting.IoC/bin/*
+Codeizi/src/Codeizi.Curso.CalculoFolhaDePagamento.Infra.CrossCutting.IoC/obj/*
+Codeizi/src/Codeizi.Curso.CalculoFolhaDePagamento.Api/bin/*
+Codeizi/src/Codeizi.Curso.CalculoFolhaDePagamento.Api/obj/*
+Codeizi/src/Codeizi.Curso.Infra.Redis/bin/*
+Codeizi/src/Codeizi.Curso.Infra.Redis/obj/*
+Codeizi/src/Codeizi.Curso.SignalrHub/bin/*
+Codeizi/src/Codeizi.Curso.SignalrHub/obj/*

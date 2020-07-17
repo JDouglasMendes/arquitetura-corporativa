@@ -50,7 +50,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.CalculoFolhaD
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.CalculoFolhaDePagamento.Infra.Data", "src\Codeizi.Curso.CalculoFolhaDePagamento.Infra.Data\Codeizi.Curso.CalculoFolhaDePagamento.Infra.Data.csproj", "{7967892A-7CAE-4389-A26B-3D5522CF1033}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.FolhaDePagamento.Infra.BackgroundTasks", "src\Codeizi.Curso.FolhaDePagamento.Infra.BackgroundTasks\Codeizi.Curso.FolhaDePagamento.Infra.BackgroundTasks.csproj", "{44B972EF-C064-449D-89E1-7A7BB1421D1C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.CalculoFolhaDePagamento.Infra.BackgroundTasks", "src\Codeizi.Curso.FolhaDePagamento.Infra.BackgroundTasks\Codeizi.Curso.CalculoFolhaDePagamento.Infra.BackgroundTasks.csproj", "{44B972EF-C064-449D-89E1-7A7BB1421D1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codeizi.Curso.CalculoFolhaDePagamento.Infra.CrossCutting.IoC", "src\Codeizi.Curso.CalculoFolhaDePagamento.Infra.CrossCutting.IoC\Codeizi.Curso.CalculoFolhaDePagamento.Infra.CrossCutting.IoC.csproj", "{580D5D10-6261-4F77-BD86-22331F6ABCCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codeizi.Curso.CalculoFolhaDePagamento.Api", "src\Codeizi.Curso.CalculoFolhaDePagamento.Api\Codeizi.Curso.CalculoFolhaDePagamento.Api.csproj", "{F196AEEA-4EEC-45C1-A32D-64E69D1F7A62}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionInfra", "SolutionInfra", "{D1ACB649-8702-4776-BF68-D38BCDFE2B98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codeizi.Curso.Infra.Redis", "src\Codeizi.Curso.Infra.Redis\Codeizi.Curso.Infra.Redis.csproj", "{873FB43D-D9FE-455A-A8C6-0EEC032262D3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hub", "Hub", "{2183FCCB-FBD8-4F37-88C8-CF3C408F5F67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codeizi.Curso.SignalrHub", "src\Codeizi.Curso.SignalrHub\Codeizi.Curso.SignalrHub.csproj", "{E6F46616-2786-4613-BA10-C7DDE63FB058}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -130,6 +142,22 @@ Global
 		{44B972EF-C064-449D-89E1-7A7BB1421D1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44B972EF-C064-449D-89E1-7A7BB1421D1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44B972EF-C064-449D-89E1-7A7BB1421D1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{580D5D10-6261-4F77-BD86-22331F6ABCCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{580D5D10-6261-4F77-BD86-22331F6ABCCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{580D5D10-6261-4F77-BD86-22331F6ABCCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{580D5D10-6261-4F77-BD86-22331F6ABCCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F196AEEA-4EEC-45C1-A32D-64E69D1F7A62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F196AEEA-4EEC-45C1-A32D-64E69D1F7A62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F196AEEA-4EEC-45C1-A32D-64E69D1F7A62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F196AEEA-4EEC-45C1-A32D-64E69D1F7A62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{873FB43D-D9FE-455A-A8C6-0EEC032262D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{873FB43D-D9FE-455A-A8C6-0EEC032262D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{873FB43D-D9FE-455A-A8C6-0EEC032262D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{873FB43D-D9FE-455A-A8C6-0EEC032262D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6F46616-2786-4613-BA10-C7DDE63FB058}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6F46616-2786-4613-BA10-C7DDE63FB058}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6F46616-2786-4613-BA10-C7DDE63FB058}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6F46616-2786-4613-BA10-C7DDE63FB058}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -154,6 +182,12 @@ Global
 		{B67585B4-ABAA-48E1-BEC2-8C2C4E062784} = {1EB582A4-F7A5-481C-B619-D37CDDC88D94}
 		{7967892A-7CAE-4389-A26B-3D5522CF1033} = {EF044E45-31B1-4A8E-9159-415DCC247701}
 		{44B972EF-C064-449D-89E1-7A7BB1421D1C} = {EF044E45-31B1-4A8E-9159-415DCC247701}
+		{580D5D10-6261-4F77-BD86-22331F6ABCCF} = {EF044E45-31B1-4A8E-9159-415DCC247701}
+		{F196AEEA-4EEC-45C1-A32D-64E69D1F7A62} = {EF044E45-31B1-4A8E-9159-415DCC247701}
+		{D1ACB649-8702-4776-BF68-D38BCDFE2B98} = {EF01AEB0-DD72-44E5-945C-3463842CEE0F}
+		{873FB43D-D9FE-455A-A8C6-0EEC032262D3} = {D1ACB649-8702-4776-BF68-D38BCDFE2B98}
+		{2183FCCB-FBD8-4F37-88C8-CF3C408F5F67} = {EF01AEB0-DD72-44E5-945C-3463842CEE0F}
+		{E6F46616-2786-4613-BA10-C7DDE63FB058} = {2183FCCB-FBD8-4F37-88C8-CF3C408F5F67}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A3BB0C73-9411-4A9A-9497-176952B73246}

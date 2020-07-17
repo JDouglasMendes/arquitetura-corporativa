@@ -1,4 +1,4 @@
-﻿namespace Codeizi.Curso.FolhaDePagamento.Infra.BackgroundTasks.Configurations
+﻿namespace Codeizi.Curso.CalculoFolhaDePagamento.Infra.BackgroundTasks.Configurations
 {
     public class RabbitMQConfigurations
     {

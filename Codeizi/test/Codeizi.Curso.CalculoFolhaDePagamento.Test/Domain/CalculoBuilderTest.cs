@@ -1,5 +1,6 @@
 ﻿using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Domain.Calculo;
 using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Services.Repositories;
+using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Services.ServiceDomain;
 using NSubstitute;
 using System;
 using System.Collections.Generic;
@@ -28,21 +29,13 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Test.Domain
 
             var builder = new CalculoBuilder(DateTime.Now,
                                              EnumFolhaDePagamento.Mensal,
-                                             mockCalculoRepository);
+                                             mockCalculoRepository,
+                                             Substitute.For<IFeedbackExecucaoCalculoServiceDomain>());
 
             var task = builder.InicieCalculo(mockContratoRepository)
                                 .CalculeContratos();
-
-            if(task.Status != TaskStatus.RanToCompletion)
-            {               
-                Assert.True(builder.EmAndamento);                
-                Assert.True(builder.PercentualExecutado < 100);
-            }
-
-            while (task.Status != TaskStatus.RanToCompletion) { }
-
-            Assert.Equal(100, builder.PercentualExecutado);
-            Assert.False(builder.EmAndamento);
+          
+            while (task.Status != TaskStatus.RanToCompletion) { }            
             Assert.True(builder.IdExecucao != Guid.Empty);
             mockCalculoRepository.Received(quantidadeCalls).InsiraValoresCalculados(Arg.Any<ComponentesCalculados>());
         }
@@ -63,7 +56,8 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Test.Domain
 
             var builder = new CalculoBuilder(DateTime.Now,
                                              EnumFolhaDePagamento.Mensal,
-                                             mockCalculoRepository);
+                                             mockCalculoRepository,
+                                             Substitute.For<IFeedbackExecucaoCalculoServiceDomain>());
 
             var ex = await Assert.ThrowsAsync<ArgumentException>(() => builder.CalculeContratos());           
         }

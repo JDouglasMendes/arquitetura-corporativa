@@ -4,5 +4,6 @@
     {
         string ConnectionStringRavenDB { get; }
         string DatabaseRavenDB { get; }
+        string ConnectionStringRedis { get; }
     }
 }
