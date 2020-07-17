@@ -36,8 +36,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.Domain.Shared
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.Domain.Test", "test\Codeizi.Curso.Domain.Test\Codeizi.Curso.Domain.Test.csproj", "{7CA1E6EE-6D76-4C18-9073-B5AA700F85E9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.infra.Data.EventSource.Test", "test\Codeizi.Curso.infra.Data.EventSource.Test\Codeizi.Curso.infra.Data.EventSource.Test.csproj", "{88EDE342-F0D4-4359-A77D-A1D9B8CF028A}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Infra.Data.Test", "test\Codeizi.Infra.Data.Test\Codeizi.Infra.Data.Test.csproj", "{AB2ED407-205E-406B-A3C9-905037A537E1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FolhaDePagamento", "FolhaDePagamento", "{EF044E45-31B1-4A8E-9159-415DCC247701}"
@@ -50,9 +48,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "benchmark", "benchmark", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.CalculoFolhaDePagamento.Benchmark.Test", "benchmark\Codeizi.Curso.CalculoFolhaDePagamento.Benchmark.Test\Codeizi.Curso.CalculoFolhaDePagamento.Benchmark.Test.csproj", "{B67585B4-ABAA-48E1-BEC2-8C2C4E062784}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codeizi.Curso.CalculoFolhaDePagamento.Infra.Data", "src\Codeizi.Curso.CalculoFolhaDePagamento.Infra.Data\Codeizi.Curso.CalculoFolhaDePagamento.Infra.Data.csproj", "{7967892A-7CAE-4389-A26B-3D5522CF1033}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.CalculoFolhaDePagamento.Infra.Data", "src\Codeizi.Curso.CalculoFolhaDePagamento.Infra.Data\Codeizi.Curso.CalculoFolhaDePagamento.Infra.Data.csproj", "{7967892A-7CAE-4389-A26B-3D5522CF1033}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codeizi.Curso.FolhaDePagamento.Infra.BackgroundTasks", "src\Codeizi.Curso.FolhaDePagamento.Infra.BackgroundTasks\Codeizi.Curso.FolhaDePagamento.Infra.BackgroundTasks.csproj", "{44B972EF-C064-449D-89E1-7A7BB1421D1C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.FolhaDePagamento.Infra.BackgroundTasks", "src\Codeizi.Curso.FolhaDePagamento.Infra.BackgroundTasks\Codeizi.Curso.FolhaDePagamento.Infra.BackgroundTasks.csproj", "{44B972EF-C064-449D-89E1-7A7BB1421D1C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -108,10 +106,6 @@ Global
 		{7CA1E6EE-6D76-4C18-9073-B5AA700F85E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7CA1E6EE-6D76-4C18-9073-B5AA700F85E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7CA1E6EE-6D76-4C18-9073-B5AA700F85E9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{88EDE342-F0D4-4359-A77D-A1D9B8CF028A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{88EDE342-F0D4-4359-A77D-A1D9B8CF028A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{88EDE342-F0D4-4359-A77D-A1D9B8CF028A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{88EDE342-F0D4-4359-A77D-A1D9B8CF028A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AB2ED407-205E-406B-A3C9-905037A537E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AB2ED407-205E-406B-A3C9-905037A537E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB2ED407-205E-406B-A3C9-905037A537E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -153,7 +147,6 @@ Global
 		{3F25DBD3-D173-45DE-930C-3CD9675F7E21} = {E242A8C3-6631-4F9E-9C98-B671EB04FB83}
 		{CFF22CCE-E109-4BFF-AEF2-06A644E99703} = {E242A8C3-6631-4F9E-9C98-B671EB04FB83}
 		{7CA1E6EE-6D76-4C18-9073-B5AA700F85E9} = {E242A8C3-6631-4F9E-9C98-B671EB04FB83}
-		{88EDE342-F0D4-4359-A77D-A1D9B8CF028A} = {E242A8C3-6631-4F9E-9C98-B671EB04FB83}
 		{AB2ED407-205E-406B-A3C9-905037A537E1} = {E242A8C3-6631-4F9E-9C98-B671EB04FB83}
 		{EF044E45-31B1-4A8E-9159-415DCC247701} = {EF01AEB0-DD72-44E5-945C-3463842CEE0F}
 		{CB1012E3-E810-47BD-9A7A-294CC6FE72AC} = {EF044E45-31B1-4A8E-9159-415DCC247701}

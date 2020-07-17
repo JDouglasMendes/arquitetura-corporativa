@@ -1,4 +1,5 @@
-﻿using Codeizi.Curso.Domain.Colaboradores.Events;
+﻿using Codeizi.Curso.Domain.Colaboradores.Commands;
+using Codeizi.Curso.Domain.Colaboradores.Events;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
@@ -6,11 +7,11 @@ using System.Threading.Tasks;
 namespace Codeizi.Curso.Domain.Colaboradores.EventHandlers
 {
     public class ColaboradorEventHandler :
-        INotificationHandler<ColaboradorAdmitidoEvent>
+       IRequestHandler<ColaboradorAdmitidoEvent, bool>
     {
-        public Task Handle(ColaboradorAdmitidoEvent notification, CancellationToken cancellationToken)
+        public Task<bool> Handle(ColaboradorAdmitidoEvent request, CancellationToken cancellationToken)
         {
-            return Task.CompletedTask;
+            return Task.FromResult(true);
         }
     }
 }

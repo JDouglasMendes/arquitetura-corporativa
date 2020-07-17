@@ -12,10 +12,15 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Test.Domain
         [InlineData(0, false)]
         public void AdicioneValor(double valor, bool result)
         {
+            var contrato = CenarioContrato.CrieCenarioConsistente(valor);
             var inss = new INSSComponenteDeCalculo();
-            var tabela = new ComponentesCalculados(CenarioContrato.CrieCenarioConsistente(valor), DateTime.Now);
+            var tabela = new ComponentesCalculados(contrato, new DateTime(2020,1,1));
             tabela.AdicioneValor(inss, (ValorComponenteCalculo)valor);
             Assert.True(tabela.ExisteValores == result);
+            Assert.Equal(new DateTime(2020, 1, 1), tabela.Referencia);
+            Assert.Equal(contrato.IdColaborador, tabela.IdColaborador);
+            Assert.Equal(contrato.IdContrato, tabela.IdContrato);
+            Assert.True(tabela.Valores.Count > 0 == result);
         }
 
         [Theory]

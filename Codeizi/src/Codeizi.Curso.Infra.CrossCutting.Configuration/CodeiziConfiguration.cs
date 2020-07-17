@@ -7,7 +7,7 @@ namespace Codeizi.Curso.Infra.CrossCutting.Configuration
     {
         public IConfiguration Configuration { get; }
 
-        public string ConnectionStringRavenDB => Configuration.GetSection("RavenDB:ConnectionString").Value;
+        public string ConnectionStringRavenDB => Configuration.GetSection("RavenDB:Connection").Value;
 
         public string DatabaseRavenDB => Configuration.GetSection("RavenDB:Database").Value;
 

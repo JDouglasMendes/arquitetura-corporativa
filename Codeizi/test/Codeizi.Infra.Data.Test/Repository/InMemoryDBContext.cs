@@ -27,8 +27,6 @@ namespace Codeizi.Infra.Data.Test.Repository
         }
 
         public void Dispose()
-        {
-            _connection.Close();
-        }
+            => _connection.Close();
     }
 }

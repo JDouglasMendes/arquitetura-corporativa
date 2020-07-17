@@ -2,6 +2,8 @@
 using Codeizi.Curso.Domain.Colaboradores.CommandHandlers;
 using Codeizi.Curso.Domain.Colaboradores.Commands;
 using Codeizi.Curso.Domain.Colaboradores.Contracts;
+using Codeizi.Curso.Domain.Colaboradores.EventHandlers;
+using Codeizi.Curso.Domain.Colaboradores.Events;
 using Codeizi.Curso.Domain.SharedKernel.Events;
 using Codeizi.Curso.Domain.SharedKernel.IMediatorBus;
 using Codeizi.Curso.Domain.SharedKernel.Notifications;
@@ -53,6 +55,7 @@ namespace Codeizi.Curso.Infra.CrossCutting.IoC
         private static void AdicioneComandosDeDominio(IServiceCollection services)
         {
             services.AddScoped<IRequestHandler<AdmissaoColaboradorCommand, bool>, ColaboradorCommandHandler>();
+            services.AddScoped<IRequestHandler<ColaboradorAdmitidoEvent, bool>, ColaboradorEventHandler>();
         }
 
         private static void AdicioneCamadaDeDados(IServiceCollection services)

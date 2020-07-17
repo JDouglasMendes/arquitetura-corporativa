@@ -32,10 +32,6 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Domain.Domain.Calculo
             _valoresCalculados[componente.IdComponente] = valor;
         }
 
-        public ValorComponenteCalculo Valor<T>(T componente)
-            where T : IComponenteDeCalculo
-            => Valor(componente.IdComponente);
-
         public ValorComponenteCalculo Valor(EnumComponentesCalculo enumComponentesCalculo)
         {
             if (_valoresCalculados.ContainsKey(enumComponentesCalculo))

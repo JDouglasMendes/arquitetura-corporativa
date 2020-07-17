@@ -52,22 +52,24 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Domain.Domain.Calculo
 
         public Guid IdExecucao { get; private set; }
 
-        public void CalculeContratos()
+        public async Task CalculeContratos()
         {
-            if (IdExecucao == null)
-                throw new ArgumentException();
-
             if (_contratos == null)
                 throw new ArgumentException();
 
-            Parallel.For(0, _quantidadeTotal, async index =>
+            await Task.Run(() =>
             {
-                var valores = _calculo.Calcule(_contratos[index]);
-                await _calculoRepository.InsiraValoresCalculados(valores);
-                Interlocked.Increment(ref _quantidadeProcessada);
-            });
+               Parallel.For(0, _quantidadeTotal, async index =>
+               {
+                   var valores = _calculo.Calcule(_contratos[index]);
+                   await _calculoRepository.InsiraValoresCalculados(valores);
+                   Interlocked.Increment(ref _quantidadeProcessada);
+               });
 
-            EmAndamento = false;
+               EmAndamento = false;
+
+           });
+
         }
     }
 }
