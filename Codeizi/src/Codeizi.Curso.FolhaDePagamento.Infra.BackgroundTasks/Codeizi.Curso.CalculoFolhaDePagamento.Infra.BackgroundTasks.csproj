@@ -21,6 +21,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Codeizi.Curso.CalculoFolhaDePagamento.Infra.Data\Codeizi.Curso.CalculoFolhaDePagamento.Infra.Data.csproj" />
     <ProjectReference Include="..\Codeizi.Curso.CalculoFolhaDePagamento\Codeizi.Curso.CalculoFolhaDePagamento.Domain.csproj" />
+    <ProjectReference Include="..\Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ\Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ.csproj" />
   </ItemGroup>
 
 </Project>

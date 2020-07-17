@@ -26,6 +26,7 @@ namespace Codeizi.Curso.SignalrHub
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddSignalR();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,7 +45,7 @@ namespace Codeizi.Curso.SignalrHub
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapHub<NotificationsHub>("/hub/notificationhub", options => options.Transports = Microsoft.AspNetCore.Http.Connections.HttpTransports.All);
             });
         }
     }

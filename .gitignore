@@ -59,3 +59,5 @@ Codeizi/src/Codeizi.Curso.Infra.Redis/bin/*
 Codeizi/src/Codeizi.Curso.Infra.Redis/obj/*
 Codeizi/src/Codeizi.Curso.SignalrHub/bin/*
 Codeizi/src/Codeizi.Curso.SignalrHub/obj/*
+Codeizi/src/Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ/bin/*
+Codeizi/src/Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ/obj/*

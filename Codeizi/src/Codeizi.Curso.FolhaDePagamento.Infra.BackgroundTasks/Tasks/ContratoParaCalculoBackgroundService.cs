@@ -1,4 +1,5 @@
 ﻿using Codeizi.Curso.CalculoFolhaDePagamento.Infra.BackgroundTasks.Configurations;
+using Codeizi.Curso.Domain.SharedKernel.IMediatorBus;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -14,16 +15,19 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Infra.BackgroundTasks.Tasks
         private readonly ILogger<ContratoParaCalculoBackgroundService> _logger;
         private readonly BackgroundTaskConfigurations _settings;
         private readonly ContratoParaCalculoRabbitMQ _contrato;
+        private readonly IMediatorHandler _mediatorHandler;
         public IConfiguration Configuration { get; }
 
         public ContratoParaCalculoBackgroundService(IOptions<BackgroundTaskConfigurations> settings,
-                                          ILogger<ContratoParaCalculoBackgroundService> logger,
-                                          IConfiguration configuration)
+                                                    ILogger<ContratoParaCalculoBackgroundService> logger,
+                                                    IConfiguration configuration,
+                                                    IMediatorHandler mediatorHandler)
         {
             _settings = settings?.Value ?? throw new ArgumentNullException(nameof(settings));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-            Configuration = configuration;
-            _contrato = new ContratoParaCalculoRabbitMQ(Configuration);
+            _mediatorHandler = mediatorHandler ?? throw new ArgumentNullException(nameof(mediatorHandler));
+            Configuration = configuration;             
+            // _contrato = new ContratoParaCalculoRabbitMQ(Configuration);
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
