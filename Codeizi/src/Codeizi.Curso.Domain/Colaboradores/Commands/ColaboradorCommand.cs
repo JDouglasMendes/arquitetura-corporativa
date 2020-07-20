@@ -1,7 +1,7 @@
-﻿using Codeizi.Curso.Domain.SharedKernel.Commands;
+﻿using Codeizi.Curso.RH.Domain.SharedKernel.Commands;
 using System;
 
-namespace Codeizi.Curso.Domain.Colaboradores.Commands
+namespace Codeizi.Curso.RH.Domain.Colaboradores.Commands
 {
     public abstract class ColaboradorCommand : Command
     {

@@ -1,12 +1,12 @@
-﻿using Codeizi.Curso.Domain.Colaboradores;
-using Codeizi.Curso.Domain.Colaboradores.Contracts;
-using Codeizi.Curso.Infra.Data.DAO.Contracts;
+﻿using Codeizi.Curso.RH.Domain.Colaboradores;
+using Codeizi.Curso.RH.Domain.Colaboradores.Contracts;
+using Codeizi.Curso.RH.Infra.Data.DAO.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Codeizi.Curso.Infra.Data.Repository
+namespace Codeizi.Curso.RH.Infra.Data.Repository
 {
     public class ColaboradorRepository : IColaboradorRepository
     {

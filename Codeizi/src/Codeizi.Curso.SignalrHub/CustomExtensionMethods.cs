@@ -1,34 +1,14 @@
-﻿using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Services.ServiceDomain;
-using Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ;
+﻿using Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ;
 using Codeizi.Curso.RH.Domain.SharedKernel.RabbitMQBus;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using RabbitMQ.Client;
-using Serilog;
 
-namespace Codeizi.Curso.CalculoFolhaDePagamento.Infra.BackgroundTasks.Extensions
+namespace Codeizi.Curso.SignalrHub
 {
     public static class CustomExtensionMethods
     {
-        public static ILoggingBuilder UseSerilog(this ILoggingBuilder builder, IConfiguration configuration)
-        {
-            var seqServerUrl = configuration["Serilog:SeqServerUrl"];
-            var logstashUrl = configuration["Serilog:LogstashgUrl"];
-
-            Log.Logger = new LoggerConfiguration()
-                .MinimumLevel.Verbose()
-                .Enrich.WithProperty("ApplicationContext", Program.AppName)
-                .Enrich.FromLogContext()
-                .WriteTo.Console()
-                .WriteTo.Seq(string.IsNullOrWhiteSpace(seqServerUrl) ? "http://seq" : seqServerUrl)
-                .WriteTo.Http(string.IsNullOrWhiteSpace(logstashUrl) ? "http://logstash:8080" : logstashUrl)
-                .ReadFrom.Configuration(configuration)
-                .CreateLogger();
-
-            return builder;
-        }
-
         public static IServiceCollection AddEventBus(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddSingleton<IRabbitMQPersistentConnection>(sp =>
@@ -66,7 +46,7 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Infra.BackgroundTasks.Extensions
                 return new EventBusRabbitMQ(rabbitMQPersistentConnection,
                                             logger,
                                             services,
-                                            typeof(NovoContratoServicoBus),
+                                            typeof(EventBusRabbitMQ),
                                             queueName: "add-contrato");
             });
 

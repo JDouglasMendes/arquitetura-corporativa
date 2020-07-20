@@ -1,6 +1,6 @@
-﻿using Codeizi.Curso.Application.ViewModels;
+﻿using Codeizi.Curso.RH.Application.ViewModels;
 
-namespace Codeizi.Curso.Application.Colaboradores
+namespace Codeizi.Curso.RH.Application.Colaboradores
 {
     public interface IColaboradorAppService
     {

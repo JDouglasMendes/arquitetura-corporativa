@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Codeizi.Curso.Domain.SharedKernel.ValueObjects
+namespace Codeizi.Curso.RH.Domain.SharedKernel.ValueObjects
 {
     public sealed class NomePessoa : IEquatable<NomePessoa>, IComparable<NomePessoa>
     {

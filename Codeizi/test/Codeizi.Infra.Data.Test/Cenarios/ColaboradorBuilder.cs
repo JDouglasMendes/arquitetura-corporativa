@@ -1,5 +1,5 @@
-﻿using Codeizi.Curso.Domain.Colaboradores;
-using Codeizi.Curso.Domain.SharedKernel.ValueObjects;
+﻿using Codeizi.Curso.RH.Domain.Colaboradores;
+using Codeizi.Curso.RH.Domain.SharedKernel.ValueObjects;
 using System;
 using System.Collections.Generic;
 

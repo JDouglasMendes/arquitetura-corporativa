@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Codeizi.Curso.Domain.Contracts.Repository
+namespace Codeizi.Curso.RH.Domain.Contracts.Repository
 {
     public interface IUnitOfWork : IDisposable
     {

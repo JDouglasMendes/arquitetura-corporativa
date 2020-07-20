@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Codeizi.Curso.CalculoFolhaDePagamento.Domain.Services.BusModel
 {
+    [ExcludeFromCodeCoverage]
     public class ContratoBusModel
     {
         public Guid IdColaborador { get; set; }

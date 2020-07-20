@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using Codeizi.Curso.Application.ViewModels;
-using Codeizi.Curso.Domain.Colaboradores.Commands;
-using Codeizi.Curso.Domain.SharedKernel.IMediatorBus;
+using Codeizi.Curso.RH.Application.ViewModels;
+using Codeizi.Curso.RH.Domain.Colaboradores.Commands;
+using Codeizi.Curso.RH.Domain.SharedKernel.IMediatorBus;
 
-namespace Codeizi.Curso.Application.Colaboradores
+namespace Codeizi.Curso.RH.Application.Colaboradores
 {
     public class ColaboradorAppService : IColaboradorAppService
     {

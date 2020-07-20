@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Codeizi.Curso.Domain.SharedKernel.Entities
+namespace Codeizi.Curso.RH.Domain.SharedKernel.Entities
 {
     public abstract class Entity
     {

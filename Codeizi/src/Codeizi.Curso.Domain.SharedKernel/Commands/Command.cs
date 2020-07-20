@@ -1,7 +1,7 @@
-﻿using Codeizi.Curso.Domain.SharedKernel.Events;
+﻿using Codeizi.Curso.RH.Domain.SharedKernel.Events;
 using FluentValidation.Results;
 
-namespace Codeizi.Curso.Domain.SharedKernel.Commands
+namespace Codeizi.Curso.RH.Domain.SharedKernel.Commands
 {
     public abstract class Command : Message
     {

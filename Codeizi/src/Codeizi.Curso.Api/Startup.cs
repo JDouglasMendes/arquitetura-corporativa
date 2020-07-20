@@ -1,8 +1,7 @@
 using AutoMapper;
-using Codeizi.Curso.Api.Errors;
-using Codeizi.Curso.Application.AutoMapper;
-using Codeizi.Curso.Infra.CrossCutting.IoC;
-using Codeizi.Curso.Infra.Data.Context;
+using Codeizi.Curso.RH.Application.AutoMapper;
+using Codeizi.Curso.RH.Infra.CrossCutting.IoC;
+using Codeizi.Curso.RH.Infra.Data.Context;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
@@ -14,7 +13,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Codeizi.Curso.Api
+namespace Codeizi.Curso.RH.Api
 {
     [ExcludeFromCodeCoverage]
     public class Startup
@@ -110,8 +109,6 @@ namespace Codeizi.Curso.Api
                 c.AllowAnyMethod();
                 c.AllowAnyOrigin();
             });
-
-            app.ConfigureCustomExceptionMiddleware();
 
             app.UseEndpoints(endpoints =>
             {

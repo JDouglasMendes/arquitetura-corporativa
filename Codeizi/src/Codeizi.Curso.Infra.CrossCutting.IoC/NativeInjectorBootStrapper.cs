@@ -1,26 +1,26 @@
-﻿using Codeizi.Curso.Application.AutoMapper;
-using Codeizi.Curso.Domain.Colaboradores.CommandHandlers;
-using Codeizi.Curso.Domain.Colaboradores.Commands;
-using Codeizi.Curso.Domain.Colaboradores.Contracts;
-using Codeizi.Curso.Domain.Colaboradores.EventHandlers;
-using Codeizi.Curso.Domain.Colaboradores.Events;
-using Codeizi.Curso.Domain.SharedKernel.Events;
-using Codeizi.Curso.Domain.SharedKernel.IMediatorBus;
-using Codeizi.Curso.Domain.SharedKernel.Notifications;
-using Codeizi.Curso.infra.Data.EventSource.Context;
-using Codeizi.Curso.infra.Data.EventSource.EventSource;
-using Codeizi.Curso.Infra.CrossCutting.Bus;
-using Codeizi.Curso.Infra.CrossCutting.Configuration;
-using Codeizi.Curso.Infra.Data.Context;
-using Codeizi.Curso.Infra.Data.DAO.Contracts;
-using Codeizi.Curso.Infra.Data.Repository;
+﻿using Codeizi.Curso.Infra.CrossCutting.Configuration;
+using Codeizi.Curso.RH.Application.AutoMapper;
+using Codeizi.Curso.RH.Domain.Colaboradores.CommandHandlers;
+using Codeizi.Curso.RH.Domain.Colaboradores.Commands;
+using Codeizi.Curso.RH.Domain.Colaboradores.Contracts;
+using Codeizi.Curso.RH.Domain.Colaboradores.EventHandlers;
+using Codeizi.Curso.RH.Domain.Colaboradores.Events;
+using Codeizi.Curso.RH.Domain.SharedKernel.Events;
+using Codeizi.Curso.RH.Domain.SharedKernel.IMediatorBus;
+using Codeizi.Curso.RH.Domain.SharedKernel.Notifications;
+using Codeizi.Curso.RH.infra.Data.EventSource.Context;
+using Codeizi.Curso.RH.infra.Data.EventSource.EventSource;
+using Codeizi.Curso.RH.Infra.CrossCutting.Bus;
+using Codeizi.Curso.RH.Infra.Data.Context;
+using Codeizi.Curso.RH.Infra.Data.DAO.Contracts;
+using Codeizi.Curso.RH.Infra.Data.Repository;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Linq;
 using System.Reflection;
 
-namespace Codeizi.Curso.Infra.CrossCutting.IoC
+namespace Codeizi.Curso.RH.Infra.CrossCutting.IoC
 {
     public static class NativeInjectorBootStrapper
     {
@@ -76,9 +76,7 @@ namespace Codeizi.Curso.Infra.CrossCutting.IoC
                                   x.GetInterface(contrato.Name, true) != null);
 
                 if (implementation != null)
-                {
                     services.AddScoped(contrato, implementation);
-                }
             });
         }
     }

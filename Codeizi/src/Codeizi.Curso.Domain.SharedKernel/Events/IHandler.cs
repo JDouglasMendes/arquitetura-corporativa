@@ -1,4 +1,4 @@
-﻿namespace Codeizi.Curso.Domain.SharedKernel.Events
+﻿namespace Codeizi.Curso.RH.Domain.SharedKernel.Events
 {
     public interface IHandler<in T>
         where T : Message

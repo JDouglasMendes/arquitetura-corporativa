@@ -1,4 +1,4 @@
-﻿using Codeizi.Curso.Domain.SharedKernel.ValueObjects;
+﻿using Codeizi.Curso.RH.Domain.SharedKernel.ValueObjects;
 using System;
 using System.Collections.Generic;
 using Xunit;

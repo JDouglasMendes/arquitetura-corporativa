@@ -5,7 +5,7 @@ using Serilog;
 using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Codeizi.Curso.Api
+namespace Codeizi.Curso.RH.Api
 {
     [ExcludeFromCodeCoverage]
     public static class Program

@@ -1,4 +1,4 @@
-﻿using Codeizi.Curso.Domain.Colaboradores.Commands;
+﻿using Codeizi.Curso.RH.Domain.Colaboradores.Commands;
 using System;
 using System.Collections.Generic;
 using Xunit;

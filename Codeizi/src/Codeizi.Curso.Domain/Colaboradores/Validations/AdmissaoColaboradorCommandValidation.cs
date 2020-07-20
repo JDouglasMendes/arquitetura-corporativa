@@ -1,6 +1,6 @@
-﻿using Codeizi.Curso.Domain.Colaboradores.Commands;
+﻿using Codeizi.Curso.RH.Domain.Colaboradores.Commands;
 
-namespace Codeizi.Curso.Domain.Colaboradores.Validations
+namespace Codeizi.Curso.RH.Domain.Colaboradores.Validations
 {
     public class AdmissaoColaboradorCommandValidation : ColaboradorValidation<AdmissaoColaboradorCommand>
     {

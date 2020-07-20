@@ -1,10 +1,11 @@
-﻿using Codeizi.Curso.Domain.Contracts.Repository;
-using Codeizi.Curso.Domain.SharedKernel.Commands;
-using Codeizi.Curso.Domain.SharedKernel.IMediatorBus;
-using Codeizi.Curso.Domain.SharedKernel.Notifications;
+﻿using Codeizi.Curso.RH.Domain.Contracts.Repository;
+using Codeizi.Curso.RH.Domain.SharedKernel.Commands;
+using Codeizi.Curso.RH.Domain.SharedKernel.IMediatorBus;
+using Codeizi.Curso.RH.Domain.SharedKernel.Notifications;
 using MediatR;
+using System.Diagnostics.CodeAnalysis;
 
-namespace Codeizi.Curso.Domain.CommandHandlers
+namespace Codeizi.Curso.RH.Domain.CommandHandlers
 {
     public abstract class CommandHandler
     {
@@ -27,6 +28,7 @@ namespace Codeizi.Curso.Domain.CommandHandlers
             }
         }
 
+        [ExcludeFromCodeCoverage]
         public bool Commit()
         {
             if (_notifications.HasNotifications())

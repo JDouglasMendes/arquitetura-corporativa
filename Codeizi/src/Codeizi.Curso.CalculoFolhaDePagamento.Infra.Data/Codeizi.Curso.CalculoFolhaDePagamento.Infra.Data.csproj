@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Codeizi.Curso.CalculoFolhaDePagamento\Codeizi.Curso.CalculoFolhaDePagamento.Domain.csproj" />
+    <ProjectReference Include="..\Codeizi.Curso.Infra.Redis\Codeizi.Curso.Infra.CrossCutting.Redis.csproj" />
   </ItemGroup>
 
 </Project>

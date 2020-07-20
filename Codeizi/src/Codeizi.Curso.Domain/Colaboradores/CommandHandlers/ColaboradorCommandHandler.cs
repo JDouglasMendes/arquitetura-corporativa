@@ -1,17 +1,17 @@
-﻿using Codeizi.Curso.Domain.Colaboradores.Commands;
-using Codeizi.Curso.Domain.Colaboradores.Contracts;
-using Codeizi.Curso.Domain.Colaboradores.Events;
-using Codeizi.Curso.Domain.CommandHandlers;
-using Codeizi.Curso.Domain.Contracts.Repository;
-using Codeizi.Curso.Domain.SharedKernel.IMediatorBus;
-using Codeizi.Curso.Domain.SharedKernel.Notifications;
-using Codeizi.Curso.Domain.SharedKernel.ValueObjects;
+﻿using Codeizi.Curso.RH.Domain.Colaboradores.Commands;
+using Codeizi.Curso.RH.Domain.Colaboradores.Contracts;
+using Codeizi.Curso.RH.Domain.Colaboradores.Events;
+using Codeizi.Curso.RH.Domain.CommandHandlers;
+using Codeizi.Curso.RH.Domain.Contracts.Repository;
+using Codeizi.Curso.RH.Domain.SharedKernel.IMediatorBus;
+using Codeizi.Curso.RH.Domain.SharedKernel.Notifications;
+using Codeizi.Curso.RH.Domain.SharedKernel.ValueObjects;
 using MediatR;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Codeizi.Curso.Domain.Colaboradores.CommandHandlers
+namespace Codeizi.Curso.RH.Domain.Colaboradores.CommandHandlers
 {
     public class ColaboradorCommandHandler : CommandHandler,
         IRequestHandler<AdmissaoColaboradorCommand, bool>

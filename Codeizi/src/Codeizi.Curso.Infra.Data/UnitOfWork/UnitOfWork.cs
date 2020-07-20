@@ -1,7 +1,7 @@
-﻿using Codeizi.Curso.Domain.Contracts.Repository;
-using Codeizi.Curso.Infra.Data.Context;
+﻿using Codeizi.Curso.RH.Domain.Contracts.Repository;
+using Codeizi.Curso.RH.Infra.Data.Context;
 
-namespace Codeizi.Curso.Infra.Data.UnitOfWork
+namespace Codeizi.Curso.RH.Infra.Data.UnitOfWork
 {
     public sealed class UnitOfWork : IUnitOfWork
     {

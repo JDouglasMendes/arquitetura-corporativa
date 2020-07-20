@@ -1,5 +1,5 @@
-﻿using Codeizi.Curso.Domain.Colaboradores.EventHandlers;
-using Codeizi.Curso.Domain.Colaboradores.Events;
+﻿using Codeizi.Curso.RH.Domain.Colaboradores.EventHandlers;
+using Codeizi.Curso.RH.Domain.Colaboradores.Events;
 using System;
 using System.Threading;
 using Xunit;

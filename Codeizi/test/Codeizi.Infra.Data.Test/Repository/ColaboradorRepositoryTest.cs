@@ -1,5 +1,5 @@
-﻿using Codeizi.Curso.Infra.Data.DAO.Contracts;
-using Codeizi.Curso.Infra.Data.Repository;
+﻿using Codeizi.Curso.RH.Infra.Data.DAO.Contracts;
+using Codeizi.Curso.RH.Infra.Data.Repository;
 using Codeizi.Infra.Data.Test.Cenarios;
 using Microsoft.EntityFrameworkCore;
 using System;

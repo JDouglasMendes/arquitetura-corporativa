@@ -1,10 +1,7 @@
 ﻿using Codeizi.Curso.Infra.CrossCutting.Configuration;
 using StackExchange.Redis;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Codeizi.Curso.Infra.Redis
+namespace Codeizi.Curso.Infra.CrossCutting.Redis
 {
     public class MultiplexerRedis
     {
@@ -16,6 +13,7 @@ namespace Codeizi.Curso.Infra.Redis
             => this.codeiziConfiguration = codeiziConfiguration;
 
         private static object _lock = new object();
+
         public ConnectionMultiplexer GetConnection()
         {
             lock (_lock)
@@ -23,9 +21,8 @@ namespace Codeizi.Curso.Infra.Redis
                 if (_instance == null)
                     _instance = ConnectionMultiplexer.Connect(codeiziConfiguration.ConnectionStringRedis);
             }
-            
+
             return _instance;
         }
-             
     }
 }

@@ -1,10 +1,10 @@
-﻿using Codeizi.Curso.Domain.Colaboradores;
-using Codeizi.Curso.Domain.Colaboradores.CommandHandlers;
-using Codeizi.Curso.Domain.Colaboradores.Commands;
-using Codeizi.Curso.Domain.Colaboradores.Contracts;
-using Codeizi.Curso.Domain.Contracts.Repository;
-using Codeizi.Curso.Domain.SharedKernel.IMediatorBus;
-using Codeizi.Curso.Domain.SharedKernel.Notifications;
+﻿using Codeizi.Curso.RH.Domain.Colaboradores;
+using Codeizi.Curso.RH.Domain.Colaboradores.CommandHandlers;
+using Codeizi.Curso.RH.Domain.Colaboradores.Commands;
+using Codeizi.Curso.RH.Domain.Colaboradores.Contracts;
+using Codeizi.Curso.RH.Domain.Contracts.Repository;
+using Codeizi.Curso.RH.Domain.SharedKernel.IMediatorBus;
+using Codeizi.Curso.RH.Domain.SharedKernel.Notifications;
 using MediatR;
 using NSubstitute;
 using System;

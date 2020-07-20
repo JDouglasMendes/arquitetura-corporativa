@@ -22,10 +22,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Codeizi.Curso.Application\Codeizi.Curso.Application.csproj" />
-    <ProjectReference Include="..\Codeizi.Curso.Infra.CrossCutting.IoC\Codeizi.Curso.Infra.CrossCutting.IoC.csproj" />
-    <ProjectReference Include="..\Codeizi.Curso.infra.Data.EventSource\Codeizi.Curso.infra.Data.EventSource.csproj" />
-    <ProjectReference Include="..\Codeizi.Curso.Infra.Data\Codeizi.Curso.Infra.Data.csproj" />
+    <ProjectReference Include="..\Codeizi.Curso.Application\Codeizi.Curso.RH.Application.csproj" />
+    <ProjectReference Include="..\Codeizi.Curso.Domain.SharedKernel\Codeizi.Curso.RH.Domain.SharedKernel.csproj" />
+    <ProjectReference Include="..\Codeizi.Curso.Infra.CrossCutting.IoC\Codeizi.Curso.RH.Infra.CrossCutting.IoC.csproj" />
+    <ProjectReference Include="..\Codeizi.Curso.infra.Data.EventSource\Codeizi.Curso.RH.infra.Data.EventSource.csproj" />
+    <ProjectReference Include="..\Codeizi.Curso.Infra.Data\Codeizi.Curso.RH.Infra.Data.csproj" />
   </ItemGroup>
 
 

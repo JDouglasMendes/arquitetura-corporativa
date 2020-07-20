@@ -1,9 +1,9 @@
-﻿using Codeizi.Curso.Domain.SharedKernel.Notifications;
+﻿using Codeizi.Curso.RH.Domain.SharedKernel.Notifications;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
-namespace Codeizi.Curso.Api.Controllers
+namespace Codeizi.Curso.RH.Api.Controllers
 {
     public abstract class ApiController : ControllerBase
     {

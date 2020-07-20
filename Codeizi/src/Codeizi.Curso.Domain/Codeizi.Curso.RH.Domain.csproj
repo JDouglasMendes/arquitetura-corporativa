@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Codeizi.Curso.Domain.SharedKernel\Codeizi.Curso.Domain.SharedKernel.csproj" />
+    <ProjectReference Include="..\Codeizi.Curso.Domain.SharedKernel\Codeizi.Curso.RH.Domain.SharedKernel.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,9 +35,13 @@
 
   <ItemGroup>
     <EmbeddedResource Update="Mensagens.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Mensagens.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Ocorrencias\" />
   </ItemGroup>
 
 </Project>

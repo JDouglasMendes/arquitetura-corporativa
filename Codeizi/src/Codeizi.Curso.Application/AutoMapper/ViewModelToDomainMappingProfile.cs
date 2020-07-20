@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using Codeizi.Curso.Application.ViewModels;
-using Codeizi.Curso.Domain.Colaboradores.Commands;
+using Codeizi.Curso.RH.Application.ViewModels;
+using Codeizi.Curso.RH.Domain.Colaboradores.Commands;
 
-namespace Codeizi.Curso.Application.AutoMapper
+namespace Codeizi.Curso.RH.Application.AutoMapper
 {
     public class ViewModelToDomainMappingProfile : Profile
     {

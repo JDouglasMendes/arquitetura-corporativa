@@ -1,4 +1,4 @@
-﻿using Codeizi.Curso.Application.ViewModels;
+﻿using Codeizi.Curso.RH.Application.ViewModels;
 using System;
 
 namespace Codeizi.Curso.Api.Integration.Test.Cenarios

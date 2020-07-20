@@ -52,7 +52,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Codeizi.Curso.Api\Codeizi.Curso.Api.csproj" />
+    <ProjectReference Include="..\..\src\Codeizi.Curso.Api\Codeizi.Curso.RH.Api.csproj" />
+    <ProjectReference Include="..\..\src\Codeizi.Curso.Application\Codeizi.Curso.RH.Application.csproj" />
   </ItemGroup>
 
 </Project>

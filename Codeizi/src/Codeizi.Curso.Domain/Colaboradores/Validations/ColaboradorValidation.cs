@@ -1,7 +1,7 @@
-﻿using Codeizi.Curso.Domain.Colaboradores.Commands;
+﻿using Codeizi.Curso.RH.Domain.Colaboradores.Commands;
 using FluentValidation;
 
-namespace Codeizi.Curso.Domain.Colaboradores.Validations
+namespace Codeizi.Curso.RH.Domain.Colaboradores.Validations
 {
     public abstract class ColaboradorValidation<TComand> : AbstractValidator<TComand>
         where TComand : ColaboradorCommand

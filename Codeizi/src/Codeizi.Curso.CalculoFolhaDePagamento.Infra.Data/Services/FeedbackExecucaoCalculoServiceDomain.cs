@@ -1,8 +1,6 @@
 ﻿using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Services.ServiceDomain;
-using Codeizi.Curso.Infra.Redis;
+using Codeizi.Curso.Infra.CrossCutting.Redis;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Codeizi.Curso.CalculoFolhaDePagamento.Infra.Data.Services
 {
@@ -12,7 +10,7 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Infra.Data.Services
 
         public FeedbackExecucaoCalculoServiceDomain(DatabaseRedis databaseRedis)
             => this.databaseRedis = databaseRedis;
-        
+
         public void IniciarProcessamento(Guid idExecucao, int quantidadeParaProcessamento)
         {
             var client = databaseRedis.GetClient();
@@ -22,16 +20,29 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Infra.Data.Services
         private static string CamposProcessamentoCalculo(int quantidadeParaProcessamento)
             => string.Concat(DateTime.Now.ToString(), "|", quantidadeParaProcessamento);
 
+        private static string CamposProcessamentoCalculo(string dataProcessamento, double quantidadeParaProcessamento)
+            => string.Concat(dataProcessamento, "|", quantidadeParaProcessamento);
+
+        private static string Conteudo(string conteudo, EnumPosicaoValores enumPosicaoValores)
+            => conteudo?.Split('|')?[(int)enumPosicaoValores];
+
+        private static bool EhMultiplo(double valor, int fator)
+            => valor % fator == 0;
+
+        private void AtualizaStatusProcessamento(Guid idExecucao, double percentual)
+        {
+            var conteudo = databaseRedis.GetClient().StringGet(idExecucao.ToString());
+            databaseRedis.GetClient().StringSet(idExecucao.ToString(), CamposProcessamentoCalculo(Conteudo(conteudo, EnumPosicaoValores.DataInicioProcessamento),
+                                                                                                    percentual));
+        }
+
         public void AtualizarPercentualExecucao(Guid idExecucao, int quantidadeProcessada, int quantidadeTotalProcessamento)
         {
             if (EhMultiplo(quantidadeProcessada * 100 / quantidadeTotalProcessamento, 10))
             {
-                // Mensagem SignalIR
+                AtualizaStatusProcessamento(idExecucao, quantidadeProcessada * 100 / quantidadeTotalProcessamento);
             }
         }
-
-        private static bool EhMultiplo(double valor, int fator)
-            => valor % fator == 0;
 
         private enum EnumPosicaoValores
         {

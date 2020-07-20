@@ -16,5 +16,10 @@
     <Folder Include="EventHandling\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Codeizi.Curso.Domain.SharedKernel\Codeizi.Curso.RH.Domain.SharedKernel.csproj" />
+    <ProjectReference Include="..\Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ\Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ.csproj" />
+  </ItemGroup>
+
 
 </Project>

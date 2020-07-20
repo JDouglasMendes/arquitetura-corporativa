@@ -1,9 +1,6 @@
 ﻿using StackExchange.Redis;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Codeizi.Curso.Infra.Redis
+namespace Codeizi.Curso.Infra.CrossCutting.Redis
 {
     public class DatabaseRedis
     {
@@ -12,8 +9,7 @@ namespace Codeizi.Curso.Infra.Redis
         public DatabaseRedis(MultiplexerRedis multiplexerRedis)
             => this.multiplexerRedis = multiplexerRedis;
 
-        public IDatabase GetClient()        
+        public IDatabase GetClient()
             => multiplexerRedis.GetConnection().GetDatabase();
-        
     }
 }

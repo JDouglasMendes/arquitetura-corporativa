@@ -1,4 +1,4 @@
-﻿using Codeizi.Curso.Infra.Data.Context;
+﻿using Codeizi.Curso.RH.Infra.Data.Context;
 using System;
 using System.Linq;
 using System.Reflection;

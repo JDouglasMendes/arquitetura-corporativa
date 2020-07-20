@@ -1,8 +1,8 @@
-﻿using Codeizi.Curso.Domain.Colaboradores;
+﻿using Codeizi.Curso.RH.Domain.Colaboradores;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Codeizi.Curso.Infra.Data.Map
+namespace Codeizi.Curso.RH.Infra.Data.Map
 {
     public class ContratoMap : IEntityTypeConfiguration<Contrato>
     {

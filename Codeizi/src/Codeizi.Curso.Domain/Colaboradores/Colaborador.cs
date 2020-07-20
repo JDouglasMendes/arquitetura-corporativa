@@ -1,11 +1,11 @@
-﻿using Codeizi.Curso.Domain.SharedKernel.Entities;
-using Codeizi.Curso.Domain.SharedKernel.ValueObjects;
+﻿using Codeizi.Curso.RH.Domain.SharedKernel.Entities;
+using Codeizi.Curso.RH.Domain.SharedKernel.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
-namespace Codeizi.Curso.Domain.Colaboradores
+namespace Codeizi.Curso.RH.Domain.Colaboradores
 {
     public class Colaborador : Entity
     {

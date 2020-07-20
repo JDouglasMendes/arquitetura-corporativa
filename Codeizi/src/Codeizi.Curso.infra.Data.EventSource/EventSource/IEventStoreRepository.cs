@@ -1,9 +1,9 @@
-﻿using Codeizi.Curso.Domain.SharedKernel.Events;
+﻿using Codeizi.Curso.RH.Domain.SharedKernel.Events;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Codeizi.Curso.infra.Data.EventSource.EventSource
+namespace Codeizi.Curso.RH.infra.Data.EventSource.EventSource
 {
     public interface IEventStoreRepository : IDisposable
     {

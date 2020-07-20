@@ -12,23 +12,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.Api", "src\Codeizi.Curso.Api\Codeizi.Curso.Api.csproj", "{2C0ABE64-DE59-4110-9F6A-D890A069DF2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.RH.Api", "src\Codeizi.Curso.Api\Codeizi.Curso.RH.Api.csproj", "{2C0ABE64-DE59-4110-9F6A-D890A069DF2C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.Application", "src\Codeizi.Curso.Application\Codeizi.Curso.Application.csproj", "{35D11468-46DE-473E-AA6E-3BD322DC5405}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.RH.Application", "src\Codeizi.Curso.Application\Codeizi.Curso.RH.Application.csproj", "{35D11468-46DE-473E-AA6E-3BD322DC5405}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.Domain", "src\Codeizi.Curso.Domain\Codeizi.Curso.Domain.csproj", "{968CB0CE-CD84-45F2-A749-39262F4947F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.RH.Domain", "src\Codeizi.Curso.Domain\Codeizi.Curso.RH.Domain.csproj", "{968CB0CE-CD84-45F2-A749-39262F4947F3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.Domain.SharedKernel", "src\Codeizi.Curso.Domain.SharedKernel\Codeizi.Curso.Domain.SharedKernel.csproj", "{0DBF81FC-F3AB-4CFF-940C-126C5B29DD1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.RH.Domain.SharedKernel", "src\Codeizi.Curso.Domain.SharedKernel\Codeizi.Curso.RH.Domain.SharedKernel.csproj", "{0DBF81FC-F3AB-4CFF-940C-126C5B29DD1E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.Infra.CrossCutting.Configuration", "src\Codeizi.Curso.Infra.CrossCutting.Configuration\Codeizi.Curso.Infra.CrossCutting.Configuration.csproj", "{5C9458B1-15A1-4554-867F-C10C214DF4A5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.Infra.CrossCutting.IoC", "src\Codeizi.Curso.Infra.CrossCutting.IoC\Codeizi.Curso.Infra.CrossCutting.IoC.csproj", "{D62A58D5-EB38-4F45-9A14-6B70535FCD7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.RH.Infra.CrossCutting.IoC", "src\Codeizi.Curso.Infra.CrossCutting.IoC\Codeizi.Curso.RH.Infra.CrossCutting.IoC.csproj", "{D62A58D5-EB38-4F45-9A14-6B70535FCD7E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.Infra.Data", "src\Codeizi.Curso.Infra.Data\Codeizi.Curso.Infra.Data.csproj", "{2BFA6782-B169-4DFE-8F71-B5BA4EA41606}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.RH.Infra.Data", "src\Codeizi.Curso.Infra.Data\Codeizi.Curso.RH.Infra.Data.csproj", "{2BFA6782-B169-4DFE-8F71-B5BA4EA41606}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.infra.Data.EventSource", "src\Codeizi.Curso.infra.Data.EventSource\Codeizi.Curso.infra.Data.EventSource.csproj", "{9531111D-B141-4E06-975E-0D9343E5B087}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.RH.infra.Data.EventSource", "src\Codeizi.Curso.infra.Data.EventSource\Codeizi.Curso.RH.infra.Data.EventSource.csproj", "{9531111D-B141-4E06-975E-0D9343E5B087}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.Infra.CrossCutting.Bus", "src\Codeizi.Infra.CrossCutting.Bus\Codeizi.Curso.Infra.CrossCutting.Bus.csproj", "{AAAFAB90-D079-4D55-AE91-B54131B533EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.RH.Infra.CrossCutting.Bus", "src\Codeizi.Infra.CrossCutting.Bus\Codeizi.Curso.RH.Infra.CrossCutting.Bus.csproj", "{AAAFAB90-D079-4D55-AE91-B54131B533EB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.Api.Integration.Test", "test\Codeizi.Curso.Api.Integration.Test\Codeizi.Curso.Api.Integration.Test.csproj", "{3F25DBD3-D173-45DE-930C-3CD9675F7E21}"
 EndProject
@@ -38,7 +38,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.Domain.Test",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Infra.Data.Test", "test\Codeizi.Infra.Data.Test\Codeizi.Infra.Data.Test.csproj", "{AB2ED407-205E-406B-A3C9-905037A537E1}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FolhaDePagamento", "FolhaDePagamento", "{EF044E45-31B1-4A8E-9159-415DCC247701}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CalculoFolhaDePagamento", "CalculoFolhaDePagamento", "{EF044E45-31B1-4A8E-9159-415DCC247701}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.CalculoFolhaDePagamento.Domain", "src\Codeizi.Curso.CalculoFolhaDePagamento\Codeizi.Curso.CalculoFolhaDePagamento.Domain.csproj", "{CB1012E3-E810-47BD-9A7A-294CC6FE72AC}"
 EndProject
@@ -52,19 +52,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.CalculoFolhaD
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.CalculoFolhaDePagamento.Infra.BackgroundTasks", "src\Codeizi.Curso.FolhaDePagamento.Infra.BackgroundTasks\Codeizi.Curso.CalculoFolhaDePagamento.Infra.BackgroundTasks.csproj", "{44B972EF-C064-449D-89E1-7A7BB1421D1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codeizi.Curso.CalculoFolhaDePagamento.Infra.CrossCutting.IoC", "src\Codeizi.Curso.CalculoFolhaDePagamento.Infra.CrossCutting.IoC\Codeizi.Curso.CalculoFolhaDePagamento.Infra.CrossCutting.IoC.csproj", "{580D5D10-6261-4F77-BD86-22331F6ABCCF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.CalculoFolhaDePagamento.Infra.CrossCutting.IoC", "src\Codeizi.Curso.CalculoFolhaDePagamento.Infra.CrossCutting.IoC\Codeizi.Curso.CalculoFolhaDePagamento.Infra.CrossCutting.IoC.csproj", "{580D5D10-6261-4F77-BD86-22331F6ABCCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codeizi.Curso.CalculoFolhaDePagamento.Api", "src\Codeizi.Curso.CalculoFolhaDePagamento.Api\Codeizi.Curso.CalculoFolhaDePagamento.Api.csproj", "{F196AEEA-4EEC-45C1-A32D-64E69D1F7A62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.CalculoFolhaDePagamento.Api", "src\Codeizi.Curso.CalculoFolhaDePagamento.Api\Codeizi.Curso.CalculoFolhaDePagamento.Api.csproj", "{F196AEEA-4EEC-45C1-A32D-64E69D1F7A62}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionInfra", "SolutionInfra", "{D1ACB649-8702-4776-BF68-D38BCDFE2B98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codeizi.Curso.Infra.Redis", "src\Codeizi.Curso.Infra.Redis\Codeizi.Curso.Infra.Redis.csproj", "{873FB43D-D9FE-455A-A8C6-0EEC032262D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.Infra.CrossCutting.Redis", "src\Codeizi.Curso.Infra.Redis\Codeizi.Curso.Infra.CrossCutting.Redis.csproj", "{873FB43D-D9FE-455A-A8C6-0EEC032262D3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hub", "Hub", "{2183FCCB-FBD8-4F37-88C8-CF3C408F5F67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codeizi.Curso.SignalrHub", "src\Codeizi.Curso.SignalrHub\Codeizi.Curso.SignalrHub.csproj", "{E6F46616-2786-4613-BA10-C7DDE63FB058}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.SignalrHub", "src\Codeizi.Curso.SignalrHub\Codeizi.Curso.SignalrHub.csproj", "{E6F46616-2786-4613-BA10-C7DDE63FB058}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ", "src\Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ\Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ.csproj", "{3D4DB93C-2107-476F-B0C2-2F10780B07F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ", "src\Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ\Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ.csproj", "{3D4DB93C-2107-476F-B0C2-2F10780B07F3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RH", "RH", "{14737675-58F4-4FA8-B9D5-41A86042EFC4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -169,15 +171,15 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{2C0ABE64-DE59-4110-9F6A-D890A069DF2C} = {EF01AEB0-DD72-44E5-945C-3463842CEE0F}
-		{35D11468-46DE-473E-AA6E-3BD322DC5405} = {EF01AEB0-DD72-44E5-945C-3463842CEE0F}
+		{2C0ABE64-DE59-4110-9F6A-D890A069DF2C} = {14737675-58F4-4FA8-B9D5-41A86042EFC4}
+		{35D11468-46DE-473E-AA6E-3BD322DC5405} = {14737675-58F4-4FA8-B9D5-41A86042EFC4}
 		{968CB0CE-CD84-45F2-A749-39262F4947F3} = {EF01AEB0-DD72-44E5-945C-3463842CEE0F}
-		{0DBF81FC-F3AB-4CFF-940C-126C5B29DD1E} = {EF01AEB0-DD72-44E5-945C-3463842CEE0F}
+		{0DBF81FC-F3AB-4CFF-940C-126C5B29DD1E} = {14737675-58F4-4FA8-B9D5-41A86042EFC4}
 		{5C9458B1-15A1-4554-867F-C10C214DF4A5} = {D1ACB649-8702-4776-BF68-D38BCDFE2B98}
-		{D62A58D5-EB38-4F45-9A14-6B70535FCD7E} = {EF01AEB0-DD72-44E5-945C-3463842CEE0F}
-		{2BFA6782-B169-4DFE-8F71-B5BA4EA41606} = {EF01AEB0-DD72-44E5-945C-3463842CEE0F}
-		{9531111D-B141-4E06-975E-0D9343E5B087} = {EF01AEB0-DD72-44E5-945C-3463842CEE0F}
-		{AAAFAB90-D079-4D55-AE91-B54131B533EB} = {EF01AEB0-DD72-44E5-945C-3463842CEE0F}
+		{D62A58D5-EB38-4F45-9A14-6B70535FCD7E} = {14737675-58F4-4FA8-B9D5-41A86042EFC4}
+		{2BFA6782-B169-4DFE-8F71-B5BA4EA41606} = {14737675-58F4-4FA8-B9D5-41A86042EFC4}
+		{9531111D-B141-4E06-975E-0D9343E5B087} = {14737675-58F4-4FA8-B9D5-41A86042EFC4}
+		{AAAFAB90-D079-4D55-AE91-B54131B533EB} = {14737675-58F4-4FA8-B9D5-41A86042EFC4}
 		{3F25DBD3-D173-45DE-930C-3CD9675F7E21} = {E242A8C3-6631-4F9E-9C98-B671EB04FB83}
 		{CFF22CCE-E109-4BFF-AEF2-06A644E99703} = {E242A8C3-6631-4F9E-9C98-B671EB04FB83}
 		{7CA1E6EE-6D76-4C18-9073-B5AA700F85E9} = {E242A8C3-6631-4F9E-9C98-B671EB04FB83}
@@ -195,6 +197,7 @@ Global
 		{2183FCCB-FBD8-4F37-88C8-CF3C408F5F67} = {EF01AEB0-DD72-44E5-945C-3463842CEE0F}
 		{E6F46616-2786-4613-BA10-C7DDE63FB058} = {2183FCCB-FBD8-4F37-88C8-CF3C408F5F67}
 		{3D4DB93C-2107-476F-B0C2-2F10780B07F3} = {D1ACB649-8702-4776-BF68-D38BCDFE2B98}
+		{14737675-58F4-4FA8-B9D5-41A86042EFC4} = {EF01AEB0-DD72-44E5-945C-3463842CEE0F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A3BB0C73-9411-4A9A-9497-176952B73246}

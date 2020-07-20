@@ -3,7 +3,7 @@ using Raven.Client.Documents;
 using Raven.Client.Documents.Session;
 using System;
 
-namespace Codeizi.Curso.infra.Data.EventSource.Context
+namespace Codeizi.Curso.RH.infra.Data.EventSource.Context
 {
     public sealed class DocumentStoreHolder : IDisposable
     {

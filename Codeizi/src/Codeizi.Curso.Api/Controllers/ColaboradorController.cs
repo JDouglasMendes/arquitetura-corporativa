@@ -1,11 +1,11 @@
-﻿using Codeizi.Curso.Application.Colaboradores;
-using Codeizi.Curso.Application.ViewModels;
-using Codeizi.Curso.Domain.SharedKernel.Notifications;
+﻿using Codeizi.Curso.RH.Application.Colaboradores;
+using Codeizi.Curso.RH.Application.ViewModels;
+using Codeizi.Curso.RH.Domain.SharedKernel.Notifications;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace Codeizi.Curso.Api.Controllers
+namespace Codeizi.Curso.RH.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

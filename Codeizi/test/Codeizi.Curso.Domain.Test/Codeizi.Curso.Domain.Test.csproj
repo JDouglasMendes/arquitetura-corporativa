@@ -30,7 +30,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Codeizi.Curso.Domain\Codeizi.Curso.Domain.csproj" />
+    <ProjectReference Include="..\..\src\Codeizi.Curso.Domain.SharedKernel\Codeizi.Curso.RH.Domain.SharedKernel.csproj" />
+    <ProjectReference Include="..\..\src\Codeizi.Curso.Domain\Codeizi.Curso.RH.Domain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,7 +1,7 @@
-﻿using Codeizi.Curso.Domain.SharedKernel.Events;
+﻿using Codeizi.Curso.RH.Domain.SharedKernel.Events;
 using System;
 
-namespace Codeizi.Curso.Domain.Colaboradores.Events
+namespace Codeizi.Curso.RH.Domain.Colaboradores.Events
 {
     public class ColaboradorAdmitidoEvent : Event
     {

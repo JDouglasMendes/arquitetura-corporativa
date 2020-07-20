@@ -1,8 +1,8 @@
-﻿using Codeizi.Curso.Domain.SharedKernel.Commands;
-using Codeizi.Curso.Domain.SharedKernel.Events;
+﻿using Codeizi.Curso.RH.Domain.SharedKernel.Commands;
+using Codeizi.Curso.RH.Domain.SharedKernel.Events;
 using System.Threading.Tasks;
 
-namespace Codeizi.Curso.Domain.SharedKernel.IMediatorBus
+namespace Codeizi.Curso.RH.Domain.SharedKernel.IMediatorBus
 {
     public interface IMediatorHandler
     {

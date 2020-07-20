@@ -1,8 +1,8 @@
-﻿using Codeizi.Curso.Domain.SharedKernel.Entities;
+﻿using Codeizi.Curso.RH.Domain.SharedKernel.Entities;
 using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Codeizi.Curso.Domain.Colaboradores
+namespace Codeizi.Curso.RH.Domain.Colaboradores
 {
     public class Contrato : Entity
     {

@@ -1,10 +1,10 @@
-﻿using Codeizi.Curso.Domain.SharedKernel.Commands;
-using Codeizi.Curso.Domain.SharedKernel.Events;
-using Codeizi.Curso.Domain.SharedKernel.IMediatorBus;
+﻿using Codeizi.Curso.RH.Domain.SharedKernel.Commands;
+using Codeizi.Curso.RH.Domain.SharedKernel.Events;
+using Codeizi.Curso.RH.Domain.SharedKernel.IMediatorBus;
 using MediatR;
 using System.Threading.Tasks;
 
-namespace Codeizi.Curso.Infra.CrossCutting.Bus
+namespace Codeizi.Curso.RH.Infra.CrossCutting.Bus
 {
     public sealed class InMemoryBus : IMediatorHandler
     {

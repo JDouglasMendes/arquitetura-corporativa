@@ -1,8 +1,10 @@
-﻿using Codeizi.Curso.Domain.SharedKernel.Events;
+﻿using Codeizi.Curso.RH.Domain.SharedKernel.Events;
 using System;
+using System.Diagnostics.CodeAnalysis;
 
-namespace Codeizi.Curso.Domain.SharedKernel.Notifications
+namespace Codeizi.Curso.RH.Domain.SharedKernel.Notifications
 {
+    [ExcludeFromCodeCoverage]
     public class DomainNotification : Event
     {
         public Guid DomainNotificationId { get; private set; }

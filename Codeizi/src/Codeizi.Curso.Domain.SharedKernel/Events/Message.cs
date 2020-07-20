@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using System;
 
-namespace Codeizi.Curso.Domain.SharedKernel.Events
+namespace Codeizi.Curso.RH.Domain.SharedKernel.Events
 {
     public abstract class Message : IRequest<bool>
     {

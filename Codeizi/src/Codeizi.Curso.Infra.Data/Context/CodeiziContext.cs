@@ -1,7 +1,7 @@
-﻿using Codeizi.Curso.Infra.Data.Map;
+﻿using Codeizi.Curso.RH.Infra.Data.Map;
 using Microsoft.EntityFrameworkCore;
 
-namespace Codeizi.Curso.Infra.Data.Context
+namespace Codeizi.Curso.RH.Infra.Data.Context
 {
     public class CodeiziContext : DbContext
     {

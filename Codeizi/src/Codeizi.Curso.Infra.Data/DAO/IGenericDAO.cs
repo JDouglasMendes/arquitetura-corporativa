@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Codeizi.Curso.Infra.Data.DAO
+namespace Codeizi.Curso.RH.Infra.Data.DAO
 {
     public interface IGenericDAO<TEntity> : IDisposable
         where TEntity : class

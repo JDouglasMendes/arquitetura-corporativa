@@ -22,7 +22,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Codeizi.Curso.Domain\Codeizi.Curso.Domain.csproj" />
+    <ProjectReference Include="..\Codeizi.Curso.Domain.SharedKernel\Codeizi.Curso.RH.Domain.SharedKernel.csproj" />
+    <ProjectReference Include="..\Codeizi.Curso.Domain\Codeizi.Curso.RH.Domain.csproj" />
   </ItemGroup>
 
 </Project>

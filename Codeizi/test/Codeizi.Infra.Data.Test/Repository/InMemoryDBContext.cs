@@ -1,4 +1,4 @@
-﻿using Codeizi.Curso.Infra.Data.Context;
+﻿using Codeizi.Curso.RH.Infra.Data.Context;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using System;

@@ -1,5 +1,5 @@
 ﻿using Codeizi.Curso.CalculoFolhaDePagamento.Infra.BackgroundTasks.Configurations;
-using Codeizi.Curso.Domain.SharedKernel.IMediatorBus;
+using Codeizi.Curso.RH.Domain.SharedKernel.IMediatorBus;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -26,7 +26,7 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Infra.BackgroundTasks.Tasks
             _settings = settings?.Value ?? throw new ArgumentNullException(nameof(settings));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _mediatorHandler = mediatorHandler ?? throw new ArgumentNullException(nameof(mediatorHandler));
-            Configuration = configuration;             
+            Configuration = configuration;
             // _contrato = new ContratoParaCalculoRabbitMQ(Configuration);
         }
 

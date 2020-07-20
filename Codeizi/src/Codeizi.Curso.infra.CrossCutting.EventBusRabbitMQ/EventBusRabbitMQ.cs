@@ -1,11 +1,9 @@
-﻿using Codeizi.Curso.Domain.SharedKernel.Commands;
-using Codeizi.Curso.Domain.SharedKernel.Events;
-using Codeizi.Curso.Domain.SharedKernel.IMediatorBus;
+﻿using Codeizi.Curso.RH.Domain.SharedKernel.IMediatorBus;
+using Codeizi.Curso.RH.Domain.SharedKernel.RabbitMQBus;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Polly;
-using Polly.Retry;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using RabbitMQ.Client.Exceptions;
@@ -18,7 +16,7 @@ using System.Threading.Tasks;
 
 namespace Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ
 {
-    public class EventBusRabbitMQ : IMediatorHandler, IDisposable
+    public class EventBusRabbitMQ : IRabbitMQBus, IDisposable
     {
         private const string BROKER_NAME = "codeizi_event_bus";
 
@@ -132,6 +130,7 @@ namespace Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ
             var handle = _services
                 .BuildServiceProvider()
                 .GetRequiredService(GetTypeByName(eventName));
+
             await (Task)handle.GetType().GetMethod("Handle").Invoke(handle, new object[] { message });
         }
 
@@ -156,31 +155,29 @@ namespace Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ
             }
         }
 
-        public Task RaiseEvent<T>(T @event) where T : Event
+        public Task Publisher<T>(T publishable) where T : Publishable
         {
             if (!_persistentConnection.IsConnected)
-            {
                 _persistentConnection.TryConnect();
-            }
 
             var policy = Policy.Handle<BrokerUnreachableException>()
                 .Or<SocketException>()
                 .WaitAndRetry(_retryCount, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)), (ex, time) =>
                 {
-                    _logger.LogWarning(ex, "Could not publish event: {EventId} after {Timeout}s ({ExceptionMessage})", @event.Id, $"{time.TotalSeconds:n1}", ex.Message);
+                    _logger.LogWarning(ex, "Could not publish event: {EventId} after {Timeout}s ({ExceptionMessage})", publishable.Id, $"{time.TotalSeconds:n1}", ex.Message);
                 });
 
-            var eventName = @event.GetType().Name;
+            var eventName = publishable.EventName;
 
-            _logger.LogTrace("Creating RabbitMQ channel to publish event: {EventId} ({EventName})", @event.Id, eventName);
+            _logger.LogTrace("Creating RabbitMQ channel to publish event: {EventId} ({EventName})", publishable.Id, eventName);
 
             using (var channel = _persistentConnection.CreateModel())
             {
-                _logger.LogTrace("Declaring RabbitMQ exchange to publish event: {EventId}", @event.Id);
+                _logger.LogTrace("Declaring RabbitMQ exchange to publish event: {EventId}", publishable.Id);
 
                 channel.ExchangeDeclare(exchange: BROKER_NAME, type: "direct");
 
-                var message = JsonConvert.SerializeObject(@event);
+                var message = JsonConvert.SerializeObject(publishable);
                 var body = Encoding.UTF8.GetBytes(message);
 
                 policy.Execute(() =>
@@ -188,53 +185,7 @@ namespace Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ
                     var properties = channel.CreateBasicProperties();
                     properties.DeliveryMode = 2; // persistent
 
-                    _logger.LogTrace("Publishing event to RabbitMQ: {EventId}", @event.Id);
-
-                    channel.BasicPublish(
-                        exchange: BROKER_NAME,
-                        routingKey: eventName,
-                        mandatory: true,
-                        basicProperties: properties,
-                        body: body);
-                });
-            }
-
-            return Task.CompletedTask;
-        }
-
-        public Task SendCommand<T>(T command) where T : Command
-        {
-            if (!_persistentConnection.IsConnected)
-            {
-                _persistentConnection.TryConnect();
-            }
-
-            var policy = RetryPolicy.Handle<BrokerUnreachableException>()
-                .Or<SocketException>()
-                .WaitAndRetry(_retryCount, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)), (ex, time) =>
-                {
-                    _logger.LogWarning(ex, "Could not publish event: {EventId} after {Timeout}s ({ExceptionMessage})", command.Id, $"{time.TotalSeconds:n1}", ex.Message);
-                });
-
-            var eventName = command.GetType().Name;
-
-            _logger.LogTrace("Creating RabbitMQ channel to publish event: {EventId} ({EventName})", command.Id, eventName);
-
-            using (var channel = _persistentConnection.CreateModel())
-            {
-                _logger.LogTrace("Declaring RabbitMQ exchange to publish event: {EventId}", command.Id);
-
-                channel.ExchangeDeclare(exchange: BROKER_NAME, type: "direct");
-
-                var message = JsonConvert.SerializeObject(command);
-                var body = Encoding.UTF8.GetBytes(message);
-
-                policy.Execute(() =>
-                {
-                    var properties = channel.CreateBasicProperties();
-                    properties.DeliveryMode = 2; // persistent
-
-                    _logger.LogTrace("Publishing event to RabbitMQ: {EventId}", command.Id);
+                    _logger.LogTrace("Publishing event to RabbitMQ: {EventId}", publishable.Id);
 
                     channel.BasicPublish(
                         exchange: BROKER_NAME,

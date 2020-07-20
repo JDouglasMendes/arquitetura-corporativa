@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Codeizi.Curso.Application.ViewModels
+namespace Codeizi.Curso.RH.Application.ViewModels
 {
     public class ColaboradorAdmissaoViewModel
     {

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Codeizi.Curso.Domain.SharedKernel.Notifications
+namespace Codeizi.Curso.RH.Domain.SharedKernel.Notifications
 {
     public class DomainNotificationHandler : INotificationHandler<DomainNotification>, IDisposable
     {
