@@ -11,14 +11,14 @@ namespace Codeizi.Infra.Data.Test.Cenarios
 
         public ColaboradorBuilder CrieColaboradorSucesso()
         {
-            colaborador = new Colaborador(Guid.NewGuid(), NomePessoa.Crie("Codeizi", "Treinamento"));
+            colaborador = new Colaborador(Guid.NewGuid(), NomePessoa.Crie("Codeizi", "Treinamento"), DateTime.Now.AddYears(-20));
             colaborador.AddContrato(DateTime.Now, 1000);
             return this;
         }
 
         public ColaboradorBuilder CrieColaboradorSucesso(Guid chave)
         {
-            colaborador = new Colaborador(chave, NomePessoa.Crie("Codeizi", "Treinamento"));
+            colaborador = new Colaborador(chave, NomePessoa.Crie("Codeizi", "Treinamento"), DateTime.Now.AddYears(-20));
             CrieContratos(colaborador).ForEach(c => colaborador.AddContrato(c.DataInicio, c.SalarioContratual));
             return this;
         }

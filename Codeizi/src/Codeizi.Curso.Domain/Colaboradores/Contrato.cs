@@ -23,6 +23,14 @@ namespace Codeizi.Curso.RH.Domain.Colaboradores
         public Guid ColaboradorId => Colaborador.Id;
 
         public DateTime DataInicio { get; }
+
+        public DateTime? DataFim { get; set; }
+
         public double SalarioContratual { get; }
+
+        public void EncerreContrato(DateTime date)
+            => DataFim = date;
+
+        public bool ContratoAindaVigente => DataFim == default;
     }
 }

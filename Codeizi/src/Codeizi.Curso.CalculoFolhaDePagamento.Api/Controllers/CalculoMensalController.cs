@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Codeizi.Curso.CalculoFolhaDePagamento.Api.ViewModel;
+﻿using Codeizi.Curso.CalculoFolhaDePagamento.Api.ViewModel;
 using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Domain.Calculo;
 using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Services.Repositories;
-using Microsoft.AspNetCore.Http;
+using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Services.ServiceDomain;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Codeizi.Curso.CalculoFolhaDePagamento.Api.Controllers
@@ -16,11 +12,15 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Api.Controllers
     {
         private readonly ICalculoRepository _calculoRepository;
         private readonly IContratoRepository _contratoRepository;
+        private readonly IFeedbackExecucaoCalculoServiceDomain _feedbackExecucaoCalculoServiceDomain;
+
         public CalculoMensalController(ICalculoRepository calculoRepository,
-                                       IContratoRepository contratoRepository)
+                                       IContratoRepository contratoRepository,
+                                       IFeedbackExecucaoCalculoServiceDomain feedbackExecucaoCalculoServiceDomain)
         {
             _calculoRepository = calculoRepository;
             _contratoRepository = contratoRepository;
+            _feedbackExecucaoCalculoServiceDomain = feedbackExecucaoCalculoServiceDomain;
         }
 
         [HttpPost]
@@ -29,7 +29,7 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Api.Controllers
             var calculo = new CalculoBuilder(calculoViewModel.Referencia,
                                              EnumFolhaDePagamento.Mensal,
                                              _calculoRepository,
-                                             null);
+                                             _feedbackExecucaoCalculoServiceDomain);
 
             calculo.InicieCalculo(_contratoRepository);
             _ = calculo.CalculeContratos();

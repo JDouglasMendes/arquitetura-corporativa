@@ -1,5 +1,5 @@
 ﻿using Codeizi.Curso.CalculoFolhaDePagamento.Infra.BackgroundTasks.Configurations;
-using Codeizi.Curso.RH.Domain.SharedKernel.IMediatorBus;
+using Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -15,19 +15,22 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Infra.BackgroundTasks.Tasks
         private readonly ILogger<ContratoParaCalculoBackgroundService> _logger;
         private readonly BackgroundTaskConfigurations _settings;
         private readonly ContratoParaCalculoRabbitMQ _contrato;
-        private readonly IMediatorHandler _mediatorHandler;
+#pragma warning disable IDE0052 // Remove unread private members
+        private readonly IRabbitMQBus _rabbitMQBus;
+#pragma warning restore IDE0052 // Remove unread private members
+
         public IConfiguration Configuration { get; }
+        
 
         public ContratoParaCalculoBackgroundService(IOptions<BackgroundTaskConfigurations> settings,
                                                     ILogger<ContratoParaCalculoBackgroundService> logger,
                                                     IConfiguration configuration,
-                                                    IMediatorHandler mediatorHandler)
+                                                    IRabbitMQBus rabbitMQBus)
         {
             _settings = settings?.Value ?? throw new ArgumentNullException(nameof(settings));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-            _mediatorHandler = mediatorHandler ?? throw new ArgumentNullException(nameof(mediatorHandler));
-            Configuration = configuration;
-            // _contrato = new ContratoParaCalculoRabbitMQ(Configuration);
+            _rabbitMQBus = rabbitMQBus;        
+            Configuration = configuration;        
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)

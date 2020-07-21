@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Codeizi.Curso.RH.Domain.SharedKernel.IMediatorBus
+namespace Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ
 {
     [ExcludeFromCodeCoverage]
-    public class ServiceMediatorBusAttribute : Attribute
+    public sealed class ServiceMediatorBusAttribute : Attribute
     {
         public string Queue { get; }
 

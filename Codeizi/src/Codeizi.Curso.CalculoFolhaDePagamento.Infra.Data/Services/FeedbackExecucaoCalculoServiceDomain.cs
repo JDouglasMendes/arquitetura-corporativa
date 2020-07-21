@@ -35,7 +35,6 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Infra.Data.Services
             databaseRedis.GetClient().StringSet(idExecucao.ToString(), CamposProcessamentoCalculo(Conteudo(conteudo, EnumPosicaoValores.DataInicioProcessamento),
                                                                                                     percentual));
         }
-
         public void AtualizarPercentualExecucao(Guid idExecucao, int quantidadeProcessada, int quantidadeTotalProcessamento)
         {
             if (EhMultiplo(quantidadeProcessada * 100 / quantidadeTotalProcessamento, 10))

@@ -6,12 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="RavenDB.Client" Version="4.2.103" />
+    <ProjectReference Include="..\Codeizi.Curso.Domain.SharedKernel\Codeizi.Curso.RH.Domain.SharedKernel.csproj" />
+    <ProjectReference Include="..\Codeizi.Curso.Infra.CrossCutting.Configuration\Codeizi.Curso.Infra.CrossCutting.Configuration.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Codeizi.Curso.Domain.SharedKernel\Codeizi.Curso.RH.Domain.SharedKernel.csproj" />
-    <ProjectReference Include="..\Codeizi.Curso.Infra.CrossCutting.Configuration\Codeizi.Curso.Infra.CrossCutting.Configuration.csproj" />
+    <PackageReference Include="MongoDB.Driver" Version="2.10.4" />
   </ItemGroup>
 
 </Project>

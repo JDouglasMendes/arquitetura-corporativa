@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 
 namespace Codeizi.Curso.RH.infra.Data.EventSource.EventSource
 {
-    public interface IEventStoreRepository : IDisposable
+    public interface IEventStoreRepository
     {
-        void Store(object theEvent);
+        Task Store<T>(T theEvent) where T : Event;
 
-        Task<IList<T>> All<T>(Guid aggregateId) where T : Event;
+        Task<IEnumerable<T>> All<T>(string aggregateId) where T : Event;
     }
 }

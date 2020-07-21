@@ -1,5 +1,9 @@
-﻿using Codeizi.Curso.RH.Domain.Colaboradores.EventHandlers;
+﻿using Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ;
+using Codeizi.Curso.RH.Domain.Colaboradores.EventHandlers;
 using Codeizi.Curso.RH.Domain.Colaboradores.Events;
+using Codeizi.Curso.RH.Domain.SharedKernel.Events;
+using Newtonsoft.Json;
+using NSubstitute;
 using System;
 using System.Threading;
 using Xunit;
@@ -9,16 +13,26 @@ namespace Codeizi.Curso.Domain.Test.Colaboradores
     public class ColaboradorEventHandlerTest
     {
         [Fact]
-        public async void HandleAdimitido()
+        public async void HandleAdmitido()
         {
+            var mock = Substitute.For<IRabbitMQBus>();
             var colaboradorAdmitido = new ColaboradorAdmitidoEvent(Guid.NewGuid(),
-                                                                   "Codeizi",
-                                                                   "Treinamento",
+                                                                   Guid.NewGuid(),
                                                                    DateTime.Now,
-                                                                   1000,
-                                                                   "Observacao Contratual");
+                                                                   null,
+                                                                   1000);
 
-            var eventHandler = new ColaboradorEventHandler();
+            var p = FactoryPublishable.Get(colaboradorAdmitido.AggregateId,
+                                                            "add-contrato",
+                                                            colaboradorAdmitido);
+            var json = JsonConvert.SerializeObject(p);
+            var p2 = JsonConvert.DeserializeObject<Publishable>(json);
+            var c = p2.ToObject<ColaboradorAdmitidoEvent>();
+
+            Assert.Equal(colaboradorAdmitido.AggregateId, c.AggregateId);
+            var mockStore = Substitute.For<IEventStore>();
+
+            var eventHandler = new ColaboradorEventHandler(mock, mockStore);
             await eventHandler.Handle(colaboradorAdmitido, CancellationToken.None);
             Assert.True(true);
         }

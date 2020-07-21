@@ -11,22 +11,34 @@ namespace Codeizi.Curso.RH.Domain.Colaboradores
     {
         private readonly List<Contrato> _contratos = new List<Contrato>();
         public NomePessoa Nome { get; }
+        public DateTime DataDeNascimento { get; private set; }
         public string ObservacaoContratual { get; set; }
 
-        public Colaborador(Guid id, NomePessoa nome)
+        public Colaborador(Guid id, NomePessoa nome, DateTime dataDeNascimento)
+            : this()
         {
-            this.Id = id;
-            this.Nome = nome;
-            _contratos = new List<Contrato>();
+            Id = id;
+            Nome = nome;
+            DataDeNascimento = dataDeNascimento;
         }
 
         [ExcludeFromCodeCoverage]
-        protected Colaborador() { }
+        protected Colaborador()
+            => _contratos = new List<Contrato>();
 
         [ExcludeFromCodeCoverage]
         public IReadOnlyCollection<Contrato> Contratos => _contratos.ToList();
 
         public void AddContrato(DateTime dataInicio, double salarioContratual)
             => _contratos.Add(new Contrato(this, dataInicio, salarioContratual));
+
+        public bool ContratoPodeSerEncerrado(Guid idContrato)
+            => _contratos.FirstOrDefault(x => x.Id == idContrato)?.ContratoAindaVigente ?? false;
+
+        public void EncerreContrato(Guid idContrato, DateTime date)
+        {
+            if (ContratoPodeSerEncerrado(idContrato))
+                _contratos.FirstOrDefault(x => x.Id == idContrato)?.EncerreContrato(date);
+        }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Services.ServiceDomain;
 using Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ;
-using Codeizi.Curso.RH.Domain.SharedKernel.RabbitMQBus;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;

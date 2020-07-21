@@ -10,6 +10,7 @@ using Codeizi.Curso.RH.Domain.SharedKernel.IMediatorBus;
 using Codeizi.Curso.RH.Domain.SharedKernel.Notifications;
 using Codeizi.Curso.RH.infra.Data.EventSource.Context;
 using Codeizi.Curso.RH.infra.Data.EventSource.EventSource;
+using Codeizi.Curso.RH.infra.Data.EventSource.EventStore;
 using Codeizi.Curso.RH.Infra.CrossCutting.Bus;
 using Codeizi.Curso.RH.Infra.Data.Context;
 using Codeizi.Curso.RH.Infra.Data.DAO.Contracts;
@@ -34,9 +35,9 @@ namespace Codeizi.Curso.RH.Infra.CrossCutting.IoC
             AdicioneCamadaDeDados(services);
 
             services.AddScoped<ICodeiziConfiguration, CodeiziConfiguration>();
-            services.AddScoped<IEventStoreRepository, EventStoreRavenDBRepository>();
-            services.AddScoped<IEventStore, RavenDBEventStore>();
-            services.AddScoped<DocumentStoreHolder>();
+            services.AddScoped<IEventStoreRepository, EventStoreRepository>();
+            services.AddScoped<IEventStore, EventStoreMongoDB>();
+            services.AddScoped<DatabaseEventSource>();
             services.AddScoped<CodeiziContext>();
         }
 
@@ -54,8 +55,10 @@ namespace Codeizi.Curso.RH.Infra.CrossCutting.IoC
 
         private static void AdicioneComandosDeDominio(IServiceCollection services)
         {
+            services.AddScoped<INotificationHandler<ColaboradorAdmitidoEvent>, ColaboradorEventHandler>();
+            services.AddScoped<INotificationHandler<ColaboradorAdmitidoEventSource>, ColaboradorEventHandler>();
+
             services.AddScoped<IRequestHandler<AdmissaoColaboradorCommand, bool>, ColaboradorCommandHandler>();
-            services.AddScoped<IRequestHandler<ColaboradorAdmitidoEvent, bool>, ColaboradorEventHandler>();
         }
 
         private static void AdicioneCamadaDeDados(IServiceCollection services)

@@ -7,7 +7,7 @@ using Codeizi.Curso.CalculoFolhaDePagamento.Infra.BackgroundTasks.Extensions;
 
 namespace Codeizi.Curso.CalculoFolhaDePagamento.Infra.BackgroundTasks
 {
-    public class Program
+    public sealed class Program
     {
         public static readonly string AppName = typeof(Program).Assembly.GetName().Name;
 

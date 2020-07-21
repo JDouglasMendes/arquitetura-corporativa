@@ -2,8 +2,8 @@
 {
     public interface ICodeiziConfiguration
     {
-        string ConnectionStringRavenDB { get; }
-        string DatabaseRavenDB { get; }
+        string ConnectionStringEventSource { get; }
+        string DatabaseEventSource { get; }
         string ConnectionStringRedis { get; }
     }
 }

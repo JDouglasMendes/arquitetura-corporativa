@@ -14,7 +14,7 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Domain.Domain.Calculo
         private readonly ICalculo _calculo;
         private readonly ICalculoRepository _calculoRepository;
         private readonly IFeedbackExecucaoCalculoServiceDomain _feedbackExecucaoCalculo;
-        private DateTime _referencia;
+        private readonly DateTime _referencia;
         private List<Contrato> _contratos;
 
         public CalculoBuilder(DateTime referencia,

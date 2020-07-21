@@ -7,7 +7,7 @@ namespace Codeizi.Curso.RH.Domain.SharedKernel.Events
     {
         public string Id { get; set; }
         public string MessageType { get; protected set; }
-        public Guid AggregateId { get; protected set; }
+        public string AggregateId { get; protected set; }
 
         protected Message()
         {

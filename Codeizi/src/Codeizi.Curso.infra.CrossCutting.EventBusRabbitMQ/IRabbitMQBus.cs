@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Codeizi.Curso.RH.Domain.SharedKernel.RabbitMQBus
+namespace Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ
 {
     public interface IRabbitMQBus
     {

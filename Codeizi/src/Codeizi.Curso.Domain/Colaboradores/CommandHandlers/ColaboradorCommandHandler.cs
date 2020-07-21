@@ -8,6 +8,7 @@ using Codeizi.Curso.RH.Domain.SharedKernel.Notifications;
 using Codeizi.Curso.RH.Domain.SharedKernel.ValueObjects;
 using MediatR;
 using System;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -32,21 +33,32 @@ namespace Codeizi.Curso.RH.Domain.Colaboradores.CommandHandlers
                 NotifyValidationErrors(request);
                 return false;
             }
-            var colaborador = new Colaborador(Guid.NewGuid(), NomePessoa.Crie(request.Nome, request.Sobrenome))
+
+            var colaborador = new Colaborador(Guid.NewGuid(), NomePessoa.Crie(request.Nome, request.Sobrenome), request.DataNascimento)
             {
                 ObservacaoContratual = request.ObservacaoContratual,
             };
+
             colaborador.AddContrato(request.DataDeAdmissao, request.SalarioContratual);
             await _colaboradorRepository.RealizeAdmissao(colaborador);
+            var contratoVigente = colaborador.Contratos.ToList().FirstOrDefault();
 
-            var colaboradorAdmitidoEvent = new ColaboradorAdmitidoEvent(colaborador.Id,
-                                                                        colaborador.Nome.Nome,
-                                                                        colaborador.Nome.Sobrenome,
-                                                                        request.DataDeAdmissao,
-                                                                        request.SalarioContratual,
-                                                                        colaborador.ObservacaoContratual);
             if (Commit())
-                await Bus.RaiseEvent(colaboradorAdmitidoEvent);
+            {
+                var colaboradorAdmitidoEvent = new ColaboradorAdmitidoEvent(colaborador.Id,
+                                                                        contratoVigente.Id,
+                                                                        contratoVigente.DataInicio,
+                                                                        null,
+                                                                        request.SalarioContratual);
+
+                var contratoParaCalculo = Bus.RaiseEvent(colaboradorAdmitidoEvent);
+
+                var colaboradorEventSource = new ColaboradorAdmitidoEventSource(colaborador);
+
+                var eventSource = Bus.RaiseEvent(colaboradorEventSource);
+
+                Task.WaitAll(contratoParaCalculo, eventSource);
+            }
 
             return true;
         }

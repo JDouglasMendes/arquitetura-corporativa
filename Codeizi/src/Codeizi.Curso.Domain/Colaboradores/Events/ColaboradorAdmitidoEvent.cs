@@ -5,20 +5,21 @@ namespace Codeizi.Curso.RH.Domain.Colaboradores.Events
 {
     public class ColaboradorAdmitidoEvent : Event
     {
-        public ColaboradorAdmitidoEvent(Guid id, string nome, string sobrenome, DateTime dataDeAdmissao, double salarioContratual, string observacaoContratual)
+        public ColaboradorAdmitidoEvent(Guid idColaborador, Guid idContrato, DateTime dataInicio, DateTime? dataFim, double salarioContratual)
         {
-            AggregateId = id;
-            Nome = nome;
-            Sobrenome = sobrenome;
-            DataDeAdmissao = dataDeAdmissao;
+            Id = idColaborador.ToString();
+            AggregateId = idColaborador.ToString();
+            IdColaborador = idColaborador;
+            IdContrato = idContrato;
+            DataInicio = dataInicio;
+            DataFim = dataFim;
             SalarioContratual = salarioContratual;
-            ObservacaoContratual = observacaoContratual;
         }
 
-        public string Nome { get; }
-        public string Sobrenome { get; }
-        public DateTime DataDeAdmissao { get; }
-        public double SalarioContratual { get; }
-        public string ObservacaoContratual { get; }
+        public Guid IdColaborador { get; private set; }
+        public Guid IdContrato { get; private set; }
+        public DateTime DataInicio { get; private set; }
+        public DateTime? DataFim { get; private set; }
+        public double SalarioContratual { get; private set; }
     }
 }

@@ -1,6 +1,4 @@
-﻿using Codeizi.Curso.RH.Domain.SharedKernel.IMediatorBus;
-using Codeizi.Curso.RH.Domain.SharedKernel.RabbitMQBus;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Polly;
@@ -26,8 +24,8 @@ namespace Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ
         private readonly IServiceCollection _services;
 
         private IModel _consumerChannel;
-        private string _queueName;
-        private Type _type;
+        private readonly string _queueName;
+        private readonly Type _type;
 
         public EventBusRabbitMQ(IRabbitMQPersistentConnection persistentConnection,
                                 ILogger<EventBusRabbitMQ> logger,
@@ -112,10 +110,12 @@ namespace Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ
 
                 await ProcessEvent(eventName, message);
             }
+#pragma warning disable CA1031 // Do not catch general exception types
             catch (Exception ex)
             {
                 _logger.LogWarning(ex, "----- ERROR Processing message \"{Message}\"", message);
             }
+#pragma warning restore CA1031 // Do not catch general exception types
 
             // Even on exception we take the message off the queue.
             // in a REAL WORLD app this should be handled with a Dead Letter Exchange (DLX).
@@ -131,7 +131,9 @@ namespace Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ
                 .BuildServiceProvider()
                 .GetRequiredService(GetTypeByName(eventName));
 
-            await (Task)handle.GetType().GetMethod("Handle").Invoke(handle, new object[] { message });
+            var publishable = JsonConvert.DeserializeObject<Publishable>(message);
+
+            await (Task)handle.GetType().GetMethod("Handle").Invoke(handle, new object[] { publishable });
         }
 
         private Type GetTypeByName(string eventName)
