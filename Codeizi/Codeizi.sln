@@ -70,6 +70,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RH", "RH", "{14737675-58F4-
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.infra.Data.EventSource.Test", "test\Codeizi.Curso.infra.Data.EventSource.Test\Codeizi.Curso.infra.Data.EventSource.Test.csproj", "{6ED2CF6C-18A2-4E1F-934C-512B9BD3471D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "functional test", "functional test", "{7B5A9F09-F1DC-4880-9F44-B6C5AF1CECDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codeizi.Curso.FunctionalTest", "functional test\Codeizi.Curso.FunctionalTest\Codeizi.Curso.FunctionalTest.csproj", "{2302049A-3969-41CB-B2EE-22B122C8AE04}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -172,6 +176,10 @@ Global
 		{6ED2CF6C-18A2-4E1F-934C-512B9BD3471D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6ED2CF6C-18A2-4E1F-934C-512B9BD3471D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6ED2CF6C-18A2-4E1F-934C-512B9BD3471D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2302049A-3969-41CB-B2EE-22B122C8AE04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2302049A-3969-41CB-B2EE-22B122C8AE04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2302049A-3969-41CB-B2EE-22B122C8AE04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2302049A-3969-41CB-B2EE-22B122C8AE04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -205,6 +213,7 @@ Global
 		{3D4DB93C-2107-476F-B0C2-2F10780B07F3} = {D1ACB649-8702-4776-BF68-D38BCDFE2B98}
 		{14737675-58F4-4FA8-B9D5-41A86042EFC4} = {EF01AEB0-DD72-44E5-945C-3463842CEE0F}
 		{6ED2CF6C-18A2-4E1F-934C-512B9BD3471D} = {E242A8C3-6631-4F9E-9C98-B671EB04FB83}
+		{2302049A-3969-41CB-B2EE-22B122C8AE04} = {7B5A9F09-F1DC-4880-9F44-B6C5AF1CECDE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A3BB0C73-9411-4A9A-9497-176952B73246}

@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 namespace Codeizi.Curso.RH.Domain.Colaboradores.EventHandlers
 {
     public class ColaboradorEventHandler :
-       INotificationHandler<ColaboradorAdmitidoEvent>,
-        INotificationHandler<ColaboradorAdmitidoEventSource>
+        INotificationHandler<NovoColaboradorParaCalculoEvent>,
+        INotificationHandler<ColaboradorEventSource>
     {
         private readonly IRabbitMQBus _rabbitMQBus;
         private readonly IEventStore _eventStore;
@@ -20,18 +20,17 @@ namespace Codeizi.Curso.RH.Domain.Colaboradores.EventHandlers
             _eventStore = eventStore;
         }
 
-
-        public Task Handle(ColaboradorAdmitidoEvent request, CancellationToken cancellationToken)
+        public Task Handle(NovoColaboradorParaCalculoEvent request, CancellationToken cancellationToken)
         {
             _rabbitMQBus.Publisher(FactoryPublishable.Get(request.AggregateId,
-                                                         "Add-contrato",
+                                                         "add-contrato",
                                                          request));
             return Task.CompletedTask;
         }
 
-        public Task Handle(ColaboradorAdmitidoEventSource notification, CancellationToken cancellationToken)
+        public Task Handle(ColaboradorEventSource notification, CancellationToken cancellationToken)
         {
-            if (notification.MessageType.Equals("DomainNotification"))
+            if (!notification.MessageType.Equals("DomainNotification"))
                 _eventStore?.Save(notification);
 
             return Task.CompletedTask;

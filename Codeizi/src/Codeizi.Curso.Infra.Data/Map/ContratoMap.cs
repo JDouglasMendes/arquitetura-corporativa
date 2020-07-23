@@ -15,6 +15,10 @@ namespace Codeizi.Curso.RH.Infra.Data.Map
                 .HasColumnName("DataInicio")
                 .IsRequired();
 
+            builder.Property(x => x.DataFim)
+                .HasColumnName("DataFim")
+                .IsRequired(false);
+
             builder.Property(x => x.SalarioContratual)
                 .HasColumnName("SalarioContratual")
                 .IsRequired();

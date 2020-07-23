@@ -55,8 +55,8 @@ namespace Codeizi.Curso.RH.Infra.CrossCutting.IoC
 
         private static void AdicioneComandosDeDominio(IServiceCollection services)
         {
-            services.AddScoped<INotificationHandler<ColaboradorAdmitidoEvent>, ColaboradorEventHandler>();
-            services.AddScoped<INotificationHandler<ColaboradorAdmitidoEventSource>, ColaboradorEventHandler>();
+            services.AddScoped<INotificationHandler<NovoColaboradorParaCalculoEvent>, ColaboradorEventHandler>();
+            services.AddScoped<INotificationHandler<ColaboradorEventSource>, ColaboradorEventHandler>();
 
             services.AddScoped<IRequestHandler<AdmissaoColaboradorCommand, bool>, ColaboradorCommandHandler>();
         }

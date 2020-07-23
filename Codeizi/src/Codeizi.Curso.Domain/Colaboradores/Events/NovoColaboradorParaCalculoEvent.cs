@@ -3,11 +3,10 @@ using System;
 
 namespace Codeizi.Curso.RH.Domain.Colaboradores.Events
 {
-    public class ColaboradorAdmitidoEvent : Event
+    public class NovoColaboradorParaCalculoEvent : Event
     {
-        public ColaboradorAdmitidoEvent(Guid idColaborador, Guid idContrato, DateTime dataInicio, DateTime? dataFim, double salarioContratual)
+        public NovoColaboradorParaCalculoEvent(Guid idColaborador, Guid idContrato, DateTime dataInicio, DateTime? dataFim, double salarioContratual)
         {
-            Id = idColaborador.ToString();
             AggregateId = idColaborador.ToString();
             IdColaborador = idColaborador;
             IdContrato = idContrato;

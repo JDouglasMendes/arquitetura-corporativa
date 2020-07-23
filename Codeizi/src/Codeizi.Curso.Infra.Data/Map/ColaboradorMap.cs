@@ -24,6 +24,10 @@ namespace Codeizi.Curso.RH.Infra.Data.Map
                         .IsRequired();
             });
 
+            builder.Property(x => x.DataDeNascimento)
+                .HasColumnName("DataDeNascimento")
+                .IsRequired();
+
             builder.Property(x => x.ObservacaoContratual)
                 .HasMaxLength(100);
 

@@ -45,7 +45,7 @@ namespace Codeizi.Curso.RH.Domain.Colaboradores.CommandHandlers
 
             if (Commit())
             {
-                var colaboradorAdmitidoEvent = new ColaboradorAdmitidoEvent(colaborador.Id,
+                var colaboradorAdmitidoEvent = new NovoColaboradorParaCalculoEvent(colaborador.Id,
                                                                         contratoVigente.Id,
                                                                         contratoVigente.DataInicio,
                                                                         null,
@@ -53,7 +53,7 @@ namespace Codeizi.Curso.RH.Domain.Colaboradores.CommandHandlers
 
                 var contratoParaCalculo = Bus.RaiseEvent(colaboradorAdmitidoEvent);
 
-                var colaboradorEventSource = new ColaboradorAdmitidoEventSource(colaborador);
+                var colaboradorEventSource = new ColaboradorEventSource(colaborador);
 
                 var eventSource = Bus.RaiseEvent(colaboradorEventSource);
 

@@ -16,7 +16,7 @@ namespace Codeizi.Curso.Domain.Test.Colaboradores
         public async void HandleAdmitido()
         {
             var mock = Substitute.For<IRabbitMQBus>();
-            var colaboradorAdmitido = new ColaboradorAdmitidoEvent(Guid.NewGuid(),
+            var colaboradorAdmitido = new NovoColaboradorParaCalculoEvent(Guid.NewGuid(),
                                                                    Guid.NewGuid(),
                                                                    DateTime.Now,
                                                                    null,
@@ -27,7 +27,7 @@ namespace Codeizi.Curso.Domain.Test.Colaboradores
                                                             colaboradorAdmitido);
             var json = JsonConvert.SerializeObject(p);
             var p2 = JsonConvert.DeserializeObject<Publishable>(json);
-            var c = p2.ToObject<ColaboradorAdmitidoEvent>();
+            var c = p2.ToObject<NovoColaboradorParaCalculoEvent>();
 
             Assert.Equal(colaboradorAdmitido.AggregateId, c.AggregateId);
             var mockStore = Substitute.For<IEventStore>();

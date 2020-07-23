@@ -45,9 +45,10 @@ namespace Codeizi.Curso.RH.Domain.CommandHandlers
                 return false;
             }
 #pragma warning disable CA1031 // Do not catch general exception types
-            catch (System.Exception)
+            catch (System.Exception ex)
             {
-                Bus.RaiseEvent(new DomainNotification("Commit", "Não foi possível salvar os dados"));
+
+                Bus.RaiseEvent(new DomainNotification("Commit", $"Não foi possível salvar os dados MESSAGE:{ex.Message}"));
                 return false;
             }
 #pragma warning restore CA1031 // Do not catch general exception types
