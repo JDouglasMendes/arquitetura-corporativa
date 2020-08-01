@@ -6,32 +6,28 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System.Threading.Tasks;
 
 namespace Codeizi.Curso.RH.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(IdentityServerConstants.LocalApi.PolicyName)]
     public class ColaboradorController : ApiController
     {
         private readonly IColaboradorAppService colaboradorAppService;
-        private readonly ILogger<ColaboradorController> _logger;
 
         public ColaboradorController(INotificationHandler<DomainNotification> notifications,
-                                     IColaboradorAppService colaboradorAppService,
-                                     ILogger<ColaboradorController> logger)
+                                     IColaboradorAppService colaboradorAppService)
             : base(notifications)
         {
             this.colaboradorAppService = colaboradorAppService;
-            _logger = logger;
         }
 
         [HttpPost]
-        [Route("realize-admissao")]
-        [Authorize(IdentityServerConstants.LocalApi.PolicyName)]
-        public IActionResult Post(ColaboradorAdmissaoViewModel colaboradorAdmissaoViewModel)
+        public async Task<IActionResult> Post(ColaboradorAdmissaoViewModel colaboradorAdmissaoViewModel)
         {
-            _logger.LogInformation($"Tentativa de admissção do colaborador {colaboradorAdmissaoViewModel.Nome}");
-            colaboradorAppService.RealizeAdmissao(colaboradorAdmissaoViewModel);
+            await colaboradorAppService.RealizeAdmissao(colaboradorAdmissaoViewModel);
             return Response(colaboradorAdmissaoViewModel);
         }
     }

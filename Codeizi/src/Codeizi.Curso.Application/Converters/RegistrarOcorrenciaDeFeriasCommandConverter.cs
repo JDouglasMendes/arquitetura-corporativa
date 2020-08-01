@@ -21,7 +21,8 @@ namespace Codeizi.Curso.RH.Application.Converters
                                                            RegistrarOcorrenciaDeFeriasCommand destination,
                                                            ResolutionContext context)
         {
-            return new RegistrarOcorrenciaDeFeriasCommand(source.IdContrato,
+            return new RegistrarOcorrenciaDeFeriasCommand(source.IdColaborador,
+                source.IdContrato,
                 source.PeriodoAquisitivo,
                 source.DataDeInicio,
                 source.DiasDeFerias,

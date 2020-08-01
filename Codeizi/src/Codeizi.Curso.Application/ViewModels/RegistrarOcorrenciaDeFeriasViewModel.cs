@@ -6,6 +6,7 @@ namespace Codeizi.Curso.RH.Application.ViewModels
 {
     public class RegistrarOcorrenciaDeFeriasViewModel
     {
+        public Guid IdColaborador { get; set; }
         public Guid IdContrato { get; set; }
         public DateTime PeriodoAquisitivo { get; set; }
         public DateTime DataDeInicio { get; set; }

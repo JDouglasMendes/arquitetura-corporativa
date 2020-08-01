@@ -70,6 +70,8 @@ namespace Codeizi.Curso.RH.Api
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Codeizi Treinamento");
             });
+
+
         }
     }
 }

@@ -23,9 +23,9 @@ namespace Codeizi.Curso.RH.Infra.Data.DAO
             => await dbSetContext.AddAsync(entity);
 
         public virtual async Task<TEntity> GetByIdAsync(Guid id)
-            => await dbSetContext.FindAsync(id);
+            => await dbSetContext.FindAsync(id).AsTask();
 
-        public virtual IQueryable<TEntity> GetAll()
+        public virtual IQueryable<TEntity> GetQueryable()
             => dbSetContext;
 
         public virtual void Update(TEntity obj)

@@ -5,7 +5,7 @@ using System;
 
 namespace Codeizi.Infra.Data.Test.Repository
 {
-    public class InMemoryDBContext : IDisposable
+    public sealed class InMemoryDBContext : IDisposable
     {
         private const string InMemoryConnectionString = "DataSource=:memory:";
         private readonly SqliteConnection _connection;

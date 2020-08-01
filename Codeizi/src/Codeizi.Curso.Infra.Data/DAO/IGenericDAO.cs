@@ -11,7 +11,7 @@ namespace Codeizi.Curso.RH.Infra.Data.DAO
 
         Task<TEntity> GetByIdAsync(Guid id);
 
-        IQueryable<TEntity> GetAll();
+        IQueryable<TEntity> GetQueryable();
 
         void Update(TEntity obj);
 

@@ -19,8 +19,11 @@ namespace Codeizi.Curso.RH.Infra.Data.Repository
             this.colaboradorDAO = colaboradorDAO;
         }
 
+        public async Task<Colaborador> BusqueColaborador(Guid idColaborador)
+            => await colaboradorDAO.GetByIdAsync(idColaborador);
+
         public IEnumerable<Contrato> BusqueTodosContratos(Guid guid)
-            => contratoDAO.GetAll().AsEnumerable().Where(x => x.ColaboradorId == guid).ToList();
+            => contratoDAO.GetQueryable().AsEnumerable().Where(x => x.ColaboradorId == guid).ToList();
 
         public async Task<Contrato> ObtenhaContrato(Guid idContrato)
             => await contratoDAO.GetByIdAsync(idContrato);

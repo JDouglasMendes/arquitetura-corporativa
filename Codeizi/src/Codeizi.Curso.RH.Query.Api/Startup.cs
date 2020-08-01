@@ -89,6 +89,7 @@ namespace Codeizi.Curso.RH.Query.Api
             services.AddSingleton<ICodeiziConfiguration, CodeiziConfiguration>();
             services.AddScoped<DatabaseQuery>();
             services.AddScoped<ContratoQueryServiceBus>();
+            services.AddScoped<AgendamentoDeFeriasQueryServiceBus>();
         }
         
         public static void Configure(IApplicationBuilder app, IWebHostEnvironment env)

@@ -18,7 +18,7 @@ namespace Codeizi.Curso.RH.Infra.Data.Repository
 
         public async Task<List<OcorrenciaDeFerias>> ObtenhaOcorrenciasDoPeriodoAquisitivo(Guid idContrato, DateTime periodoAquisitivo)
             => await _ocorrenciaDeFeriasDAO
-                    .GetAll()
+                    .GetQueryable()
             .Where(x => x.ContradoId == idContrato && x.PeriodoArquisitivo == periodoAquisitivo)
             .ToListAsync();
 

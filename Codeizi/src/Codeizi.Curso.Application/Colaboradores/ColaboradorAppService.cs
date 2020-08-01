@@ -2,6 +2,7 @@
 using Codeizi.Curso.RH.Application.ViewModels;
 using Codeizi.Curso.RH.Domain.Colaboradores.Commands;
 using Codeizi.Curso.RH.Domain.SharedKernel.IMediatorBus;
+using System.Threading.Tasks;
 
 namespace Codeizi.Curso.RH.Application.Colaboradores
 {
@@ -16,10 +17,10 @@ namespace Codeizi.Curso.RH.Application.Colaboradores
             _bus = bus;
         }
 
-        public void RealizeAdmissao(ColaboradorAdmissaoViewModel colaboradorAdmissaoViewModel)
+        public async Task RealizeAdmissao(ColaboradorAdmissaoViewModel colaboradorAdmissaoViewModel)
         {
             var colaboradorAdmissaoComand = _mapper.Map<AdmissaoColaboradorCommand>(colaboradorAdmissaoViewModel);
-            _bus.SendCommand(colaboradorAdmissaoComand);
+            await _bus.SendCommand(colaboradorAdmissaoComand);
         }
     }
 }

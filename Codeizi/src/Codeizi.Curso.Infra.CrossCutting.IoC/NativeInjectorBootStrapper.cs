@@ -6,6 +6,10 @@ using Codeizi.Curso.RH.Domain.Colaboradores.Commands;
 using Codeizi.Curso.RH.Domain.Colaboradores.Contracts;
 using Codeizi.Curso.RH.Domain.Colaboradores.EventHandlers;
 using Codeizi.Curso.RH.Domain.Colaboradores.Events;
+using Codeizi.Curso.RH.Domain.Ocorrencias.Ferias.CommandHandlers;
+using Codeizi.Curso.RH.Domain.Ocorrencias.Ferias.Commands;
+using Codeizi.Curso.RH.Domain.Ocorrencias.Ferias.Events;
+using Codeizi.Curso.RH.Domain.Ocorrencias.Ferias.EventsHandlers;
 using Codeizi.Curso.RH.Domain.SharedKernel.Events;
 using Codeizi.Curso.RH.Domain.SharedKernel.IMediatorBus;
 using Codeizi.Curso.RH.Domain.SharedKernel.Notifications;
@@ -61,8 +65,10 @@ namespace Codeizi.Curso.RH.Infra.CrossCutting.IoC
             services.AddScoped<INotificationHandler<NovoColaboradorParaCalculoEvent>, ColaboradorEventHandler>();
             services.AddScoped<INotificationHandler<ColaboradorEventSource>, ColaboradorEventHandler>();
             services.AddScoped<INotificationHandler<ContratoQueryEvent>, ColaboradorEventHandler>();
+            services.AddScoped<INotificationHandler<AgendamentoDeFeriasQueryEvent>, FeriasEventHandler>();
 
             services.AddScoped<IRequestHandler<AdmissaoColaboradorCommand, bool>, ColaboradorCommandHandler>();
+            services.AddScoped<IRequestHandler<RegistrarOcorrenciaDeFeriasCommand, bool>, FeriasCommandHandler>();
         }
 
         private static void AdicioneCamadaDeDados(IServiceCollection services)

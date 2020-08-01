@@ -7,13 +7,16 @@ namespace Codeizi.Curso.RH.Domain.Ocorrencias.Ferias.Commands
     public class RegistrarOcorrenciaDeFeriasCommand : OcorrenciaDeFeriasCommand
     {
         private readonly IOcorrenciaDeDeriasRepository _ocorrenciaDeDeriasRepository;
-        public RegistrarOcorrenciaDeFeriasCommand(Guid idContrato,
+
+        public RegistrarOcorrenciaDeFeriasCommand(Guid idColaborador,
+            Guid idContrato,
             DateTime periodoAquisitivo,
             DateTime dataDeInicio,
             byte diasDeFerias,
             byte diasDeAbono,
             IOcorrenciaDeDeriasRepository ocorrenciaDeDeriasRepository)
         {
+            IdColaborador = idColaborador;
             IdContrato = idContrato;
             PeriodoAquisitivo = periodoAquisitivo;
             DataDeInicio = dataDeInicio;
@@ -29,6 +32,5 @@ namespace Codeizi.Curso.RH.Domain.Ocorrencias.Ferias.Commands
 
             return ValidationResult.IsValid;
         }
-
     }
 }

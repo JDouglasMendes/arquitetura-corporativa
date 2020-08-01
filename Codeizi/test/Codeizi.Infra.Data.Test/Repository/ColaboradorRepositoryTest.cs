@@ -9,6 +9,7 @@ using Xunit;
 
 namespace Codeizi.Infra.Data.Test.Repository
 {
+    [Trait("Categoria", "Data")]
     public class ColaboradorRepositoryTest
     {
         [Fact]
@@ -21,8 +22,8 @@ namespace Codeizi.Infra.Data.Test.Repository
             var repository = new ColaboradorRepository(contratoDAO, colaboradorDAO);
             await repository.RealizeAdmissao(colaborador);
             await contexto.SaveChangesAsync();
-            Assert.True(await colaboradorDAO.GetAll().CountAsync() > 0, "Não existe colaborador cadastrado");
-            Assert.True(await contratoDAO.GetAll().CountAsync() > 0, "Não existe contrato cadastrado");
+            Assert.True(await colaboradorDAO.GetQueryable().CountAsync() > 0, "Não existe colaborador cadastrado");
+            Assert.True(await contratoDAO.GetQueryable().CountAsync() > 0, "Não existe contrato cadastrado");
         }
 
         [Fact]
@@ -43,6 +44,33 @@ namespace Codeizi.Infra.Data.Test.Repository
             var contratosArmazenados = repository.BusqueTodosContratos(chave);
             contratosArmazenados.ToList().ForEach(item => Assert.Equal(chave, item.ColaboradorId));
             Assert.True(contratosArmazenados.Count() == 1);
+        }
+
+        [Fact]
+        public async Task Busque_colaborador_existente()
+        {
+            // Arrange
+            var contexto = new InMemoryDBContext().Crie();
+            var contratoDAO = FabricGenericDAO<IContratoDAO>.Crie(contexto);
+            var colaboradorDAO = FabricGenericDAO<IColaboradorDAO>.Crie(contexto);
+
+            var chave = Guid.NewGuid();
+
+            var colaborador = new ColaboradorBuilder().CrieColaboradorSucesso(chave).Get;
+
+            await contexto.AddAsync(colaborador);
+
+            await contexto.SaveChangesAsync();
+
+            var repository = new ColaboradorRepository(contratoDAO, colaboradorDAO);
+
+            // Act
+            var result = await repository.BusqueColaborador(chave);
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.Equal(chave, result.Id);
+            Assert.True(result.Contratos.Any());
         }
     }
 }

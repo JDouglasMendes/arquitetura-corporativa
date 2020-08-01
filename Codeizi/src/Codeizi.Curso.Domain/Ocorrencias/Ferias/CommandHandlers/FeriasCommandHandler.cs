@@ -3,9 +3,11 @@ using Codeizi.Curso.RH.Domain.CommandHandlers;
 using Codeizi.Curso.RH.Domain.Contracts.Repository;
 using Codeizi.Curso.RH.Domain.Ocorrencias.Ferias.Commands;
 using Codeizi.Curso.RH.Domain.Ocorrencias.Ferias.Contracts;
+using Codeizi.Curso.RH.Domain.Ocorrencias.Ferias.Events;
 using Codeizi.Curso.RH.Domain.SharedKernel.IMediatorBus;
 using Codeizi.Curso.RH.Domain.SharedKernel.Notifications;
 using MediatR;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -36,7 +38,13 @@ namespace Codeizi.Curso.RH.Domain.Ocorrencias.Ferias.CommandHandlers
                 NotifyValidationErrors(request);
                 return false;
             }
-            var contrato = await _colaboradorRepository.ObtenhaContrato(request.IdContrato);
+
+            var colaborador = await _colaboradorRepository.BusqueColaborador(request.IdColaborador);
+
+            var contrato = colaborador.Contratos.FirstOrDefault(x => x.Id == request.IdContrato);
+
+            if (contrato == null)
+                contrato = await _colaboradorRepository.ObtenhaContrato(request.IdContrato);
 
             var ocorrenciaDeFerias = new OcorrenciaDeFerias(contrato, request.DataDeInicio, request.DiasDeFerias, request.DiasDeAbono);
 
@@ -44,6 +52,9 @@ namespace Codeizi.Curso.RH.Domain.Ocorrencias.Ferias.CommandHandlers
 
             if (Commit())
             {
+                await Bus.RaiseEvent(AgendamentoDeFeriasQueryEvent.Crie(colaborador, request.IdContrato, ocorrenciaDeFerias));
+
+
                 return true;
             }
 
