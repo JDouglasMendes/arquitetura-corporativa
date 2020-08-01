@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Codeizi.Curso.Domain.SharedKernel\Codeizi.Curso.RH.Domain.SharedKernel.csproj" />
     <ProjectReference Include="..\Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ\Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ.csproj" />
+    <ProjectReference Include="..\Codeizi.Curso.Infra.CrossCutting.Identity\Codeizi.Curso.Infra.CrossCutting.Identity.csproj" />
     <ProjectReference Include="..\Codeizi.Curso.Infra.Redis\Codeizi.Curso.Infra.CrossCutting.Redis.csproj" />
   </ItemGroup>
 

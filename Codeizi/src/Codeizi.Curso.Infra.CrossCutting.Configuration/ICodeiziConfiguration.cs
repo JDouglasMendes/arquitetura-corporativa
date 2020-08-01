@@ -5,5 +5,7 @@
         string ConnectionStringEventSource { get; }
         string DatabaseEventSource { get; }
         string ConnectionStringRedis { get; }
+
+        string ConnectionStringQueryDatabase { get; }
     }
 }

@@ -120,14 +120,38 @@
   <data name="DataContratoObrigatoria" xml:space="preserve">
     <value>A data de inicio do contrato deve ser informada.</value>
   </data>
+  <data name="DatadeInicioNaoInformada" xml:space="preserve">
+    <value>Informe a data de inicio.</value>
+  </data>
+  <data name="DiasDeFeriasNaoInformada" xml:space="preserve">
+    <value>Informe os dias de férias.</value>
+  </data>
+  <data name="FeriasAposAnoContrato" xml:space="preserve">
+    <value>Não é possível gozar férias antes de 1 ano de contrato.</value>
+  </data>
+  <data name="IDContratoNaoInformado" xml:space="preserve">
+    <value>Informe o id do contrato.</value>
+  </data>
+  <data name="MaximoDiasDeAbono" xml:space="preserve">
+    <value>Os dias de abono não pode ser superior a {0}.</value>
+  </data>
+  <data name="MaximoDiasDeFerias" xml:space="preserve">
+    <value>Os dias de férias não pode ser superior a {0} dias.</value>
+  </data>
   <data name="NomeColaborador" xml:space="preserve">
     <value>Informe o nome do colaborador.</value>
   </data>
   <data name="ObservacaoContratual" xml:space="preserve">
     <value>A observação contratual deve ter no máximo 100 caracteres.</value>
   </data>
+  <data name="PeriodoAquisitivoNaoInformado" xml:space="preserve">
+    <value>Informe o periodo aquisitivo.</value>
+  </data>
   <data name="SalarioContratual" xml:space="preserve">
     <value>Informe o salário contratual.</value>
+  </data>
+  <data name="SaldoDeFerias" xml:space="preserve">
+    <value>Não existe saldo de férias.</value>
   </data>
   <data name="SobrenomeColaborador" xml:space="preserve">
     <value>Informe o sobrenome do colaborador.</value>

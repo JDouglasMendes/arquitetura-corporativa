@@ -8,7 +8,6 @@ using Codeizi.Curso.RH.Domain.SharedKernel.Notifications;
 using Codeizi.Curso.RH.Domain.SharedKernel.ValueObjects;
 using MediatR;
 using System;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -41,26 +40,22 @@ namespace Codeizi.Curso.RH.Domain.Colaboradores.CommandHandlers
 
             colaborador.AddContrato(request.DataDeAdmissao, request.SalarioContratual);
             await _colaboradorRepository.RealizeAdmissao(colaborador);
-            var contratoVigente = colaborador.Contratos.ToList().FirstOrDefault();
 
             if (Commit())
             {
-                var colaboradorAdmitidoEvent = new NovoColaboradorParaCalculoEvent(colaborador.Id,
-                                                                        contratoVigente.Id,
-                                                                        contratoVigente.DataInicio,
-                                                                        null,
-                                                                        request.SalarioContratual);
 
-                var contratoParaCalculo = Bus.RaiseEvent(colaboradorAdmitidoEvent);
+                var contratoParaCalculo = Bus.RaiseEvent(NovoColaboradorParaCalculoEvent.Crie(colaborador));
 
-                var colaboradorEventSource = new ColaboradorEventSource(colaborador);
+                var eventSource = Bus.RaiseEvent(ColaboradorEventSource.Crie(colaborador));
 
-                var eventSource = Bus.RaiseEvent(colaboradorEventSource);
+                var contratoQuery = Bus.RaiseEvent(ContratoQueryEvent.Crie(colaborador));
 
-                Task.WaitAll(contratoParaCalculo, eventSource);
+                Task.WaitAll(contratoParaCalculo, eventSource, contratoQuery);
+
+                return true;
             }
 
-            return true;
+            return false;
         }
     }
 }

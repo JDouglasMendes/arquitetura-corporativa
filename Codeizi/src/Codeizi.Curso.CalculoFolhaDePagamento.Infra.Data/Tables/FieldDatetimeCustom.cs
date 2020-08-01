@@ -4,7 +4,7 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Infra.Data.Tables
 {
     public class FieldDatetimeCustom
     {
-        private DateTime? _data;
+        private readonly DateTime? _data;
 
         public FieldDatetimeCustom(DateTime dateTime)
             => _data = dateTime;
@@ -13,7 +13,9 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Infra.Data.Tables
             => _data = dateTime ?? null;
 
         public FieldDatetimeCustom(int data)
-            => ToDatetime(data);
+            => _data = ToDatetime(data);
+
+        public DateTime? Value => _data;
 
         public int ToInt()
             => _data.HasValue ?
@@ -23,9 +25,14 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Infra.Data.Tables
         public DateTime? ToDateTime()
             => _data ?? null;
 
-        private DateTime ToDatetime(int data) =>
-            new DateTime(int.Parse(data.ToString().Substring(0, 4)),
-                                int.Parse(data.ToString().Substring(3, 2)),
-                                int.Parse(data.ToString().Substring(5, 2)));
+        private DateTime? ToDatetime(int data)
+        {
+            if (data > 0)
+                return new DateTime(int.Parse(data.ToString().Substring(0, 4)),
+                                    int.Parse(data.ToString().Substring(4, 2)),
+                                    int.Parse(data.ToString().Substring(6, 2)));
+
+            return null;
+        }
     }
 }

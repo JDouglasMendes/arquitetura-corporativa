@@ -8,7 +8,7 @@ RUN dotnet test ./test/Codeizi.Curso.Api.Integration.Test/Codeizi.Curso.Api.Inte
 RUN dotnet test ./test/Codeizi.Curso.Domain.Test/Codeizi.Curso.Domain.Test.csproj /p:MergeWith='..\result.json' /p:CoverletOutput='..\result.json'
 RUN dotnet test ./test/Codeizi.Curso.Domain.SharedKernel.Test/Codeizi.Curso.Domain.SharedKernel.Test.csproj /p:MergeWith='..\result.json' /p:CoverletOutput='..\result.json'
 RUN dotnet test ./test/Codeizi.Curso.CalculoFolhaDePagamento.Test/Codeizi.Curso.CalculoFolhaDePagamento.Test.csproj /p:MergeWith='..\result.json' /p:CoverletOutput='..\result.json'
-RUN dotnet test ./test/Codeizi.Curso.infra.Data.EventSource.Test/Codeizi.Curso.infra.Data.EventSource.Test.csproj /p:MergeWith='..\result.json' /p:CoverletOutput='..\result.json'
+#RUN dotnet test ./test/Codeizi.Curso.infra.Data.EventSource.Test/Codeizi.Curso.infra.Data.EventSource.Test.csproj /p:MergeWith='..\result.json' /p:CoverletOutput='..\result.json'
 RUN dotnet test ./test/Codeizi.Infra.Data.Test/Codeizi.Infra.Data.Test.csproj /p:Exclude='[xunit.*]*' /p:CollectCoverage=true /p:MergeWith='..\result.json' /p:CoverletOutput='..\coverage.opencover.xml' /p:CoverletOutputFormat='opencover'
 
 RUN dotnet sonarscanner begin /k:"codeizi-curso" \

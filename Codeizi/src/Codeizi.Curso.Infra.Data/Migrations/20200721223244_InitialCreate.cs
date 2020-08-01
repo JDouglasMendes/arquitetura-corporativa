@@ -15,7 +15,7 @@ namespace Codeizi.Curso.RH.Infra.Data.Migrations
                     Nome = table.Column<string>(maxLength: 100, nullable: true),
                     Sobrenome = table.Column<string>(maxLength: 100, nullable: true),
                     DataDeNascimento = table.Column<DateTime>(nullable: false),
-                    ObservacaoContratual = table.Column<string>(maxLength: 100, nullable: true)
+                    ObservacaoContratual = table.Column<string>(maxLength: 100, nullable: true),
                 },
                 constraints: table =>
                 {
@@ -30,7 +30,7 @@ namespace Codeizi.Curso.RH.Infra.Data.Migrations
                     ColaboradorId1 = table.Column<Guid>(nullable: true),
                     DataInicio = table.Column<DateTime>(nullable: false),
                     DataFim = table.Column<DateTime>(nullable: true),
-                    SalarioContratual = table.Column<double>(nullable: false)
+                    SalarioContratual = table.Column<double>(nullable: false),
                 },
                 constraints: table =>
                 {

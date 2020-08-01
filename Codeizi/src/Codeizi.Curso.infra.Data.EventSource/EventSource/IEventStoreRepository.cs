@@ -9,6 +9,6 @@ namespace Codeizi.Curso.RH.infra.Data.EventSource.EventSource
     {
         Task Store<T>(T theEvent) where T : Event;
 
-        Task<IEnumerable<T>> All<T>(string aggregateId) where T : Event;
+        Task<IEnumerable<T>> All<T>(Guid aggregateId) where T : Event;
     }
 }

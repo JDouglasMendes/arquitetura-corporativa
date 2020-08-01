@@ -46,7 +46,7 @@ namespace Codeizi.Curso.SignalrHub
                                             logger,
                                             services,
                                             typeof(EventBusRabbitMQ),
-                                            queueName: "add-contrato");
+                                            queueName: "notification");
             });
 
             return services;

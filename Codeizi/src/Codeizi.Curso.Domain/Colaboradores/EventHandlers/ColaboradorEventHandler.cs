@@ -9,7 +9,9 @@ namespace Codeizi.Curso.RH.Domain.Colaboradores.EventHandlers
 {
     public class ColaboradorEventHandler :
         INotificationHandler<NovoColaboradorParaCalculoEvent>,
-        INotificationHandler<ColaboradorEventSource>
+        INotificationHandler<ColaboradorEventSource>,
+        INotificationHandler<ContratoQueryEvent>
+
     {
         private readonly IRabbitMQBus _rabbitMQBus;
         private readonly IEventStore _eventStore;
@@ -33,6 +35,14 @@ namespace Codeizi.Curso.RH.Domain.Colaboradores.EventHandlers
             if (!notification.MessageType.Equals("DomainNotification"))
                 _eventStore?.Save(notification);
 
+            return Task.CompletedTask;
+        }
+
+        public Task Handle(ContratoQueryEvent notification, CancellationToken cancellationToken)
+        {
+            _rabbitMQBus.Publisher(FactoryPublishable.Get(notification.AggregateId,
+                                                         "contrato-query",
+                                                         notification));
             return Task.CompletedTask;
         }
     }

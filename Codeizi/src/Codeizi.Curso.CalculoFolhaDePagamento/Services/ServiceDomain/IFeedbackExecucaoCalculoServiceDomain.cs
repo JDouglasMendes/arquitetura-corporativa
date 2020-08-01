@@ -10,5 +10,7 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Domain.Services.ServiceDomain
         void AtualizarPercentualExecucao(Guid idExecucao,
                                          int quantidadeProcessada,
                                          int quantidadeTotalProcessamento);
+
+        int PercentualExecucao(Guid idExecucao);
     }
 }

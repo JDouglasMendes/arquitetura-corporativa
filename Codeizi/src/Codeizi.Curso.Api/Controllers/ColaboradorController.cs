@@ -1,7 +1,9 @@
 ﻿using Codeizi.Curso.RH.Application.Colaboradores;
 using Codeizi.Curso.RH.Application.ViewModels;
 using Codeizi.Curso.RH.Domain.SharedKernel.Notifications;
+using IdentityServer4;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -25,6 +27,7 @@ namespace Codeizi.Curso.RH.Api.Controllers
 
         [HttpPost]
         [Route("realize-admissao")]
+        [Authorize(IdentityServerConstants.LocalApi.PolicyName)]
         public IActionResult Post(ColaboradorAdmissaoViewModel colaboradorAdmissaoViewModel)
         {
             _logger.LogInformation($"Tentativa de admissção do colaborador {colaboradorAdmissaoViewModel.Nome}");

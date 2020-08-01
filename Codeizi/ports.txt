@@ -1,0 +1,15 @@
+#Visual Studio
+
+Identity        -> https://localhost:5001;http://localhost:5000
+API.Gateway     -> https://localhost:5011;http://localhost:5010
+SignalIrl       -> https://localhost:5021;http://localhost:5020
+BackgroundTasks -> https://localhost:5031;http://localhost:5030
+Calculo.API     -> https://localhost:5041;http://localhost:5040
+RH.API          -> https://localhost:5051;http://localhost:5050
+RH.Query.API    -> https://localhost:5061;http://localhost:5060
+
+
+
+Add-Migration  "InitialCreate" -context PersistedGrantDbContext
+Add-Migration  "InitialCreate" -context ConfigurationDbContext
+Add-Migration  "InitialCreate" -context ApplicationDbContext

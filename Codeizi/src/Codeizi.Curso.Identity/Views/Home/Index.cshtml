@@ -1,0 +1,37 @@
+﻿<div class="welcome-page container">
+    <div class="row page-header">
+        <div class="col-sm-10">
+            <h1>
+                <img class="icon" src="~/icon.jpg">
+                Bem vindo a Treinamento da Codeizi
+                @*<small>(build {version})</small>*@
+            </h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <p>
+                Essa é o Identity Server que utilizamos como controle de acesso centralizado da nossa aplicação.
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <p>
+                Para conhecer mais sobre o Identity Server acesse
+                <a href="https://github.com/identityserver/IdentityServer4">Github IS4</a>,
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <a class="btn btn-primary" asp-controller="account" asp-action="register">
+                Registrar
+            </a>
+            <a class="btn btn-success" asp-controller="account" asp-action="login">
+                Acessar
+            </a>
+        </div>
+    </div>
+</div>

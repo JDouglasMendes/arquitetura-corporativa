@@ -19,7 +19,7 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Benchmark.Test
         [GlobalSetup]
         public void Setup()
         {
-            calculo = new CalculoBuilder(DateTime.Now, EnumFolhaDePagamento.Mensal, repository, feedback);
+            calculo = new CalculoBuilder(DateTime.Now, EnumFolhaDePagamento.Mensal, repository, feedback, null, null);
             var quantidade = 1_000_000;
             Execucoes = new List<Contrato>(quantidade);
             var id = Guid.NewGuid();

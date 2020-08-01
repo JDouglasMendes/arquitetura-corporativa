@@ -1,4 +1,6 @@
 ﻿using Codeizi.Curso.RH.Domain.Colaboradores.Commands;
+using Codeizi.Curso.RH.Domain.SharedKernel.Commands;
+using FluentValidation;
 
 namespace Codeizi.Curso.RH.Domain.Colaboradores.Validations
 {

@@ -10,6 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1D5A049D-4D09-4E22-A764-19A1AA703D24}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		ports.txt = ports.txt
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.RH.Api", "src\Codeizi.Curso.Api\Codeizi.Curso.RH.Api.csproj", "{2C0ABE64-DE59-4110-9F6A-D890A069DF2C}"
@@ -72,7 +73,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.infra.Data.Ev
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "functional test", "functional test", "{7B5A9F09-F1DC-4880-9F44-B6C5AF1CECDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codeizi.Curso.FunctionalTest", "functional test\Codeizi.Curso.FunctionalTest\Codeizi.Curso.FunctionalTest.csproj", "{2302049A-3969-41CB-B2EE-22B122C8AE04}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.FunctionalTest", "functional test\Codeizi.Curso.FunctionalTest\Codeizi.Curso.FunctionalTest.csproj", "{2302049A-3969-41CB-B2EE-22B122C8AE04}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{4F27BF91-3763-40B1-9890-F340D5971B15}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.Identity", "src\Codeizi.Curso.Identity\Codeizi.Curso.Identity.csproj", "{6FB36AF5-9D80-4F72-B706-EDB19C775AEA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "APIGateway", "APIGateway", "{913FC83F-0500-4EF1-8AFA-CB8ED84014C6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.APIGateway", "src\Codeizi.Curso.APIGateway\Codeizi.Curso.APIGateway.csproj", "{198C3D89-BDD6-4397-A7B9-8AA7523E8B45}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.RH.Query.Api", "src\Codeizi.Curso.RH.Query.Api\Codeizi.Curso.RH.Query.Api.csproj", "{78B83162-A62D-408B-99DF-A320119D5E60}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codeizi.Curso.Infra.CrossCutting.Identity", "src\Codeizi.Curso.Infra.CrossCutting.Identity\Codeizi.Curso.Infra.CrossCutting.Identity.csproj", "{F8271E3E-CB5B-4775-9A5B-27F34326BC51}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RHQuery", "RHQuery", "{E14B8436-9667-4196-BFD1-2A99E106687A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -180,6 +195,22 @@ Global
 		{2302049A-3969-41CB-B2EE-22B122C8AE04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2302049A-3969-41CB-B2EE-22B122C8AE04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2302049A-3969-41CB-B2EE-22B122C8AE04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FB36AF5-9D80-4F72-B706-EDB19C775AEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FB36AF5-9D80-4F72-B706-EDB19C775AEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FB36AF5-9D80-4F72-B706-EDB19C775AEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FB36AF5-9D80-4F72-B706-EDB19C775AEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{198C3D89-BDD6-4397-A7B9-8AA7523E8B45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{198C3D89-BDD6-4397-A7B9-8AA7523E8B45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{198C3D89-BDD6-4397-A7B9-8AA7523E8B45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{198C3D89-BDD6-4397-A7B9-8AA7523E8B45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78B83162-A62D-408B-99DF-A320119D5E60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78B83162-A62D-408B-99DF-A320119D5E60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78B83162-A62D-408B-99DF-A320119D5E60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78B83162-A62D-408B-99DF-A320119D5E60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8271E3E-CB5B-4775-9A5B-27F34326BC51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8271E3E-CB5B-4775-9A5B-27F34326BC51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8271E3E-CB5B-4775-9A5B-27F34326BC51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8271E3E-CB5B-4775-9A5B-27F34326BC51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -214,6 +245,13 @@ Global
 		{14737675-58F4-4FA8-B9D5-41A86042EFC4} = {EF01AEB0-DD72-44E5-945C-3463842CEE0F}
 		{6ED2CF6C-18A2-4E1F-934C-512B9BD3471D} = {E242A8C3-6631-4F9E-9C98-B671EB04FB83}
 		{2302049A-3969-41CB-B2EE-22B122C8AE04} = {7B5A9F09-F1DC-4880-9F44-B6C5AF1CECDE}
+		{4F27BF91-3763-40B1-9890-F340D5971B15} = {EF01AEB0-DD72-44E5-945C-3463842CEE0F}
+		{6FB36AF5-9D80-4F72-B706-EDB19C775AEA} = {4F27BF91-3763-40B1-9890-F340D5971B15}
+		{913FC83F-0500-4EF1-8AFA-CB8ED84014C6} = {EF01AEB0-DD72-44E5-945C-3463842CEE0F}
+		{198C3D89-BDD6-4397-A7B9-8AA7523E8B45} = {913FC83F-0500-4EF1-8AFA-CB8ED84014C6}
+		{78B83162-A62D-408B-99DF-A320119D5E60} = {E14B8436-9667-4196-BFD1-2A99E106687A}
+		{F8271E3E-CB5B-4775-9A5B-27F34326BC51} = {D1ACB649-8702-4776-BF68-D38BCDFE2B98}
+		{E14B8436-9667-4196-BFD1-2A99E106687A} = {EF01AEB0-DD72-44E5-945C-3463842CEE0F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A3BB0C73-9411-4A9A-9497-176952B73246}

@@ -1,6 +1,7 @@
 ﻿using Codeizi.Curso.RH.Domain.SharedKernel.Events;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Codeizi.Curso.RH.Domain.Colaboradores.Events
 {
@@ -12,27 +13,23 @@ namespace Codeizi.Curso.RH.Domain.Colaboradores.Events
         public string ObservacaoContratual { get; set; }
         public List<ContratoEventSource> Contratos { get; set; }
 
-        protected ColaboradorEventSource()
-        {
-        }
-
-        public ColaboradorEventSource(Colaborador colaborador)
-        {
-            AggregateId = colaborador.Id.ToString();
-            Nome = colaborador.Nome.Nome;
-            Sobrenome = colaborador.Nome.Sobrenome;
-            DataNascimento = colaborador.DataDeNascimento;
-            ObservacaoContratual = colaborador.ObservacaoContratual;
-            Contratos = new List<ContratoEventSource>();
-            foreach (var contrato in colaborador.Contratos)
+        public static ColaboradorEventSource Crie(Colaborador colaborador)
+            => new ColaboradorEventSource
             {
-                Contratos.Add(new ContratoEventSource
-                {
-                    DataFim = contrato.DataFim,
-                    DataInicio = contrato.DataInicio,
-                    SalarioContratual = contrato.SalarioContratual,
-                });
-            }
-        }
+                AggregateId = colaborador.Id,
+                Nome = colaborador.Nome.Nome,
+                Sobrenome = colaborador.Nome.Sobrenome,
+                DataNascimento = colaborador.DataDeNascimento,
+                ObservacaoContratual = colaborador.ObservacaoContratual,
+                Contratos = colaborador
+                            .Contratos
+                            .ToList()
+                            .ConvertAll(new Converter<Contrato, ContratoEventSource>(x => new ContratoEventSource
+                            {
+                                DataInicio = x.DataInicio,
+                                DataFim = x.DataFim,
+                                SalarioContratual = x.SalarioContratual,
+                            })),
+            };
     }
 }

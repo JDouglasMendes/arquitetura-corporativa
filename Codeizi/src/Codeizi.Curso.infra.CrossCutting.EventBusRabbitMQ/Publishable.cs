@@ -7,7 +7,7 @@ namespace Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ
     [ExcludeFromCodeCoverage]
     public class Publishable
     {
-        public Publishable(string id, string eventName, string data)
+        public Publishable(Guid id, string eventName, string data)
         {
             Id = id;
             EventName = eventName;
@@ -18,7 +18,7 @@ namespace Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ
             where T : class
             => (T)  JsonConvert.DeserializeObject<T>(Data);        
 
-        public string Id { get; }
+        public Guid Id { get; }
         public string EventName { get; }
         public string Data { get; set; }
         

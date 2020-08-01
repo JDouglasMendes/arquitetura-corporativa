@@ -24,6 +24,7 @@ namespace Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ
         private readonly IServiceCollection _services;
 
         private IModel _consumerChannel;
+        private bool disposedValue;
         private readonly string _queueName;
         private readonly Type _type;
 
@@ -149,14 +150,6 @@ namespace Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ
             return result;
         }
 
-        public void Dispose()
-        {
-            if (_consumerChannel != null)
-            {
-                _consumerChannel.Dispose();
-            }
-        }
-
         public Task Publisher<T>(T publishable) where T : Publishable
         {
             if (!_persistentConnection.IsConnected)
@@ -199,6 +192,27 @@ namespace Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ
             }
 
             return Task.CompletedTask;
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposedValue)
+            {
+                if (disposing)
+                {
+                    if (_consumerChannel != null)
+                    {
+                        _consumerChannel.Dispose();
+                    }
+                }
+                disposedValue = true;
+            }
+        }
+        
+        public void Dispose()
+        {        
+            Dispose(disposing: true);
+            GC.SuppressFinalize(this);
         }
     }
 }

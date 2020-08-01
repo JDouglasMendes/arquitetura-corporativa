@@ -21,7 +21,7 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Test.ServiceDomain
                                     Arg.Any<Func<ContratoBusModel, Contrato>>());
             var bus = new NovoContratoServicoBus(mock);
             var contrato = CenarioContratoBusModel.CrieContrato;
-            var publishable = FactoryPublishable.Get(contrato.IdColaborador.ToString(), "add-contrato", contrato);
+            var publishable = FactoryPublishable.Get(contrato.IdColaborador, "add-contrato", contrato);
             var result = bus.Handle(publishable);
             result.ConfigureAwait(false);
             Assert.Null(result.Exception);

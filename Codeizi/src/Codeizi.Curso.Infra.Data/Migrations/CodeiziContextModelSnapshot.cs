@@ -46,7 +46,7 @@ namespace Codeizi.Curso.RH.Infra.Data.Migrations
                         .HasColumnName("Id")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("ColaboradorId1")
+                    b.Property<Guid>("ColaboradorId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("DataFim")
@@ -57,15 +57,51 @@ namespace Codeizi.Curso.RH.Infra.Data.Migrations
                         .HasColumnName("DataInicio")
                         .HasColumnType("datetime2");
 
+                    b.Property<DateTime>("PeriodoAquisitivo")
+                        .HasColumnType("datetime2");
+
                     b.Property<double>("SalarioContratual")
                         .HasColumnName("SalarioContratual")
                         .HasColumnType("float");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ColaboradorId1");
+                    b.HasIndex("ColaboradorId");
 
                     b.ToTable("Contrato");
+                });
+
+            modelBuilder.Entity("Codeizi.Curso.RH.Domain.Ocorrencias.Ferias.OcorrenciaDeFerias", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ContradoId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("DataDeInicio")
+                        .HasColumnName("DataDeInicio")
+                        .HasColumnType("datetime2");
+
+                    b.Property<byte>("DiasDeAbono")
+                        .HasColumnName("DiasDeAboino")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("DiasDeFerias")
+                        .HasColumnName("DiasDeFerias")
+                        .HasColumnType("tinyint");
+
+                    b.Property<DateTime>("PeriodoArquisitivo")
+                        .HasColumnName("PeriodoAquisitivo")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ContradoId");
+
+                    b.ToTable("OcorrenciaDeFerias");
                 });
 
             modelBuilder.Entity("Codeizi.Curso.RH.Domain.Colaboradores.Colaborador", b =>
@@ -100,8 +136,18 @@ namespace Codeizi.Curso.RH.Infra.Data.Migrations
                 {
                     b.HasOne("Codeizi.Curso.RH.Domain.Colaboradores.Colaborador", "Colaborador")
                         .WithMany("Contratos")
-                        .HasForeignKey("ColaboradorId1")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("ColaboradorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Codeizi.Curso.RH.Domain.Ocorrencias.Ferias.OcorrenciaDeFerias", b =>
+                {
+                    b.HasOne("Codeizi.Curso.RH.Domain.Colaboradores.Contrato", "Contrato")
+                        .WithMany("Ferias")
+                        .HasForeignKey("ContradoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

@@ -15,26 +15,24 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Infra.Data.Repositories
         public CalculoRepository(IConfiguration configuration)
             => Configuration = configuration;
 
-        public Task InsiraValoresCalculados(ComponentesCalculados componentesCalculados)
+        public async Task InsiraValoresCalculados(ComponentesCalculados componentesCalculados)
         {
             using var connection = ConnectionFactory.Get(Configuration);
 
             var sql = @"INSERT INTO VALORESCALCULADOS (IdColaborador,IdContrato,Referencia,IdValor,Valor)" +
                         " VALUES (@IdColaborador,@IdContrato,@Referencia,@IdValor,@Valor)";
 
-            Parallel.ForEach(componentesCalculados.Valores.AsList(), valor =>
+            foreach(var c in componentesCalculados.Valores.AsList())
             {
-                connection.ExecuteAsync(sql, new
+                await connection.ExecuteAsync(sql, new
                 {
                     componentesCalculados.IdColaborador,
                     componentesCalculados.IdContrato,
                     Referencia = new FieldDatetimeCustom(componentesCalculados.Referencia).ToInt(),
-                    IdValor = (int)valor.Key,
-                    Valor = valor.Value
+                    IdValor = (int)c.Key,
+                    c.Value.Valor
                 });
-            });
-
-            return Task.CompletedTask;
+            };            
         }
     }
 }

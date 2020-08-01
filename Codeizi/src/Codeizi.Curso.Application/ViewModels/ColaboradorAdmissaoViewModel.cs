@@ -25,5 +25,7 @@ namespace Codeizi.Curso.RH.Application.ViewModels
         [Required(ErrorMessage = "Data de nascimento obrigatória")]
         [DataType(DataType.Date, ErrorMessage = "Data de nascimento em formato inválido")]
         public DateTime DataNascimento { get; set; }
+
+        public Guid Id { get; set; }
     }
 }

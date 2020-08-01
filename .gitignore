@@ -63,3 +63,11 @@ Codeizi/src/Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ/bin/*
 Codeizi/src/Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ/obj/*
 Codeizi/functional test/Codeizi.Curso.FunctionalTest/bin/*
 Codeizi/functional test/Codeizi.Curso.FunctionalTest/obj/*
+Codeizi/src/Codeizi.Curso.Identity/bin/*
+Codeizi/src/Codeizi.Curso.Identity/obj/*
+Codeizi/src/Codeizi.Curso.APIGateway/bin/*
+Codeizi/src/Codeizi.Curso.APIGateway/obj/*
+Codeizi/src/Codeizi.Curso.RH.Query.Api/bin/*
+Codeizi/src/Codeizi.Curso.RH.Query.Api/obj/*
+Codeizi/src/Codeizi.Curso.Infra.CrossCutting.Identity/obj/*
+Codeizi/src/Codeizi.Curso.Infra.CrossCutting.Identity/bin/*

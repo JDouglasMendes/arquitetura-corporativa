@@ -1,4 +1,5 @@
 ﻿using Codeizi.Curso.Infra.CrossCutting.Configuration;
+using Codeizi.Curso.Infra.CrossCutting.Identity;
 using Codeizi.Curso.RH.Application.AutoMapper;
 using Codeizi.Curso.RH.Domain.Colaboradores.CommandHandlers;
 using Codeizi.Curso.RH.Domain.Colaboradores.Commands;
@@ -39,6 +40,8 @@ namespace Codeizi.Curso.RH.Infra.CrossCutting.IoC
             services.AddScoped<IEventStore, EventStoreMongoDB>();
             services.AddScoped<DatabaseEventSource>();
             services.AddScoped<CodeiziContext>();
+
+            services.AddScoped<IUser, UserContext>();
         }
 
         private static void AdicioneCamadaApplication(IServiceCollection services)
@@ -57,6 +60,7 @@ namespace Codeizi.Curso.RH.Infra.CrossCutting.IoC
         {
             services.AddScoped<INotificationHandler<NovoColaboradorParaCalculoEvent>, ColaboradorEventHandler>();
             services.AddScoped<INotificationHandler<ColaboradorEventSource>, ColaboradorEventHandler>();
+            services.AddScoped<INotificationHandler<ContratoQueryEvent>, ColaboradorEventHandler>();
 
             services.AddScoped<IRequestHandler<AdmissaoColaboradorCommand, bool>, ColaboradorCommandHandler>();
         }

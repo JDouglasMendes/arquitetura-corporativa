@@ -7,7 +7,7 @@ namespace Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ
 {
     public static class FactoryPublishable
     {
-        public static Publishable Get<T>(string id, string eventName, T data) where T : class
+        public static Publishable Get<T>(Guid id, string eventName, T data) where T : class
             =>  new Publishable(id, eventName, JsonConvert.SerializeObject(data));        
     }
 }

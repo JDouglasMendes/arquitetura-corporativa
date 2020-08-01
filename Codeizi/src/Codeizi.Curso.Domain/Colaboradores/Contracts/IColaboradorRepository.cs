@@ -6,8 +6,8 @@ namespace Codeizi.Curso.RH.Domain.Colaboradores.Contracts
 {
     public interface IColaboradorRepository
     {
-        IEnumerable<Contrato> BusqueTodosContratos(Guid guid);
-
+        IEnumerable<Contrato> BusqueTodosContratos(Guid idColaborador);
+        Task<Contrato> ObtenhaContrato(Guid idContrato);
         Task RealizeAdmissao(Colaborador colaborador);
     }
 }

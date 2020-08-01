@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+using Codeizi.Curso.RH.Application.Converters;
 using Codeizi.Curso.RH.Application.ViewModels;
 using Codeizi.Curso.RH.Domain.Colaboradores.Commands;
+using Codeizi.Curso.RH.Domain.Ocorrencias.Ferias.Commands;
 
 namespace Codeizi.Curso.RH.Application.AutoMapper
 {
@@ -13,6 +15,9 @@ namespace Codeizi.Curso.RH.Application.AutoMapper
                 {
                     ObservacaoContratual = x.ObservacaoContratual,
                 });
+
+            CreateMap<RegistrarOcorrenciaDeFeriasViewModel, RegistrarOcorrenciaDeFeriasCommand>()
+                .ConvertUsing<RegistrarOcorrenciaDeFeriasCommandConverter>();
         }
     }
 }

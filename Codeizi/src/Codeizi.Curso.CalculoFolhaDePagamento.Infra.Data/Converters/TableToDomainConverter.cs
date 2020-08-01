@@ -5,13 +5,13 @@ using System;
 
 namespace Codeizi.Curso.CalculoFolhaDePagamento.Infra.Data.Converters
 {
-    public class TableToDomainConverter
+    public static class TableToDomainConverter
     {
-        public static Func<ContratoTable, Contrato> TableToContratoPadrao = (table) =>
-            new Contrato(table.IdColaborador,
-                         table.IdContrato,
-                         table.DataFim != null ?
-                            new Vigencia(new FieldDatetimeCustom(table.DataInicio).ToDateTime().Value, new FieldDatetimeCustom(table.DataFim.Value).ToDateTime().Value) :
+        public static Func<ContratoTable, Contrato> Contrato = (table) =>
+            new Contrato(Guid.Parse(table.IdColaborador),
+                         Guid.Parse(table.IdContrato),
+                         table.DataFim != null && table.DataFim.Value > 0?
+                            new Vigencia(new FieldDatetimeCustom(table.DataInicio).ToDateTime().Value, new FieldDatetimeCustom(table.DataFim.Value).Value.Value) :
                             new Vigencia(new FieldDatetimeCustom(table.DataInicio).ToDateTime().Value),
                          new ValorComponenteCalculo(table.SalarioContratual));
     }

@@ -1,7 +1,9 @@
 ﻿using StackExchange.Redis;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Codeizi.Curso.Infra.CrossCutting.Redis
 {
+    [ExcludeFromCodeCoverage]
     public class DatabaseRedis
     {
         private readonly MultiplexerRedis multiplexerRedis;

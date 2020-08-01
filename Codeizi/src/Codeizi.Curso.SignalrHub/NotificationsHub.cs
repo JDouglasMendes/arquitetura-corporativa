@@ -1,12 +1,13 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using IdentityServer4;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.SignalR;
 using System;
 using System.Threading.Tasks;
 
 namespace Codeizi.Curso.SignalrHub
 {
-    [Authorize]
-    public class NotificationsHub : Hub
+    [Authorize(IdentityServerConstants.LocalApi.PolicyName)]
+    public class NotificationsHub : Hub 
     {
         public override async Task OnConnectedAsync()
         {

@@ -43,6 +43,15 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Infra.Data.Services
             }
         }
 
+        public int PercentualExecucao(Guid idExecucao)
+        {
+            var conteudo = databaseRedis.GetClient().StringGet(idExecucao.ToString());
+            if (conteudo.HasValue)
+                return int.Parse(Conteudo(conteudo, EnumPosicaoValores.QuantidadeProcessada));
+
+            return 0;
+        }
+
         private enum EnumPosicaoValores
         {
             DataInicioProcessamento,

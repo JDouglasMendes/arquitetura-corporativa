@@ -1,5 +1,7 @@
 ﻿using Codeizi.Curso.RH.Infra.Data.Map;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using System;
 
 namespace Codeizi.Curso.RH.Infra.Data.Context
 {
@@ -12,6 +14,7 @@ namespace Codeizi.Curso.RH.Infra.Data.Context
         {
             modelBuilder.ApplyConfiguration(new ColaboradorMap());
             modelBuilder.ApplyConfiguration(new ContratoMap());
+            modelBuilder.ApplyConfiguration(new OcorrenciaDeFeriasMap());
             base.OnModelCreating(modelBuilder);
         }
     }

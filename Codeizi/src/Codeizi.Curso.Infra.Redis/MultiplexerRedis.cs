@@ -1,8 +1,10 @@
 ﻿using Codeizi.Curso.Infra.CrossCutting.Configuration;
 using StackExchange.Redis;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Codeizi.Curso.Infra.CrossCutting.Redis
 {
+    [ExcludeFromCodeCoverage]
     public class MultiplexerRedis
     {
         private ConnectionMultiplexer _instance;
@@ -12,7 +14,7 @@ namespace Codeizi.Curso.Infra.CrossCutting.Redis
         public MultiplexerRedis(ICodeiziConfiguration codeiziConfiguration)
             => this.codeiziConfiguration = codeiziConfiguration;
 
-        private static object _lock = new object();
+        private static readonly object _lock = new object();
 
         public ConnectionMultiplexer GetConnection()
         {

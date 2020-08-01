@@ -17,8 +17,7 @@ namespace Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ
         private readonly ILogger<DefaultRabbitMQPersistentConnection> _logger;
         private readonly int _retryCount;
         private IConnection _connection;
-        private bool _disposed;
-
+        private bool _disposed;      
         private readonly object sync_root = new object();
 
         public DefaultRabbitMQPersistentConnection(IConnectionFactory connectionFactory, ILogger<DefaultRabbitMQPersistentConnection> logger, int retryCount = 5)
@@ -44,22 +43,6 @@ namespace Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ
             }
 
             return _connection.CreateModel();
-        }
-
-        public void Dispose()
-        {
-            if (_disposed) return;
-
-            _disposed = true;
-
-            try
-            {
-                _connection.Dispose();
-            }
-            catch (IOException ex)
-            {
-                _logger.LogCritical(ex.ToString());
-            }
         }
 
         public bool TryConnect()
@@ -126,6 +109,35 @@ namespace Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ
             _logger.LogWarning("A RabbitMQ connection is on shutdown. Trying to re-connect...");
 
             TryConnect();
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!_disposed)
+            {
+                if (disposing)
+                {
+                    if (_disposed) return;
+
+                    _disposed = true;
+
+                    try
+                    {
+                        _connection.Dispose();
+                    }
+                    catch (IOException ex)
+                    {
+                        _logger.LogCritical(ex.ToString());
+                    }
+                }
+                _disposed = true;
+            }
+        }
+
+        public void Dispose()
+        {            
+            Dispose(disposing: true);
+            GC.SuppressFinalize(this);
         }
     }
 }

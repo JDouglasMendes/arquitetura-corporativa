@@ -49,13 +49,13 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Infra.Data.Repositories
 
             var sql = "SELECT Id,IdColaborador,IdContrato,DataInicio,DataFim,SalarioContratual " +
                        " from CONTRATO " +
-                       " WHERE DataInicio BETWEEN @inicio AND @fim";
+                       " WHERE (DataInicio <= @inicio AND Datafim = 0) OR (DataInicio <= @inicio AND Datafim >= @fim)";
 
             using var connection = ConnectionFactory.Get(Configuration);
             var listas = connection.Query<ContratoTable>(sql, parametros);
             return listas
                 .ToList()
-                .ConvertAll(new Converter<ContratoTable, Contrato>(TableToDomainConverter.TableToContratoPadrao));
+                .ConvertAll(new Converter<ContratoTable, Contrato>(TableToDomainConverter.Contrato));
         }
     }
 }

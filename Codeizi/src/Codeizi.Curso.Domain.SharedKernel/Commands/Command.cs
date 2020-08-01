@@ -1,4 +1,5 @@
 ﻿using Codeizi.Curso.RH.Domain.SharedKernel.Events;
+using FluentValidation;
 using FluentValidation.Results;
 
 namespace Codeizi.Curso.RH.Domain.SharedKernel.Commands
