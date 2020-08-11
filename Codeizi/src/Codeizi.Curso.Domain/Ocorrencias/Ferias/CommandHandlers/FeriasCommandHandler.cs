@@ -25,7 +25,6 @@ namespace Codeizi.Curso.RH.Domain.Ocorrencias.Ferias.CommandHandlers
                                    IMediatorHandler bus,
                                    INotificationHandler<DomainNotification> notifications)
         : base(uow, bus, notifications)
-
         {
             _ocorrenciaDeDeriasRepository = ocorrenciaDeDeriasRepository;
             _colaboradorRepository = colaboradorRepository;

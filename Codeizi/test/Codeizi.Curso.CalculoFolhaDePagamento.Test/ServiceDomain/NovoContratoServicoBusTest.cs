@@ -3,6 +3,7 @@ using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Services.BusModel;
 using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Services.Repositories;
 using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Services.ServiceDomain;
 using Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ;
+using Codeizi.Curso.Infra.CrossCutting.Configuration;
 using FluentAssertions;
 using NSubstitute;
 using System;
@@ -19,7 +20,9 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Test.ServiceDomain
             var mock = Substitute.For<IContratoRepository>();
             mock.InsiraNovoContrato(Arg.Any<ContratoBusModel>(), 
                                     Arg.Any<Func<ContratoBusModel, Contrato>>());
-            var bus = new NovoContratoServicoBus(mock);
+            var mockConfiguration = Substitute.For<ICodeiziConfiguration>();
+
+            var bus = new NovoContratoServicoBus(mock, mockConfiguration);
             var contrato = CenarioContratoBusModel.CrieContrato;
             var publishable = FactoryPublishable.Get(contrato.IdColaborador, "add-contrato", contrato);
             var result = bus.Handle(publishable);

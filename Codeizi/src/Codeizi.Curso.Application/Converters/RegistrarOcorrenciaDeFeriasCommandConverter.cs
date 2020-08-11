@@ -1,34 +1,30 @@
 ﻿using AutoMapper;
 using Codeizi.Curso.RH.Application.ViewModels;
 using Codeizi.Curso.RH.Domain.Ocorrencias.Ferias.Commands;
-using Codeizi.Curso.RH.Domain.Ocorrencias.Ferias.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Codeizi.Curso.RH.Domain.Ocorrencias.Ferias.Validations;
 
 namespace Codeizi.Curso.RH.Application.Converters
 {
     public class RegistrarOcorrenciaDeFeriasCommandConverter : ITypeConverter<RegistrarOcorrenciaDeFeriasViewModel, RegistrarOcorrenciaDeFeriasCommand>
     {
-        private readonly IOcorrenciaDeDeriasRepository _ocorrenciaDeDeriasRepository;
+        private readonly RegistrarOcorrenciaDeFeriasCommandValidation _registrarOcorrenciaDeFeriasCommandValidation;
 
-        public RegistrarOcorrenciaDeFeriasCommandConverter(IOcorrenciaDeDeriasRepository ocorrenciaDeDeriasRepository)
+        public RegistrarOcorrenciaDeFeriasCommandConverter(RegistrarOcorrenciaDeFeriasCommandValidation registrarOcorrenciaDeFeriasCommandValidation)
         {
-            _ocorrenciaDeDeriasRepository = ocorrenciaDeDeriasRepository;
+            _registrarOcorrenciaDeFeriasCommandValidation = registrarOcorrenciaDeFeriasCommandValidation;
         }
 
         public RegistrarOcorrenciaDeFeriasCommand Convert(RegistrarOcorrenciaDeFeriasViewModel source,
                                                            RegistrarOcorrenciaDeFeriasCommand destination,
                                                            ResolutionContext context)
         {
-            return new RegistrarOcorrenciaDeFeriasCommand(source.IdColaborador,
+            return new RegistrarOcorrenciaDeFeriasCommand(_registrarOcorrenciaDeFeriasCommandValidation,
+                source.IdColaborador,
                 source.IdContrato,
                 source.PeriodoAquisitivo,
                 source.DataDeInicio,
                 source.DiasDeFerias,
-                source.DiasDeAbono,
-                _ocorrenciaDeDeriasRepository);
-
+                source.DiasDeAbono);
         }
     }
 }

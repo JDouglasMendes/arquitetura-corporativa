@@ -5,6 +5,8 @@ using Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ;
 using Codeizi.Curso.Infra.CrossCutting.Identity;
 using NSubstitute;
 using System;
+using System.Diagnostics;
+using System.IO;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -14,7 +16,7 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Test.Domain
     {
         [Fact]
         public void CalculeContratos()
-        {
+        {            
             var quantidadeCalls = 500;
             var mockCalculoRepository = Substitute.For<ICalculoRepository>();
             mockCalculoRepository
@@ -29,7 +31,7 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Test.Domain
             var mockRabbtimq = Substitute.For<IRabbitMQBus>();
 
             var mockUser = Substitute.For<IUser>();
-
+            
             var builder = new CalculoBuilder(DateTime.Now,
                                              EnumFolhaDePagamento.Mensal,
                                              mockCalculoRepository,

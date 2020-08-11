@@ -91,18 +91,17 @@ namespace Codeizi.Curso.Domain.Test.Ocorrencias.Ferias.Validations
         public void Sem_saldo_de_ferias_periodo_aquisitivo()
         {
             // Arrange
-            var mock = Substitute.For<IOcorrenciaDeDeriasRepository>();
+            var mock = Substitute.For<IOcorrenciaDeDeriasRepository>();            
             var contratoMock = Substitute.For<Contrato>();
             mock.ObtenhaOcorrenciasDoPeriodoAquisitivo(Arg.Any<Guid>(), Arg.Any<DateTime>())
                 .Returns(new List<OcorrenciaDeFerias>()
                 {
                     new OcorrenciaDeFerias(contratoMock, new DateTime(2020, 1, 2), 30, 0),
                 });
-            var command = CenarioOcorrenciaDeFeriasCommandBuilder.Crie(mock);
 
             // act
             var validation = new RegistrarOcorrenciaDeFeriasCommandValidation(mock);
-
+            var command = CenarioOcorrenciaDeFeriasCommandBuilder.Crie(validation);
             // Assert
             validation.ShouldHaveValidationErrorFor(x => x.DiasDeFerias, command);
         }
@@ -111,20 +110,19 @@ namespace Codeizi.Curso.Domain.Test.Ocorrencias.Ferias.Validations
         public void Saldo_ferias_periodo_aquisitivo_com_parcela()
         {
             // Arrange
-            var mock = Substitute.For<IOcorrenciaDeDeriasRepository>();
+            var mock = Substitute.For<IOcorrenciaDeDeriasRepository>();            
             var contratoMock = Substitute.For<Contrato>();
             mock.ObtenhaOcorrenciasDoPeriodoAquisitivo(Arg.Any<Guid>(), Arg.Any<DateTime>())
                 .Returns(new List<OcorrenciaDeFerias>()
                 {
                     new OcorrenciaDeFerias(contratoMock, new DateTime(2020, 1, 2), 15, 0),
                 });
-            var command = CenarioOcorrenciaDeFeriasCommandBuilder.Crie(mock);
-            command.DiasDeAbono = 0;
-            command.DiasDeFerias = 15;
 
             // act
             var validation = new RegistrarOcorrenciaDeFeriasCommandValidation(mock);
-
+            var command = CenarioOcorrenciaDeFeriasCommandBuilder.Crie(validation);
+            command.DiasDeAbono = 0;
+            command.DiasDeFerias = 15;
             // Assert
             validation.ShouldNotHaveValidationErrorFor(x => x.DiasDeFerias, command);
         }
@@ -136,11 +134,11 @@ namespace Codeizi.Curso.Domain.Test.Ocorrencias.Ferias.Validations
             var mock = Substitute.For<IOcorrenciaDeDeriasRepository>();
             mock.ObtenhaOcorrenciasDoPeriodoAquisitivo(Arg.Any<Guid>(), Arg.Any<DateTime>())
                 .Returns(new List<OcorrenciaDeFerias>());
-            var command = CenarioOcorrenciaDeFeriasCommandBuilder.Crie(mock);
-            transforme(command);
 
             // act
             var validation = new RegistrarOcorrenciaDeFeriasCommandValidation(mock);
+            var command = CenarioOcorrenciaDeFeriasCommandBuilder.Crie(validation);
+            transforme(command);
 
             // Assert
             validation.ShouldHaveValidationErrorFor(assert, command);
@@ -152,11 +150,9 @@ namespace Codeizi.Curso.Domain.Test.Ocorrencias.Ferias.Validations
             var mock = Substitute.For<IOcorrenciaDeDeriasRepository>();
             mock.ObtenhaOcorrenciasDoPeriodoAquisitivo(Arg.Any<Guid>(), Arg.Any<DateTime>())
                 .Returns(new List<OcorrenciaDeFerias>());
-            var command = CenarioOcorrenciaDeFeriasCommandBuilder.Crie(mock);
-
             // act
             var validation = new RegistrarOcorrenciaDeFeriasCommandValidation(mock);
-
+            var command = CenarioOcorrenciaDeFeriasCommandBuilder.Crie(validation);
             // Assert
             validation.ShouldNotHaveValidationErrorFor(assert, command);
         }
@@ -168,12 +164,11 @@ namespace Codeizi.Curso.Domain.Test.Ocorrencias.Ferias.Validations
             var mock = Substitute.For<IOcorrenciaDeDeriasRepository>();
             mock.ObtenhaOcorrenciasDoPeriodoAquisitivo(Arg.Any<Guid>(), Arg.Any<DateTime>())
                 .Returns(new List<OcorrenciaDeFerias>());
-            var command = CenarioOcorrenciaDeFeriasCommandBuilder.Crie(mock);
-            transforme(command);
 
             // act
             var validation = new RegistrarOcorrenciaDeFeriasCommandValidation(mock);
-
+            var command = CenarioOcorrenciaDeFeriasCommandBuilder.Crie(validation);
+            transforme(command);
             // Assert
             validation.ShouldNotHaveValidationErrorFor(assert, command);
         }

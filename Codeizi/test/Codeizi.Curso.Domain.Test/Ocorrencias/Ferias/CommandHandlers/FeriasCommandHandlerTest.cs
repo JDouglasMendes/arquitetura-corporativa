@@ -3,7 +3,9 @@ using Codeizi.Curso.RH.Domain.Colaboradores.Contracts;
 using Codeizi.Curso.RH.Domain.Contracts.Repository;
 using Codeizi.Curso.RH.Domain.Ocorrencias.Ferias;
 using Codeizi.Curso.RH.Domain.Ocorrencias.Ferias.CommandHandlers;
+using Codeizi.Curso.RH.Domain.Ocorrencias.Ferias.Commands;
 using Codeizi.Curso.RH.Domain.Ocorrencias.Ferias.Contracts;
+using Codeizi.Curso.RH.Domain.Ocorrencias.Ferias.Validations;
 using Codeizi.Curso.RH.Domain.SharedKernel.IMediatorBus;
 using Codeizi.Curso.RH.Domain.SharedKernel.Notifications;
 using Codeizi.Curso.RH.Domain.SharedKernel.ValueObjects;
@@ -26,10 +28,11 @@ namespace Codeizi.Curso.Domain.Test.Ocorrencias.Ferias.CommandHandlers
             // Arrange
             var mockContrato = Substitute.For<Contrato>();
             var mockOcorrenciaRepository = Substitute.For<IOcorrenciaDeDeriasRepository>();
+            var validation = new RegistrarOcorrenciaDeFeriasCommandValidation(mockOcorrenciaRepository);
             mockOcorrenciaRepository.ObtenhaOcorrenciasDoPeriodoAquisitivo(Arg.Any<Guid>(), Arg.Any<DateTime>())
                 .Returns(new List<OcorrenciaDeFerias>());
             var mockColaboradorRepository = Substitute.For<IColaboradorRepository>();
-            var colaborador = Substitute.For<Contrato>();
+
             mockColaboradorRepository.BusqueColaborador(Arg.Any<Guid>())
                 .Returns(new Colaborador(Guid.NewGuid(), NomePessoa.Crie("Codeizi", "Treinamento"), DateTime.Now.AddYears(-33)));
             mockColaboradorRepository.ObtenhaContrato(Arg.Any<Guid>()).Returns(mockContrato);
@@ -45,7 +48,7 @@ namespace Codeizi.Curso.Domain.Test.Ocorrencias.Ferias.CommandHandlers
                 mockMediator,
                 mockNotification);
 
-            var request = CenarioOcorrenciaDeFeriasCommandBuilder.Crie(mockOcorrenciaRepository);
+            var request = CenarioOcorrenciaDeFeriasCommandBuilder.Crie(validation);
 
             // Act
             var result = await feriasCommand.Handle(request, CancellationToken.None);
@@ -59,8 +62,9 @@ namespace Codeizi.Curso.Domain.Test.Ocorrencias.Ferias.CommandHandlers
             // Arrange
             var mockContrato = Substitute.For<Contrato>();
             var mockOcorrenciaRepository = Substitute.For<IOcorrenciaDeDeriasRepository>();
+            var validation = new RegistrarOcorrenciaDeFeriasCommandValidation(mockOcorrenciaRepository);
             mockOcorrenciaRepository.ObtenhaOcorrenciasDoPeriodoAquisitivo(Arg.Any<Guid>(), Arg.Any<DateTime>())
-                .Returns(new List<OcorrenciaDeFerias>() { 
+                .Returns(new List<OcorrenciaDeFerias>() {
                     new OcorrenciaDeFerias(mockContrato, new DateTime(2020, 1, 2), 30, 0),
                 });
             var mockColaboradorRepository = Substitute.For<IColaboradorRepository>();
@@ -77,7 +81,7 @@ namespace Codeizi.Curso.Domain.Test.Ocorrencias.Ferias.CommandHandlers
                 mockMediator,
                 mockNotification);
 
-            var request = CenarioOcorrenciaDeFeriasCommandBuilder.Crie(mockOcorrenciaRepository);
+            var request = CenarioOcorrenciaDeFeriasCommandBuilder.Crie(validation);
 
             // Act
             var result = await feriasCommand.Handle(request, CancellationToken.None);

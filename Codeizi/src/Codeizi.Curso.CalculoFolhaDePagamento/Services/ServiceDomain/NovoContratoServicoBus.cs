@@ -3,17 +3,21 @@ using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Domain.Contratos;
 using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Services.BusModel;
 using Codeizi.Curso.CalculoFolhaDePagamento.Domain.Services.Repositories;
 using Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ;
+using Codeizi.Curso.Infra.CrossCutting.Configuration;
 using System.Threading.Tasks;
 
 namespace Codeizi.Curso.CalculoFolhaDePagamento.Domain.Services.ServiceDomain
 {
-    [ServiceMediatorBus("add-contrato")]
-    public class NovoContratoServicoBus
+    // [ServiceMediatorBus("add-contrato")]
+    public class NovoContratoServicoBus : IConsumerServiceBus
     {
-        private readonly IContratoRepository contratoRepository;
+        private readonly IContratoRepository _contratoRepository;
+        private readonly ICodeiziConfiguration _codeiziConfiguration;
+        public NovoContratoServicoBus(IContratoRepository contratoRepository,
+                                      ICodeiziConfiguration codeiziConfiguration)
+            => (_contratoRepository, _codeiziConfiguration) = (contratoRepository, codeiziConfiguration);
 
-        public NovoContratoServicoBus(IContratoRepository contratoRepository)
-            => this.contratoRepository = contratoRepository;
+        public string RoutingKey => _codeiziConfiguration.CalculoFolhaDePagamentoQueue;
 
         public static Contrato ConvertTo(ContratoBusModel x)
         {
@@ -31,7 +35,7 @@ namespace Codeizi.Curso.CalculoFolhaDePagamento.Domain.Services.ServiceDomain
         public Task Handle(Publishable publishable)
         {
             var contrato = publishable.ToObject<ContratoBusModel>();
-            contratoRepository.InsiraNovoContrato(contrato, ConvertTo);
+            _contratoRepository.InsiraNovoContrato(contrato, ConvertTo);
             return Task.CompletedTask;
         }
     }

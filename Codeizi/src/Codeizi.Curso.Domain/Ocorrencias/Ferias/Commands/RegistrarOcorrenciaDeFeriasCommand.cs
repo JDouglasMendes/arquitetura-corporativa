@@ -6,15 +6,14 @@ namespace Codeizi.Curso.RH.Domain.Ocorrencias.Ferias.Commands
 {
     public class RegistrarOcorrenciaDeFeriasCommand : OcorrenciaDeFeriasCommand
     {
-        private readonly IOcorrenciaDeDeriasRepository _ocorrenciaDeDeriasRepository;
-
-        public RegistrarOcorrenciaDeFeriasCommand(Guid idColaborador,
+        private readonly RegistrarOcorrenciaDeFeriasCommandValidation _validations;
+        public RegistrarOcorrenciaDeFeriasCommand(RegistrarOcorrenciaDeFeriasCommandValidation validations,
+            Guid idColaborador,
             Guid idContrato,
             DateTime periodoAquisitivo,
             DateTime dataDeInicio,
             byte diasDeFerias,
-            byte diasDeAbono,
-            IOcorrenciaDeDeriasRepository ocorrenciaDeDeriasRepository)
+            byte diasDeAbono)
         {
             IdColaborador = idColaborador;
             IdContrato = idContrato;
@@ -22,14 +21,12 @@ namespace Codeizi.Curso.RH.Domain.Ocorrencias.Ferias.Commands
             DataDeInicio = dataDeInicio;
             DiasDeFerias = diasDeFerias;
             DiasDeAbono = diasDeAbono;
-            _ocorrenciaDeDeriasRepository = ocorrenciaDeDeriasRepository;
+            _validations = validations;
         }
 
         public override bool IsValid()
         {
-            ValidationResult = new RegistrarOcorrenciaDeFeriasCommandValidation(_ocorrenciaDeDeriasRepository)
-                .Validate(this);
-
+            ValidationResult = _validations.Validate(this);
             return ValidationResult.IsValid;
         }
     }

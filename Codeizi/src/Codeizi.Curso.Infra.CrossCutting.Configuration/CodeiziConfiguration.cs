@@ -17,7 +17,18 @@ namespace Codeizi.Curso.Infra.CrossCutting.Configuration
 
         public string ConnectionStringRedis => Configuration.GetSection("Redis:Connection").Value;
 
-       
+        public string CalculoFolhaDePagamentoQueue => Configuration["CalculoFolhaDePagamentoQueue"];
+
+        public string RHQueryQueue => Configuration["RHQueryQueue"];
+
+        public string SignalHbQueue => Configuration["SignalHbQueue"];
+
+        public string AgendamentoDeFeriasQueryBus => Configuration["AgendamentoDeFeriasQueryBus"];
+
+        public string ContratoQueryBus => Configuration["ContratoQueryBus"];
+
+        public string NotificarUsuarioRoutingKey => Configuration["NotificarUsuarioRoutingKey"];
+
         public CodeiziConfiguration(IHostEnvironment env)
         {
             var builder = new ConfigurationBuilder()

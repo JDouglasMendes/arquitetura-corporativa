@@ -6,6 +6,7 @@ using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using RabbitMQ.Client.Exceptions;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net.Sockets;
 using System.Reflection;
@@ -27,6 +28,7 @@ namespace Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ
         private bool disposedValue;
         private readonly string _queueName;
         private readonly Type _type;
+        private Dictionary<string, IConsumerServiceBus> _consumers;
 
         public EventBusRabbitMQ(IRabbitMQPersistentConnection persistentConnection,
                                 ILogger<EventBusRabbitMQ> logger,
@@ -97,26 +99,48 @@ namespace Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ
             }
         }
 
+        private static readonly object _lock = new object();
+
+        private void LoadConsumers()
+        {
+            lock (_lock)
+            {
+                if (_consumers != null)
+                    return;
+
+                _consumers = new Dictionary<string, IConsumerServiceBus>();
+
+                var consumersType = _type.Assembly.GetTypes().Where(t =>
+                                        {
+                                            if (t.IsClass && !t.IsAbstract && t.GetInterface(nameof(IConsumerServiceBus)) != null)
+                                                return true;
+                                            return false;
+                                        }).ToList();
+
+                consumersType.ForEach(type =>
+                {
+                    var instance = _services.BuildServiceProvider().GetRequiredService(type);
+                    if (instance is IConsumerServiceBus consumer)
+                        _consumers.Add(consumer.RoutingKey, consumer);
+                });
+            }
+        }
+
         private async Task Consumer_Received(object sender, BasicDeliverEventArgs eventArgs)
         {
+            LoadConsumers();
+
             var eventName = eventArgs.RoutingKey;
             var message = Encoding.UTF8.GetString(eventArgs.Body.ToArray());
 
             try
             {
-                if (message.ToLowerInvariant().Contains("throw-fake-exception"))
-                {
-                    throw new InvalidOperationException($"Fake exception requested: \"{message}\"");
-                }
-
                 await ProcessEvent(eventName, message);
             }
-#pragma warning disable CA1031 // Do not catch general exception types
             catch (Exception ex)
             {
                 _logger.LogWarning(ex, "----- ERROR Processing message \"{Message}\"", message);
             }
-#pragma warning restore CA1031 // Do not catch general exception types
 
             // Even on exception we take the message off the queue.
             // in a REAL WORLD app this should be handled with a Dead Letter Exchange (DLX).
@@ -127,7 +151,7 @@ namespace Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ
         private async Task ProcessEvent(string eventName, string message)
         {
             _logger.LogTrace("Processing RabbitMQ event: {EventName}", eventName);
-
+            /*
             var handle = _services
                 .BuildServiceProvider()
                 .GetRequiredService(GetTypeByName(eventName));
@@ -135,8 +159,12 @@ namespace Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ
             var publishable = JsonConvert.DeserializeObject<Publishable>(message);
 
             await (Task)handle.GetType().GetMethod("Handle").Invoke(handle, new object[] { publishable });
+            */
+            var publishable = JsonConvert.DeserializeObject<Publishable>(message);
+            if (_consumers.ContainsKey(eventName))
+                await _consumers[eventName].Handle(publishable);
         }
-
+        /*
         private Type GetTypeByName(string eventName)
         {
             var result = _type.Assembly.GetTypes().Where(t =>
@@ -149,7 +177,7 @@ namespace Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ
 
             return result;
         }
-
+        */
         public Task Publisher<T>(T publishable) where T : Publishable
         {
             if (!_persistentConnection.IsConnected)
@@ -208,9 +236,9 @@ namespace Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ
                 disposedValue = true;
             }
         }
-        
+
         public void Dispose()
-        {        
+        {
             Dispose(disposing: true);
             GC.SuppressFinalize(this);
         }

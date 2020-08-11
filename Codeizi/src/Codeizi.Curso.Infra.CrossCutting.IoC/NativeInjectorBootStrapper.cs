@@ -10,6 +10,7 @@ using Codeizi.Curso.RH.Domain.Ocorrencias.Ferias.CommandHandlers;
 using Codeizi.Curso.RH.Domain.Ocorrencias.Ferias.Commands;
 using Codeizi.Curso.RH.Domain.Ocorrencias.Ferias.Events;
 using Codeizi.Curso.RH.Domain.Ocorrencias.Ferias.EventsHandlers;
+using Codeizi.Curso.RH.Domain.Ocorrencias.Ferias.Validations;
 using Codeizi.Curso.RH.Domain.SharedKernel.Events;
 using Codeizi.Curso.RH.Domain.SharedKernel.IMediatorBus;
 using Codeizi.Curso.RH.Domain.SharedKernel.Notifications;
@@ -46,6 +47,8 @@ namespace Codeizi.Curso.RH.Infra.CrossCutting.IoC
             services.AddScoped<CodeiziContext>();
 
             services.AddScoped<IUser, UserContext>();
+
+            services.AddScoped<RegistrarOcorrenciaDeFeriasCommandValidation>();
         }
 
         private static void AdicioneCamadaApplication(IServiceCollection services)
