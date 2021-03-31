@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infra.CrossCutting.Identity", "Infra.CrossCutting.Identity\Infra.CrossCutting.Identity.csproj", "{93CC7BD6-98BF-4B31-B8C6-3DA26E06624B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infra.Identity", "Infra.Identity\Infra.Identity.csproj", "{AD3ECF06-5164-4A2B-97A5-3D23265B0F15}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{93CC7BD6-98BF-4B31-B8C6-3DA26E06624B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93CC7BD6-98BF-4B31-B8C6-3DA26E06624B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93CC7BD6-98BF-4B31-B8C6-3DA26E06624B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93CC7BD6-98BF-4B31-B8C6-3DA26E06624B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD3ECF06-5164-4A2B-97A5-3D23265B0F15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD3ECF06-5164-4A2B-97A5-3D23265B0F15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD3ECF06-5164-4A2B-97A5-3D23265B0F15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD3ECF06-5164-4A2B-97A5-3D23265B0F15}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {58781BD9-BFB7-461D-B685-BB7D0F06255C}
+	EndGlobalSection
+EndGlobal

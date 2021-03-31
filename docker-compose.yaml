@@ -1,0 +1,52 @@
+version: '3.4'
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server
+    container_name: MsSqlServer
+    environment:
+    - ACCEPT_EULA=Y
+    - SA_PASSWORD=@Dm!n2021
+    ports:
+    - "1433:1433"
+    volumes:
+    - C:\SQLServer:/var/opt/mssql/data
+    networks:
+      - local-network
+
+  msgs-rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: msgs-rabbitmq
+    environment:
+    - RABBITMQ_DEFAULT_USER=@dmin
+    - RABBITMQ_DEFAULT_PASS=@Dm!n2021
+    ports:
+    - "6672:5672"
+    - "15672:15672"
+    networks:
+      - local-network
+      
+  identity:
+    image: identity
+    build:
+      context: .    
+    networks:
+      - local-network
+    ports:
+      - "50000:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__CodeiziCalculoFolhaPagamento=X
+      - ConnectionStrings__CodeiziIdentity=Server=MsSqlServer,1433;Database=CodeiziIdentity;User Id=sa;Password=@Dm!n2021;
+      - ConnectionStrings__BaseLog=X
+      - ConnectionStrings__EventSource=X
+      - RabbitMQConfigurations:HostName=X
+      - RabbitMQConfigurations:Port=X
+      - RabbitMQConfigurations:UserName=X
+      - RabbitMQConfigurations:Password=X
+    depends_on:
+      - sqlserver
+
+networks: 
+    local-network:
+        driver: bridge    

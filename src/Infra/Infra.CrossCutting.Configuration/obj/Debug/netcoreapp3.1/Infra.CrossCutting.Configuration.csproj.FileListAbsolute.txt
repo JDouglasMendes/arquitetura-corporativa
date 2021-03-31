@@ -1,0 +1,15 @@
+D:\Projetos\arquitetura-corporativa\src\Infra\Infra.CrossCutting.Configuration\bin\Debug\netcoreapp3.1\Infra.CrossCutting.Configuration.deps.json
+D:\Projetos\arquitetura-corporativa\src\Infra\Infra.CrossCutting.Configuration\bin\Debug\netcoreapp3.1\Infra.CrossCutting.Configuration.dll
+D:\Projetos\arquitetura-corporativa\src\Infra\Infra.CrossCutting.Configuration\bin\Debug\netcoreapp3.1\Infra.CrossCutting.Configuration.pdb
+D:\Projetos\arquitetura-corporativa\src\Infra\Infra.CrossCutting.Configuration\bin\Debug\netcoreapp3.1\Infra.CrossCutting.Configuration.xml
+D:\Projetos\arquitetura-corporativa\src\Infra\Infra.CrossCutting.Configuration\obj\Debug\netcoreapp3.1\Infra.CrossCutting.Configuration.AssemblyInfoInputs.cache
+D:\Projetos\arquitetura-corporativa\src\Infra\Infra.CrossCutting.Configuration\obj\Debug\netcoreapp3.1\Infra.CrossCutting.Configuration.AssemblyInfo.cs
+D:\Projetos\arquitetura-corporativa\src\Infra\Infra.CrossCutting.Configuration\obj\Debug\netcoreapp3.1\Infra.CrossCutting.Configuration.csproj.CoreCompileInputs.cache
+D:\Projetos\arquitetura-corporativa\src\Infra\Infra.CrossCutting.Configuration\obj\Debug\netcoreapp3.1\Infra.CrossCutting.Configuration.dll
+D:\Projetos\arquitetura-corporativa\src\Infra\Infra.CrossCutting.Configuration\obj\Debug\netcoreapp3.1\Infra.CrossCutting.Configuration.xml
+D:\Projetos\arquitetura-corporativa\src\Infra\Infra.CrossCutting.Configuration\obj\Debug\netcoreapp3.1\Infra.CrossCutting.Configuration.pdb
+D:\Projetos\arquitetura-corporativa\src\Infra\Infra.CrossCutting.Configuration\obj\Debug\netcoreapp3.1\Infra.CrossCutting.Configuration.csprojAssemblyReference.cache
+D:\Projetos\arquitetura-corporativa\src\Infra\package\netcoreapp3.1\Infra.CrossCutting.Configuration.deps.json
+D:\Projetos\arquitetura-corporativa\src\Infra\package\netcoreapp3.1\Infra.CrossCutting.Configuration.dll
+D:\Projetos\arquitetura-corporativa\src\Infra\package\netcoreapp3.1\Infra.CrossCutting.Configuration.pdb
+D:\Projetos\arquitetura-corporativa\src\Infra\package\netcoreapp3.1\Infra.CrossCutting.Configuration.xml

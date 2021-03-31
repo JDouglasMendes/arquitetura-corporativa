@@ -1,0 +1,10 @@
+D:\Projetos\arquitetura-corporativa\Codeizi\src\Codeizi.Curso.Domain.SharedKernel\bin\Release\netcoreapp3.1\Codeizi.Curso.Domain.SharedKernel.deps.json
+D:\Projetos\arquitetura-corporativa\Codeizi\src\Codeizi.Curso.Domain.SharedKernel\bin\Release\netcoreapp3.1\Codeizi.Curso.Domain.SharedKernel.dll
+D:\Projetos\arquitetura-corporativa\Codeizi\src\Codeizi.Curso.Domain.SharedKernel\bin\Release\netcoreapp3.1\Codeizi.Curso.Domain.SharedKernel.pdb
+D:\Projetos\arquitetura-corporativa\Codeizi\src\Codeizi.Curso.Domain.SharedKernel\bin\Release\netcoreapp3.1\Codeizi.Curso.Domain.SharedKernel.xml
+D:\Projetos\arquitetura-corporativa\Codeizi\src\Codeizi.Curso.Domain.SharedKernel\obj\Release\netcoreapp3.1\Codeizi.Curso.Domain.SharedKernel.AssemblyInfoInputs.cache
+D:\Projetos\arquitetura-corporativa\Codeizi\src\Codeizi.Curso.Domain.SharedKernel\obj\Release\netcoreapp3.1\Codeizi.Curso.Domain.SharedKernel.AssemblyInfo.cs
+D:\Projetos\arquitetura-corporativa\Codeizi\src\Codeizi.Curso.Domain.SharedKernel\obj\Release\netcoreapp3.1\Codeizi.Curso.Domain.SharedKernel.csproj.CoreCompileInputs.cache
+D:\Projetos\arquitetura-corporativa\Codeizi\src\Codeizi.Curso.Domain.SharedKernel\obj\Release\netcoreapp3.1\Codeizi.Curso.Domain.SharedKernel.dll
+D:\Projetos\arquitetura-corporativa\Codeizi\src\Codeizi.Curso.Domain.SharedKernel\obj\Release\netcoreapp3.1\Codeizi.Curso.Domain.SharedKernel.xml
+D:\Projetos\arquitetura-corporativa\Codeizi\src\Codeizi.Curso.Domain.SharedKernel\obj\Release\netcoreapp3.1\Codeizi.Curso.Domain.SharedKernel.pdb

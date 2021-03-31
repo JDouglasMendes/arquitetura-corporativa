@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "XjYWAACFnSKEIlsuqK0gMSq4MgUwtzFCXIDX3C0OEARGJVo9oca9v+WoSONKYFOn9kfm74zZkGLaFpXNC/AKow==",
+  "success": true,
+  "projectFilePath": "D:\\Projetos\\arquitetura-corporativa\\src\\Infra\\Infra.CrossCutting.Bus\\Infra.CrossCutting.Bus.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Douglas\\.nuget\\packages\\mediatr\\8.0.2\\mediatr.8.0.2.nupkg.sha512",
+    "C:\\Users\\Douglas\\.nuget\\packages\\stylecop.analyzers\\1.1.118\\stylecop.analyzers.1.1.118.nupkg.sha512"
+  ],
+  "logs": []
+}

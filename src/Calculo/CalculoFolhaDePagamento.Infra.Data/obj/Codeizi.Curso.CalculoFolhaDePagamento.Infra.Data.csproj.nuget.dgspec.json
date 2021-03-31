@@ -1,0 +1,562 @@
+{
+  "format": 1,
+  "restore": {
+    "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.CalculoFolhaDePagamento.Infra.Data\\Codeizi.Curso.CalculoFolhaDePagamento.Infra.Data.csproj": {}
+  },
+  "projects": {
+    "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.CalculoFolhaDePagamento.Infra.Data\\Codeizi.Curso.CalculoFolhaDePagamento.Infra.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.CalculoFolhaDePagamento.Infra.Data\\Codeizi.Curso.CalculoFolhaDePagamento.Infra.Data.csproj",
+        "projectName": "Codeizi.Curso.CalculoFolhaDePagamento.Infra.Data",
+        "projectPath": "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.CalculoFolhaDePagamento.Infra.Data\\Codeizi.Curso.CalculoFolhaDePagamento.Infra.Data.csproj",
+        "packagesPath": "C:\\Users\\Douglas\\.nuget\\packages\\",
+        "outputPath": "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.CalculoFolhaDePagamento.Infra.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Douglas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.CalculoFolhaDePagamento\\Codeizi.Curso.CalculoFolhaDePagamento.Domain.csproj": {
+                "projectPath": "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.CalculoFolhaDePagamento\\Codeizi.Curso.CalculoFolhaDePagamento.Domain.csproj"
+              },
+              "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.Infra.Redis\\Codeizi.Curso.Infra.CrossCutting.Redis.csproj": {
+                "projectPath": "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.Infra.Redis\\Codeizi.Curso.Infra.CrossCutting.Redis.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.35, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.6, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.CalculoFolhaDePagamento\\Codeizi.Curso.CalculoFolhaDePagamento.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.CalculoFolhaDePagamento\\Codeizi.Curso.CalculoFolhaDePagamento.Domain.csproj",
+        "projectName": "Codeizi.Curso.CalculoFolhaDePagamento.Domain",
+        "projectPath": "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.CalculoFolhaDePagamento\\Codeizi.Curso.CalculoFolhaDePagamento.Domain.csproj",
+        "packagesPath": "C:\\Users\\Douglas\\.nuget\\packages\\",
+        "outputPath": "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.CalculoFolhaDePagamento\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Douglas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.Domain.SharedKernel\\Codeizi.Curso.RH.Domain.SharedKernel.csproj": {
+                "projectPath": "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.Domain.SharedKernel\\Codeizi.Curso.RH.Domain.SharedKernel.csproj"
+              },
+              "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ\\Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ.csproj": {
+                "projectPath": "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ\\Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ.csproj"
+              },
+              "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.Infra.CrossCutting.Identity\\Codeizi.Curso.Infra.CrossCutting.Identity.csproj": {
+                "projectPath": "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.Infra.CrossCutting.Identity\\Codeizi.Curso.Infra.CrossCutting.Identity.csproj"
+              },
+              "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.Infra.Redis\\Codeizi.Curso.Infra.CrossCutting.Redis.csproj": {
+                "projectPath": "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.Infra.Redis\\Codeizi.Curso.Infra.CrossCutting.Redis.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.1.118, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.Domain.SharedKernel\\Codeizi.Curso.RH.Domain.SharedKernel.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.Domain.SharedKernel\\Codeizi.Curso.RH.Domain.SharedKernel.csproj",
+        "projectName": "Codeizi.Curso.RH.Domain.SharedKernel",
+        "projectPath": "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.Domain.SharedKernel\\Codeizi.Curso.RH.Domain.SharedKernel.csproj",
+        "packagesPath": "C:\\Users\\Douglas\\.nuget\\packages\\",
+        "outputPath": "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.Domain.SharedKernel\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Douglas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.1.118, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.Infra.CrossCutting.Configuration\\Codeizi.Curso.Infra.CrossCutting.Configuration.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.Infra.CrossCutting.Configuration\\Codeizi.Curso.Infra.CrossCutting.Configuration.csproj",
+        "projectName": "Codeizi.Curso.Infra.CrossCutting.Configuration",
+        "projectPath": "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.Infra.CrossCutting.Configuration\\Codeizi.Curso.Infra.CrossCutting.Configuration.csproj",
+        "packagesPath": "C:\\Users\\Douglas\\.nuget\\packages\\",
+        "outputPath": "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.Infra.CrossCutting.Configuration\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Douglas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[3.1.6, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.6, )"
+            },
+            "Microsoft.Extensions.Configuration.EnvironmentVariables": {
+              "target": "Package",
+              "version": "[3.1.6, )"
+            },
+            "Microsoft.Extensions.Configuration.FileExtensions": {
+              "target": "Package",
+              "version": "[3.1.6, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[3.1.6, )"
+            },
+            "Microsoft.Extensions.Hosting.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ\\Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ\\Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ.csproj",
+        "projectName": "Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ",
+        "projectPath": "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ\\Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ.csproj",
+        "packagesPath": "C:\\Users\\Douglas\\.nuget\\packages\\",
+        "outputPath": "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.infra.CrossCutting.EventBusRabbitMQ\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Douglas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[3.1.6, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.6, )"
+            },
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.6, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "Polly": {
+              "target": "Package",
+              "version": "[7.2.1, )"
+            },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[6.1.0, )"
+            },
+            "Serilog": {
+              "target": "Package",
+              "version": "[2.9.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.Infra.CrossCutting.Identity\\Codeizi.Curso.Infra.CrossCutting.Identity.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.Infra.CrossCutting.Identity\\Codeizi.Curso.Infra.CrossCutting.Identity.csproj",
+        "projectName": "Codeizi.Curso.Infra.CrossCutting.Identity",
+        "projectPath": "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.Infra.CrossCutting.Identity\\Codeizi.Curso.Infra.CrossCutting.Identity.csproj",
+        "packagesPath": "C:\\Users\\Douglas\\.nuget\\packages\\",
+        "outputPath": "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.Infra.CrossCutting.Identity\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Douglas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.Infra.Redis\\Codeizi.Curso.Infra.CrossCutting.Redis.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.Infra.Redis\\Codeizi.Curso.Infra.CrossCutting.Redis.csproj",
+        "projectName": "Codeizi.Curso.Infra.CrossCutting.Redis",
+        "projectPath": "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.Infra.Redis\\Codeizi.Curso.Infra.CrossCutting.Redis.csproj",
+        "packagesPath": "C:\\Users\\Douglas\\.nuget\\packages\\",
+        "outputPath": "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.Infra.Redis\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Douglas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.Infra.CrossCutting.Configuration\\Codeizi.Curso.Infra.CrossCutting.Configuration.csproj": {
+                "projectPath": "d:\\Projetos\\arquitetura-corporativa\\src\\Codeizi.Curso.Infra.CrossCutting.Configuration\\Codeizi.Curso.Infra.CrossCutting.Configuration.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.1.58, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

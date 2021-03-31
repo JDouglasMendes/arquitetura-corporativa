@@ -1,0 +1,9 @@
+D:\Projetos\arquitetura-corporativa\Codeizi\src\Codeizi.Curso.Infra.CrossCutting.Identity\bin\Release\netcoreapp3.1\Codeizi.Curso.Infra.CrossCutting.Identity.deps.json
+D:\Projetos\arquitetura-corporativa\Codeizi\src\Codeizi.Curso.Infra.CrossCutting.Identity\bin\Release\netcoreapp3.1\Codeizi.Curso.Infra.CrossCutting.Identity.dll
+D:\Projetos\arquitetura-corporativa\Codeizi\src\Codeizi.Curso.Infra.CrossCutting.Identity\bin\Release\netcoreapp3.1\Codeizi.Curso.Infra.CrossCutting.Identity.pdb
+D:\Projetos\arquitetura-corporativa\Codeizi\src\Codeizi.Curso.Infra.CrossCutting.Identity\obj\Release\netcoreapp3.1\Codeizi.Curso.Infra.CrossCutting.Identity.csprojAssemblyReference.cache
+D:\Projetos\arquitetura-corporativa\Codeizi\src\Codeizi.Curso.Infra.CrossCutting.Identity\obj\Release\netcoreapp3.1\Codeizi.Curso.Infra.CrossCutting.Identity.AssemblyInfoInputs.cache
+D:\Projetos\arquitetura-corporativa\Codeizi\src\Codeizi.Curso.Infra.CrossCutting.Identity\obj\Release\netcoreapp3.1\Codeizi.Curso.Infra.CrossCutting.Identity.AssemblyInfo.cs
+D:\Projetos\arquitetura-corporativa\Codeizi\src\Codeizi.Curso.Infra.CrossCutting.Identity\obj\Release\netcoreapp3.1\Codeizi.Curso.Infra.CrossCutting.Identity.csproj.CoreCompileInputs.cache
+D:\Projetos\arquitetura-corporativa\Codeizi\src\Codeizi.Curso.Infra.CrossCutting.Identity\obj\Release\netcoreapp3.1\Codeizi.Curso.Infra.CrossCutting.Identity.dll
+D:\Projetos\arquitetura-corporativa\Codeizi\src\Codeizi.Curso.Infra.CrossCutting.Identity\obj\Release\netcoreapp3.1\Codeizi.Curso.Infra.CrossCutting.Identity.pdb

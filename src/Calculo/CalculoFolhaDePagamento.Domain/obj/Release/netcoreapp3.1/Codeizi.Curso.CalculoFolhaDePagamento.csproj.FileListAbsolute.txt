@@ -1,0 +1,9 @@
+D:\Projetos\arquitetura-corporativa\Codeizi\src\Codeizi.Curso.CalculoFolhaDePagamento\bin\Release\netcoreapp3.1\Codeizi.Curso.CalculoFolhaDePagamento.deps.json
+D:\Projetos\arquitetura-corporativa\Codeizi\src\Codeizi.Curso.CalculoFolhaDePagamento\bin\Release\netcoreapp3.1\Codeizi.Curso.CalculoFolhaDePagamento.dll
+D:\Projetos\arquitetura-corporativa\Codeizi\src\Codeizi.Curso.CalculoFolhaDePagamento\bin\Release\netcoreapp3.1\Codeizi.Curso.CalculoFolhaDePagamento.pdb
+D:\Projetos\arquitetura-corporativa\Codeizi\src\Codeizi.Curso.CalculoFolhaDePagamento\obj\Release\netcoreapp3.1\Codeizi.Curso.CalculoFolhaDePagamento.AssemblyInfoInputs.cache
+D:\Projetos\arquitetura-corporativa\Codeizi\src\Codeizi.Curso.CalculoFolhaDePagamento\obj\Release\netcoreapp3.1\Codeizi.Curso.CalculoFolhaDePagamento.AssemblyInfo.cs
+D:\Projetos\arquitetura-corporativa\Codeizi\src\Codeizi.Curso.CalculoFolhaDePagamento\obj\Release\netcoreapp3.1\Codeizi.Curso.CalculoFolhaDePagamento.csproj.CoreCompileInputs.cache
+D:\Projetos\arquitetura-corporativa\Codeizi\src\Codeizi.Curso.CalculoFolhaDePagamento\obj\Release\netcoreapp3.1\Codeizi.Curso.CalculoFolhaDePagamento.dll
+D:\Projetos\arquitetura-corporativa\Codeizi\src\Codeizi.Curso.CalculoFolhaDePagamento\obj\Release\netcoreapp3.1\Codeizi.Curso.CalculoFolhaDePagamento.pdb
+D:\Projetos\arquitetura-corporativa\Codeizi\src\Codeizi.Curso.CalculoFolhaDePagamento\obj\Release\netcoreapp3.1\Codeizi.Curso.CalculoFolhaDePagamento.csprojAssemblyReference.cache

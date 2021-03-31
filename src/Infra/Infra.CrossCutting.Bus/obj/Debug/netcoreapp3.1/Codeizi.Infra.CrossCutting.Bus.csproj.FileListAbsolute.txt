@@ -1,0 +1,12 @@
+D:\Projetos\curso-aplicacao-corporativa-.net-core\Codeizi\Codeizi.Infra.CrossCutting.Bus\obj\Debug\netcoreapp3.1\Codeizi.Infra.CrossCutting.Bus.csprojAssemblyReference.cache
+D:\Projetos\curso-aplicacao-corporativa-.net-core\Codeizi\Codeizi.Infra.CrossCutting.Bus\obj\Debug\netcoreapp3.1\Codeizi.Infra.CrossCutting.Bus.AssemblyInfoInputs.cache
+D:\Projetos\curso-aplicacao-corporativa-.net-core\Codeizi\Codeizi.Infra.CrossCutting.Bus\obj\Debug\netcoreapp3.1\Codeizi.Infra.CrossCutting.Bus.AssemblyInfo.cs
+D:\Projetos\curso-aplicacao-corporativa-.net-core\Codeizi\Codeizi.Infra.CrossCutting.Bus\obj\Debug\netcoreapp3.1\Codeizi.Infra.CrossCutting.Bus.csproj.CoreCompileInputs.cache
+D:\Projetos\curso-aplicacao-corporativa-.net-core\Codeizi\Codeizi.Infra.CrossCutting.Bus\bin\Debug\netcoreapp3.1\Codeizi.Infra.CrossCutting.Bus.deps.json
+D:\Projetos\curso-aplicacao-corporativa-.net-core\Codeizi\Codeizi.Infra.CrossCutting.Bus\bin\Debug\netcoreapp3.1\Codeizi.Infra.CrossCutting.Bus.dll
+D:\Projetos\curso-aplicacao-corporativa-.net-core\Codeizi\Codeizi.Infra.CrossCutting.Bus\bin\Debug\netcoreapp3.1\Codeizi.Curso.Domain.SharedKernel.dll
+D:\Projetos\curso-aplicacao-corporativa-.net-core\Codeizi\Codeizi.Infra.CrossCutting.Bus\bin\Debug\netcoreapp3.1\Codeizi.Curso.Domain.SharedKernel.pdb
+D:\Projetos\curso-aplicacao-corporativa-.net-core\Codeizi\Codeizi.Infra.CrossCutting.Bus\obj\Debug\netcoreapp3.1\Codeizi.Infra.CrossCutting.Bus.csproj.CopyComplete
+D:\Projetos\curso-aplicacao-corporativa-.net-core\Codeizi\Codeizi.Infra.CrossCutting.Bus\bin\Debug\netcoreapp3.1\Codeizi.Infra.CrossCutting.Bus.pdb
+D:\Projetos\curso-aplicacao-corporativa-.net-core\Codeizi\Codeizi.Infra.CrossCutting.Bus\obj\Debug\netcoreapp3.1\Codeizi.Infra.CrossCutting.Bus.dll
+D:\Projetos\curso-aplicacao-corporativa-.net-core\Codeizi\Codeizi.Infra.CrossCutting.Bus\obj\Debug\netcoreapp3.1\Codeizi.Infra.CrossCutting.Bus.pdb

@@ -1,0 +1,12 @@
+D:\Projetos\arquitetura-corporativa\src\Infra\Infra.CrossCutting.EventBusRabbitMQ\bin\Debug\netcoreapp3.1\Infra.CrossCutting.EventBusRabbitMQ.deps.json
+D:\Projetos\arquitetura-corporativa\src\Infra\Infra.CrossCutting.EventBusRabbitMQ\bin\Debug\netcoreapp3.1\Infra.CrossCutting.EventBusRabbitMQ.dll
+D:\Projetos\arquitetura-corporativa\src\Infra\Infra.CrossCutting.EventBusRabbitMQ\bin\Debug\netcoreapp3.1\Infra.CrossCutting.EventBusRabbitMQ.pdb
+D:\Projetos\arquitetura-corporativa\src\Infra\Infra.CrossCutting.EventBusRabbitMQ\obj\Debug\netcoreapp3.1\Infra.CrossCutting.EventBusRabbitMQ.AssemblyInfoInputs.cache
+D:\Projetos\arquitetura-corporativa\src\Infra\Infra.CrossCutting.EventBusRabbitMQ\obj\Debug\netcoreapp3.1\Infra.CrossCutting.EventBusRabbitMQ.AssemblyInfo.cs
+D:\Projetos\arquitetura-corporativa\src\Infra\Infra.CrossCutting.EventBusRabbitMQ\obj\Debug\netcoreapp3.1\Infra.CrossCutting.EventBusRabbitMQ.csproj.CoreCompileInputs.cache
+D:\Projetos\arquitetura-corporativa\src\Infra\Infra.CrossCutting.EventBusRabbitMQ\obj\Debug\netcoreapp3.1\Infra.CrossCutting.EventBusRabbitMQ.dll
+D:\Projetos\arquitetura-corporativa\src\Infra\Infra.CrossCutting.EventBusRabbitMQ\obj\Debug\netcoreapp3.1\Infra.CrossCutting.EventBusRabbitMQ.pdb
+D:\Projetos\arquitetura-corporativa\src\Infra\Infra.CrossCutting.EventBusRabbitMQ\obj\Debug\netcoreapp3.1\Infra.CrossCutting.EventBusRabbitMQ.csprojAssemblyReference.cache
+D:\Projetos\arquitetura-corporativa\src\Infra\package\netcoreapp3.1\Infra.CrossCutting.EventBusRabbitMQ.deps.json
+D:\Projetos\arquitetura-corporativa\src\Infra\package\netcoreapp3.1\Infra.CrossCutting.EventBusRabbitMQ.dll
+D:\Projetos\arquitetura-corporativa\src\Infra\package\netcoreapp3.1\Infra.CrossCutting.EventBusRabbitMQ.pdb

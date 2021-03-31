@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.SharedKernel.Test", "src\Infra\test\Domain.SharedKernel.Test\Domain.SharedKernel.Test.csproj", "{BDC627FF-B79B-4285-A310-8F4EFD737554}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RH.API.Integration.Test", "src\RH\test\RH.API.Integration.Test\RH.API.Integration.Test.csproj", "{570121A4-B8FF-4631-98F4-97C46D87C3F0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RH.Domain.Test", "src\RH\test\RH.Domain.Test\RH.Domain.Test.csproj", "{404BAE23-3B44-4E07-82A2-B3C5839F764A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RH.Infra.Data.Test", "src\RH\test\RH.Infra.Data.Test\RH.Infra.Data.Test.csproj", "{4291C154-B12E-44DB-8139-515B66F9FD48}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculoFolhaDePagamento.Test", "src\Calculo\test\CalculoFolhaDePagamento.Test\CalculoFolhaDePagamento.Test.csproj", "{27713189-A0AB-4C4B-A89D-48727F96572A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BDC627FF-B79B-4285-A310-8F4EFD737554}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDC627FF-B79B-4285-A310-8F4EFD737554}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDC627FF-B79B-4285-A310-8F4EFD737554}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDC627FF-B79B-4285-A310-8F4EFD737554}.Release|Any CPU.Build.0 = Release|Any CPU
+		{570121A4-B8FF-4631-98F4-97C46D87C3F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{570121A4-B8FF-4631-98F4-97C46D87C3F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{570121A4-B8FF-4631-98F4-97C46D87C3F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{570121A4-B8FF-4631-98F4-97C46D87C3F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{404BAE23-3B44-4E07-82A2-B3C5839F764A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{404BAE23-3B44-4E07-82A2-B3C5839F764A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{404BAE23-3B44-4E07-82A2-B3C5839F764A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{404BAE23-3B44-4E07-82A2-B3C5839F764A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4291C154-B12E-44DB-8139-515B66F9FD48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4291C154-B12E-44DB-8139-515B66F9FD48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4291C154-B12E-44DB-8139-515B66F9FD48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4291C154-B12E-44DB-8139-515B66F9FD48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27713189-A0AB-4C4B-A89D-48727F96572A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27713189-A0AB-4C4B-A89D-48727F96572A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27713189-A0AB-4C4B-A89D-48727F96572A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27713189-A0AB-4C4B-A89D-48727F96572A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CD2D89E9-7788-4616-AFAE-EFBB84DF4A05}
+	EndGlobalSection
+EndGlobal
