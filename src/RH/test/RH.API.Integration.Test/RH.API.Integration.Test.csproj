@@ -53,4 +53,10 @@
     <ProjectReference Include="..\..\RH.Service.Api\RH.Service.Api.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="Domain.SharedKernel">
+      <HintPath>..\..\package-infra\netcoreapp3.1\Domain.SharedKernel.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

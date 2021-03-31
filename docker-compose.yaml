@@ -47,6 +47,46 @@ services:
     depends_on:
       - sqlserver
 
+  calculo:
+    image: calculo
+    build:
+      context: .    
+    networks:
+      - local-network
+    ports:
+      - "50010:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__CodeiziCalculoFolhaPagamento=Server=MsSqlServer,1433;Database=CodeiziIdentity;User Id=sa;Password=@Dm!n2021;      
+      - ConnectionStrings__BaseLog=X
+      - ConnectionStrings__EventSource=X
+      - RabbitMQConfigurations:HostName=X
+      - RabbitMQConfigurations:Port=X
+      - RabbitMQConfigurations:UserName=X
+      - RabbitMQConfigurations:Password=X
+    depends_on:
+      - sqlserver
+
+  rh:
+    image: rh
+    build:
+      context: .    
+    networks:
+      - local-network
+    ports:
+      - "50020:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=MsSqlServer,1433;Database=CodeiziIdentity;User Id=sa;Password=@Dm!n2021;      
+      - ConnectionStrings__BaseLog=X
+      - ConnectionStrings__EventSource=X
+      - RabbitMQConfigurations:HostName=X
+      - RabbitMQConfigurations:Port=X
+      - RabbitMQConfigurations:UserName=X
+      - RabbitMQConfigurations:Password=X
+    depends_on:
+      - sqlserver
+
 networks: 
     local-network:
         driver: bridge    

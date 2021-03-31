@@ -14,8 +14,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Infra\Domain.SharedKernel\Domain.SharedKernel.csproj" />
     <ProjectReference Include="..\RH.Domain\RH.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Domain.SharedKernel">
+      <HintPath>..\package-infra\netcoreapp3.1\Domain.SharedKernel.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

@@ -15,13 +15,25 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Identity\Infra.CrossCutting.Identity\Infra.CrossCutting.Identity.csproj" />
-    <ProjectReference Include="..\..\Infra\Domain.SharedKernel\Domain.SharedKernel.csproj" />
-    <ProjectReference Include="..\..\Infra\Infra.CrossCutting.Bus\Infra.CrossCutting.Bus.csproj" />
     <ProjectReference Include="..\RH.Application\RH.Application.csproj" />
     <ProjectReference Include="..\RH.Domain\RH.Domain.csproj" />
     <ProjectReference Include="..\RH.infra.Data.EventSource\RH.infra.Data.EventSource.csproj" />
     <ProjectReference Include="..\RH.Infra.Data\RH.Infra.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Domain.SharedKernel">
+      <HintPath>..\package-infra\netcoreapp3.1\Domain.SharedKernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Infra.CrossCutting.Bus">
+      <HintPath>..\package-infra\netcoreapp3.1\Infra.CrossCutting.Bus.dll</HintPath>
+    </Reference>
+    <Reference Include="Infra.CrossCutting.Configuration">
+      <HintPath>..\package-infra\netcoreapp3.1\Infra.CrossCutting.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Infra.CrossCutting.Identity">
+      <HintPath>..\package-identity\netcoreapp3.1\Infra.CrossCutting.Identity.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

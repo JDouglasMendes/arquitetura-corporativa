@@ -6,12 +6,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Infra\Domain.SharedKernel\Domain.SharedKernel.csproj" />
-    <ProjectReference Include="..\..\Infra\Infra.CrossCutting.Configuration\Infra.CrossCutting.Configuration.csproj" />
+    <PackageReference Include="MongoDB.Driver" Version="2.10.4" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MongoDB.Driver" Version="2.10.4" />
+    <Reference Include="Domain.SharedKernel">
+      <HintPath>..\package-infra\netcoreapp3.1\Domain.SharedKernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Infra.CrossCutting.Configuration">
+      <HintPath>..\package-infra\netcoreapp3.1\Infra.CrossCutting.Configuration.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

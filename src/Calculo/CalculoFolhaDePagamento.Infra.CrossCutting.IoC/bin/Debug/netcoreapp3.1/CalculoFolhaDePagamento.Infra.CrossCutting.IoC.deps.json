@@ -10,7 +10,9 @@
         "dependencies": {
           "CalculoFolhaDePagamento.Infra.Data": "1.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.6",
+          "Infra.CrossCutting.Bus": "1.0.0.0",
           "Infra.CrossCutting.Configuration": "1.0.0.0",
+          "Infra.CrossCutting.EventBusRabbitMQ": "1.0.0.0",
           "Infra.CrossCutting.Identity": "1.0.0.0",
           "Infra.CrossCutting.Redis": "1.0.0.0"
         },
@@ -365,9 +367,25 @@
           "CalculoFolhaDePagamento.Infra.Data.dll": {}
         }
       },
+      "Infra.CrossCutting.Bus/1.0.0.0": {
+        "runtime": {
+          "Infra.CrossCutting.Bus.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Infra.CrossCutting.Configuration/1.0.0.0": {
         "runtime": {
           "Infra.CrossCutting.Configuration.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Infra.CrossCutting.EventBusRabbitMQ/1.0.0.0": {
+        "runtime": {
+          "Infra.CrossCutting.EventBusRabbitMQ.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -389,9 +407,9 @@
           }
         }
       },
-      "Infra.CrossCutting.EventBusRabbitMQ/1.0.0.0": {
+      "Domain.SharedKernel/1.0.0.0": {
         "runtime": {
-          "Infra.CrossCutting.EventBusRabbitMQ.dll": {
+          "Domain.SharedKernel.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -590,7 +608,17 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Infra.CrossCutting.Bus/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Infra.CrossCutting.Configuration/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Infra.CrossCutting.EventBusRabbitMQ/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -605,7 +633,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Infra.CrossCutting.EventBusRabbitMQ/1.0.0.0": {
+    "Domain.SharedKernel/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

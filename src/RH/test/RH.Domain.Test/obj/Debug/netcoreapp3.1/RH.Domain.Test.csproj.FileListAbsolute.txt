@@ -17,9 +17,6 @@ D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Domain.Test\bin\Debug\netcore
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Domain.Test\bin\Debug\netcoreapp3.1\FluentValidation.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Domain.Test\bin\Debug\netcoreapp3.1\MediatR.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Domain.Test\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.CodeCoverage.Shim.dll
-D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Domain.Test\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
-D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Domain.Test\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Domain.Test\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Domain.Test\bin\Debug\netcoreapp3.1\Microsoft.TestPlatform.CoreUtilities.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Domain.Test\bin\Debug\netcoreapp3.1\Microsoft.TestPlatform.PlatformAbstractions.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Domain.Test\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll
@@ -30,10 +27,6 @@ D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Domain.Test\bin\Debug\netcore
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Domain.Test\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Domain.Test\bin\Debug\netcoreapp3.1\NSubstitute.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Domain.Test\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
-D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Domain.Test\bin\Debug\netcoreapp3.1\Polly.dll
-D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Domain.Test\bin\Debug\netcoreapp3.1\RabbitMQ.Client.dll
-D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Domain.Test\bin\Debug\netcoreapp3.1\Serilog.dll
-D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Domain.Test\bin\Debug\netcoreapp3.1\System.Threading.Channels.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Domain.Test\bin\Debug\netcoreapp3.1\xunit.abstractions.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Domain.Test\bin\Debug\netcoreapp3.1\xunit.assert.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Domain.Test\bin\Debug\netcoreapp3.1\xunit.core.dll

@@ -7,12 +7,19 @@
   <ItemGroup>
     <PackageReference Include="IdentityServer4" Version="4.0.4" />
     <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="3.0.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0" />
     <PackageReference Include="MongoDB.Driver" Version="2.10.4" />
+    <PackageReference Include="RabbitMQ.Client" Version="6.2.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Infra\Infra.CrossCutting.Configuration\Infra.CrossCutting.Configuration.csproj" />
-    <ProjectReference Include="..\..\Infra\Infra.CrossCutting.EventBusRabbitMQ\Infra.CrossCutting.EventBusRabbitMQ.csproj" />
+    <Reference Include="Infra.CrossCutting.Configuration">
+      <HintPath>..\package-infra\netcoreapp3.1\Infra.CrossCutting.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Infra.CrossCutting.EventBusRabbitMQ">
+      <HintPath>..\package-infra\netcoreapp3.1\Infra.CrossCutting.EventBusRabbitMQ.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 

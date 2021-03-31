@@ -18,6 +18,7 @@
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="3.1.6" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
+    <PackageReference Include="RabbitMQ.Client" Version="6.2.1" />
     <PackageReference Include="Serilog.AspNetCore" Version="3.2.0" />
     <PackageReference Include="Serilog.Sinks.MongoDB" Version="4.0.0" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
@@ -28,10 +29,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Infra\Domain.SharedKernel\Domain.SharedKernel.csproj" />
     <ProjectReference Include="..\RH.Infra.CrossCutting.IoC\RH.Infra.CrossCutting.IoC.csproj" />
     <ProjectReference Include="..\RH.infra.Data.EventSource\RH.infra.Data.EventSource.csproj" />
     <ProjectReference Include="..\RH.Infra.Data\RH.Infra.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Domain.SharedKernel">
+      <HintPath>..\package-infra\netcoreapp3.1\Domain.SharedKernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Infra.CrossCutting.EventBusRabbitMQ">
+      <HintPath>..\package-infra\netcoreapp3.1\Infra.CrossCutting.EventBusRabbitMQ.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 

@@ -53,9 +53,6 @@ D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Infra.Data.Test\bin\Debug\net
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Infra.Data.Test\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.Common.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Infra.Data.Test\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Infra.Data.Test\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
-D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Infra.Data.Test\bin\Debug\netcoreapp3.1\Polly.dll
-D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Infra.Data.Test\bin\Debug\netcoreapp3.1\RabbitMQ.Client.dll
-D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Infra.Data.Test\bin\Debug\netcoreapp3.1\Serilog.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Infra.Data.Test\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Infra.Data.Test\bin\Debug\netcoreapp3.1\SQLitePCLRaw.nativelibrary.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Infra.Data.Test\bin\Debug\netcoreapp3.1\SQLitePCLRaw.core.dll
@@ -67,7 +64,6 @@ D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Infra.Data.Test\bin\Debug\net
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Infra.Data.Test\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Infra.Data.Test\bin\Debug\netcoreapp3.1\System.Security.Permissions.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Infra.Data.Test\bin\Debug\netcoreapp3.1\System.Text.Json.dll
-D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Infra.Data.Test\bin\Debug\netcoreapp3.1\System.Threading.Channels.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Infra.Data.Test\bin\Debug\netcoreapp3.1\xunit.abstractions.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Infra.Data.Test\bin\Debug\netcoreapp3.1\xunit.assert.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.Infra.Data.Test\bin\Debug\netcoreapp3.1\xunit.core.dll

@@ -30,8 +30,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Infra\Domain.SharedKernel\Domain.SharedKernel.csproj" />
     <ProjectReference Include="..\..\RH.Domain\RH.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Domain.SharedKernel">
+      <HintPath>..\..\package-infra\netcoreapp3.1\Domain.SharedKernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Infra.CrossCutting.EventBusRabbitMQ">
+      <HintPath>..\..\package-infra\netcoreapp3.1\Infra.CrossCutting.EventBusRabbitMQ.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

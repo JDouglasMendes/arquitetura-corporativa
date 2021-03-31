@@ -8,16 +8,17 @@
     ".NETCoreApp,Version=v3.1": {
       "RH.Infra.CrossCutting.IoC/1.0.0": {
         "dependencies": {
-          "Domain.SharedKernel": "1.0.0",
-          "Infra.CrossCutting.Bus": "1.0.0",
-          "Infra.CrossCutting.Identity": "1.0.0",
           "MediatR": "8.0.2",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.6",
           "RH.Application": "1.0.0",
           "RH.Domain": "1.0.0",
           "RH.Infra.Data": "1.0.0",
           "RH.infra.Data.EventSource": "1.0.0",
-          "StyleCop.Analyzers": "1.1.118"
+          "StyleCop.Analyzers": "1.1.118",
+          "Domain.SharedKernel": "1.0.0.0",
+          "Infra.CrossCutting.Bus": "1.0.0.0",
+          "Infra.CrossCutting.Configuration": "1.0.0.0",
+          "Infra.CrossCutting.Identity": "1.0.0.0"
         },
         "runtime": {
           "RH.Infra.CrossCutting.IoC.dll": {}
@@ -56,29 +57,6 @@
           "lib/netstandard2.1/MediatR.dll": {
             "assemblyVersion": "8.0.0.0",
             "fileVersion": "8.0.2.0"
-          }
-        }
-      },
-      "Microsoft.AspNetCore.Http.Abstractions/2.2.0": {
-        "dependencies": {
-          "Microsoft.AspNetCore.Http.Features": "2.2.0",
-          "System.Text.Encodings.Web": "4.5.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Abstractions.dll": {
-            "assemblyVersion": "2.2.0.0",
-            "fileVersion": "2.2.0.18316"
-          }
-        }
-      },
-      "Microsoft.AspNetCore.Http.Features/2.2.0": {
-        "dependencies": {
-          "Microsoft.Extensions.Primitives": "3.1.6"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll": {
-            "assemblyVersion": "2.2.0.0",
-            "fileVersion": "2.2.0.18316"
           }
         }
       },
@@ -240,17 +218,6 @@
           }
         }
       },
-      "Microsoft.Extensions.Configuration.EnvironmentVariables/3.1.6": {
-        "dependencies": {
-          "Microsoft.Extensions.Configuration": "3.1.6"
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.EnvironmentVariables.dll": {
-            "assemblyVersion": "3.1.6.0",
-            "fileVersion": "3.100.620.31605"
-          }
-        }
-      },
       "Microsoft.Extensions.Configuration.FileExtensions/3.1.6": {
         "dependencies": {
           "Microsoft.Extensions.Configuration": "3.1.6",
@@ -320,20 +287,6 @@
       "Microsoft.Extensions.FileSystemGlobbing/3.1.6": {
         "runtime": {
           "lib/netstandard2.0/Microsoft.Extensions.FileSystemGlobbing.dll": {
-            "assemblyVersion": "3.1.6.0",
-            "fileVersion": "3.100.620.31605"
-          }
-        }
-      },
-      "Microsoft.Extensions.Hosting.Abstractions/3.1.6": {
-        "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": "3.1.6",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.6",
-          "Microsoft.Extensions.FileProviders.Abstractions": "3.1.6",
-          "Microsoft.Extensions.Logging.Abstractions": "3.1.6"
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/Microsoft.Extensions.Hosting.Abstractions.dll": {
             "assemblyVersion": "3.1.6.0",
             "fileVersion": "3.100.620.31605"
           }
@@ -527,34 +480,6 @@
           "System.Xml.XDocument": "4.3.0"
         }
       },
-      "Newtonsoft.Json/12.0.3": {
-        "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "assemblyVersion": "12.0.0.0",
-            "fileVersion": "12.0.3.23909"
-          }
-        }
-      },
-      "Polly/7.2.1": {
-        "runtime": {
-          "lib/netstandard2.0/Polly.dll": {
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.2.1.0"
-          }
-        }
-      },
-      "RabbitMQ.Client/6.1.0": {
-        "dependencies": {
-          "System.Memory": "4.5.4",
-          "System.Threading.Channels": "4.7.1"
-        },
-        "runtime": {
-          "lib/netstandard2.0/RabbitMQ.Client.dll": {
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.1.0.0"
-          }
-        }
-      },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {},
       "runtime.fedora.23-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {},
       "runtime.fedora.24-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {},
@@ -640,14 +565,6 @@
             "rid": "win-x86",
             "assetType": "native",
             "fileVersion": "4.6.25512.1"
-          }
-        }
-      },
-      "Serilog/2.9.0": {
-        "runtime": {
-          "lib/netstandard2.0/Serilog.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.9.0.0"
           }
         }
       },
@@ -1001,7 +918,6 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "System.Memory/4.5.4": {},
       "System.Net.Http/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.1.2",
@@ -1501,7 +1417,6 @@
           "System.Text.Encoding": "4.3.0"
         }
       },
-      "System.Text.Encodings.Web/4.5.0": {},
       "System.Text.RegularExpressions/4.3.0": {
         "dependencies": {
           "System.Runtime": "4.3.0"
@@ -1511,14 +1426,6 @@
         "dependencies": {
           "System.Runtime": "4.3.0",
           "System.Threading.Tasks": "4.3.0"
-        }
-      },
-      "System.Threading.Channels/4.7.1": {
-        "runtime": {
-          "lib/netcoreapp3.0/System.Threading.Channels.dll": {
-            "assemblyVersion": "4.0.2.0",
-            "fileVersion": "4.700.20.21406"
-          }
         }
       },
       "System.Threading.Tasks/4.3.0": {
@@ -1623,63 +1530,9 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
-      "Domain.SharedKernel/1.0.0": {
-        "dependencies": {
-          "FluentValidation": "9.0.1",
-          "MediatR": "8.0.2"
-        },
-        "runtime": {
-          "Domain.SharedKernel.dll": {}
-        }
-      },
-      "Infra.CrossCutting.Bus/1.0.0": {
-        "dependencies": {
-          "Domain.SharedKernel": "1.0.0",
-          "MediatR": "8.0.2"
-        },
-        "runtime": {
-          "Infra.CrossCutting.Bus.dll": {}
-        }
-      },
-      "Infra.CrossCutting.Configuration/1.0.0": {
-        "dependencies": {
-          "Microsoft.Extensions.Configuration": "3.1.6",
-          "Microsoft.Extensions.Configuration.Abstractions": "3.1.6",
-          "Microsoft.Extensions.Configuration.EnvironmentVariables": "3.1.6",
-          "Microsoft.Extensions.Configuration.FileExtensions": "3.1.6",
-          "Microsoft.Extensions.Configuration.Json": "3.1.6",
-          "Microsoft.Extensions.Hosting.Abstractions": "3.1.6"
-        },
-        "runtime": {
-          "Infra.CrossCutting.Configuration.dll": {}
-        }
-      },
-      "Infra.CrossCutting.EventBusRabbitMQ/1.0.0": {
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection": "3.1.6",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.6",
-          "Microsoft.Extensions.Logging.Abstractions": "3.1.6",
-          "Newtonsoft.Json": "12.0.3",
-          "Polly": "7.2.1",
-          "RabbitMQ.Client": "6.1.0",
-          "Serilog": "2.9.0"
-        },
-        "runtime": {
-          "Infra.CrossCutting.EventBusRabbitMQ.dll": {}
-        }
-      },
-      "Infra.CrossCutting.Identity/1.0.0": {
-        "dependencies": {
-          "Microsoft.AspNetCore.Http.Abstractions": "2.2.0"
-        },
-        "runtime": {
-          "Infra.CrossCutting.Identity.dll": {}
-        }
-      },
       "RH.Application/1.0.0": {
         "dependencies": {
           "AutoMapper": "10.0.0",
-          "Domain.SharedKernel": "1.0.0",
           "RH.Domain": "1.0.0"
         },
         "runtime": {
@@ -1688,9 +1541,7 @@
       },
       "RH.Domain/1.0.0": {
         "dependencies": {
-          "Domain.SharedKernel": "1.0.0",
           "FluentValidation": "9.0.1",
-          "Infra.CrossCutting.EventBusRabbitMQ": "1.0.0",
           "MediatR": "8.0.2"
         },
         "runtime": {
@@ -1699,7 +1550,6 @@
       },
       "RH.Infra.Data/1.0.0": {
         "dependencies": {
-          "Domain.SharedKernel": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.6",
           "Microsoft.Extensions.Configuration.Json": "3.1.6",
           "RH.Domain": "1.0.0"
@@ -1710,12 +1560,50 @@
       },
       "RH.infra.Data.EventSource/1.0.0": {
         "dependencies": {
-          "Domain.SharedKernel": "1.0.0",
-          "Infra.CrossCutting.Configuration": "1.0.0",
           "MongoDB.Driver": "2.10.4"
         },
         "runtime": {
           "RH.infra.Data.EventSource.dll": {}
+        }
+      },
+      "Domain.SharedKernel/1.0.0.0": {
+        "runtime": {
+          "Domain.SharedKernel.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Infra.CrossCutting.Bus/1.0.0.0": {
+        "runtime": {
+          "Infra.CrossCutting.Bus.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Infra.CrossCutting.Configuration/1.0.0.0": {
+        "runtime": {
+          "Infra.CrossCutting.Configuration.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Infra.CrossCutting.Identity/1.0.0.0": {
+        "runtime": {
+          "Infra.CrossCutting.Identity.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Infra.CrossCutting.EventBusRabbitMQ/1.0.0.0": {
+        "runtime": {
+          "Infra.CrossCutting.EventBusRabbitMQ.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
@@ -1753,20 +1641,6 @@
       "sha512": "sha512-6mexVNDRj2T/z0OkxO5H5HPKowTP1iyToCACV/bZ/mU1X4MbzcBlqqQwGF40k+rfi+1ePcTYzSZLsFp2zM4e7g==",
       "path": "mediatr/8.0.2",
       "hashPath": "mediatr.8.0.2.nupkg.sha512"
-    },
-    "Microsoft.AspNetCore.Http.Abstractions/2.2.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Nxs7Z1q3f1STfLYKJSVXCs1iBl+Ya6E8o4Oy1bCxJ/rNI44E/0f6tbsrVqAWfB7jlnJfyaAtIalBVxPKUPQb4Q==",
-      "path": "microsoft.aspnetcore.http.abstractions/2.2.0",
-      "hashPath": "microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512"
-    },
-    "Microsoft.AspNetCore.Http.Features/2.2.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-ziFz5zH8f33En4dX81LW84I6XrYXKf9jg6aM39cM+LffN9KJahViKZ61dGMSO2gd3e+qe5yBRwsesvyqlZaSMg==",
-      "path": "microsoft.aspnetcore.http.features/2.2.0",
-      "hashPath": "microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512"
     },
     "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
       "type": "package",
@@ -1866,13 +1740,6 @@
       "path": "microsoft.extensions.configuration.binder/3.1.6",
       "hashPath": "microsoft.extensions.configuration.binder.3.1.6.nupkg.sha512"
     },
-    "Microsoft.Extensions.Configuration.EnvironmentVariables/3.1.6": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-FQqYNZ+my/gWjazYt9gnI4PmhqroO+8qkcR0pxL4sGIjbNNzYAydxPjjsInqUhaaflIrRo0sYd8s3Wbc1sGpcQ==",
-      "path": "microsoft.extensions.configuration.environmentvariables/3.1.6",
-      "hashPath": "microsoft.extensions.configuration.environmentvariables.3.1.6.nupkg.sha512"
-    },
     "Microsoft.Extensions.Configuration.FileExtensions/3.1.6": {
       "type": "package",
       "serviceable": true,
@@ -1921,13 +1788,6 @@
       "sha512": "sha512-QMyvTl195jfGHEH7edeNsQWEVkwex3CoYs/hfzwy1rXIVTfnGLp6SIhL7JfokKa1xM4UamPEggmxFTH/VN4Jrg==",
       "path": "microsoft.extensions.filesystemglobbing/3.1.6",
       "hashPath": "microsoft.extensions.filesystemglobbing.3.1.6.nupkg.sha512"
-    },
-    "Microsoft.Extensions.Hosting.Abstractions/3.1.6": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-CtXVuuBcKQXmNQm6a/wGwKkYxLNsIp7TrL8+XPld6aFUisOkkBHTm3EIm8vwKlHRI8xLONgfgILXPXREGaBBwQ==",
-      "path": "microsoft.extensions.hosting.abstractions/3.1.6",
-      "hashPath": "microsoft.extensions.hosting.abstractions.3.1.6.nupkg.sha512"
     },
     "Microsoft.Extensions.Logging/3.1.6": {
       "type": "package",
@@ -2026,27 +1886,6 @@
       "sha512": "sha512-WcSp3+vP+yHNgS8EV5J7pZ9IRpeDuARBPN28by8zqff1wJQXm26PVU8L3/fYLBJVU7BtDyqNVWq2KlCVvSSR4A==",
       "path": "netstandard.library/1.6.1",
       "hashPath": "netstandard.library.1.6.1.nupkg.sha512"
-    },
-    "Newtonsoft.Json/12.0.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
-      "path": "newtonsoft.json/12.0.3",
-      "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
-    },
-    "Polly/7.2.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Od8SnPlpQr+PuAS0YzY3jgtzaDNknlIuAaldN2VEIyTvm/wCg22C5nUkUV1BEG8rIsub5RFMoV/NEQ0tM/+7Uw==",
-      "path": "polly/7.2.1",
-      "hashPath": "polly.7.2.1.nupkg.sha512"
-    },
-    "RabbitMQ.Client/6.1.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-XtiIVPRpcR82AWoe64Hh9gDHqBtheFuL/88YubNKkCpNcctkWFQjMlz3zTyf2lGvZouxCXarDm0nYhGBMbt58Q==",
-      "path": "rabbitmq.client/6.1.0",
-      "hashPath": "rabbitmq.client.6.1.0.nupkg.sha512"
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {
       "type": "package",
@@ -2194,13 +2033,6 @@
       "sha512": "sha512-YhEdSQUsTx+C8m8Bw7ar5/VesXvCFMItyZF7G1AUY+OM0VPZUOeAVpJ4Wl6fydBGUYZxojTDR3I6Bj/+BPkJNA==",
       "path": "runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0",
       "hashPath": "runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
-    },
-    "Serilog/2.9.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-QzcrD33A3+CsVvwi1I5CSei67ikQnkGrw7SscgL+vZTghaC2aNYg8fiUcedXHzKJFNjgje9rBjzwYGQTKEaXaA==",
-      "path": "serilog/2.9.0",
-      "hashPath": "serilog.2.9.0.nupkg.sha512"
     },
     "SharpCompress/0.23.0": {
       "type": "package",
@@ -2439,13 +2271,6 @@
       "sha512": "sha512-Yn/WfYe9RoRfmSLvUt2JerP0BTGGykCZkQPgojaxgzF2N0oPo+/AhB8TXOpdCcNlrG3VRtsamtK2uzsp3cqRVw==",
       "path": "system.linq.queryable/4.0.1",
       "hashPath": "system.linq.queryable.4.0.1.nupkg.sha512"
-    },
-    "System.Memory/4.5.4": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-1MbJTHS1lZ4bS4FmsJjnuGJOu88ZzTT2rLvrhW7Ygic+pC0NWA+3hgAen0HRdsocuQXCkUTdFn9yHJJhsijDXw==",
-      "path": "system.memory/4.5.4",
-      "hashPath": "system.memory.4.5.4.nupkg.sha512"
     },
     "System.Net.Http/4.3.0": {
       "type": "package",
@@ -2748,13 +2573,6 @@
       "path": "system.text.encoding.extensions/4.3.0",
       "hashPath": "system.text.encoding.extensions.4.3.0.nupkg.sha512"
     },
-    "System.Text.Encodings.Web/4.5.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Xg4G4Indi4dqP1iuAiMSwpiWS54ZghzR644OtsRCm/m/lBMG8dUBhLVN7hLm8NNrNTR+iGbshCPTwrvxZPlm4g==",
-      "path": "system.text.encodings.web/4.5.0",
-      "hashPath": "system.text.encodings.web.4.5.0.nupkg.sha512"
-    },
     "System.Text.RegularExpressions/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -2768,13 +2586,6 @@
       "sha512": "sha512-VkUS0kOBcUf3Wwm0TSbrevDDZ6BlM+b/HRiapRFWjM5O0NS0LviG0glKmFK+hhPDd1XFeSdU1GmlLhb2CoVpIw==",
       "path": "system.threading/4.3.0",
       "hashPath": "system.threading.4.3.0.nupkg.sha512"
-    },
-    "System.Threading.Channels/4.7.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-6akRtHK/wab3246t4p5v3HQrtQk8LboOt5T4dtpNgsp3zvDeM4/Gx8V12t0h+c/W9/enUrilk8n6EQqdQorZAA==",
-      "path": "system.threading.channels/4.7.1",
-      "hashPath": "system.threading.channels.4.7.1.nupkg.sha512"
     },
     "System.Threading.Tasks/4.3.0": {
       "type": "package",
@@ -2839,31 +2650,6 @@
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
-    "Domain.SharedKernel/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Infra.CrossCutting.Bus/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Infra.CrossCutting.Configuration/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Infra.CrossCutting.EventBusRabbitMQ/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Infra.CrossCutting.Identity/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "RH.Application/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -2881,6 +2667,31 @@
     },
     "RH.infra.Data.EventSource/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Domain.SharedKernel/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Infra.CrossCutting.Bus/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Infra.CrossCutting.Configuration/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Infra.CrossCutting.Identity/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Infra.CrossCutting.EventBusRabbitMQ/1.0.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

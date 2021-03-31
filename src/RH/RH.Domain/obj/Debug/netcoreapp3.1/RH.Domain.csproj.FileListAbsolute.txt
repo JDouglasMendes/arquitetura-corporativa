@@ -17,3 +17,5 @@ D:\Projetos\arquitetura-corporativa\src\RH\RH.Domain\obj\Debug\netcoreapp3.1\RH.
 D:\Projetos\arquitetura-corporativa\src\RH\RH.Domain\obj\Debug\netcoreapp3.1\RH.Domain.dll
 D:\Projetos\arquitetura-corporativa\src\RH\RH.Domain\obj\Debug\netcoreapp3.1\RH.Domain.xml
 D:\Projetos\arquitetura-corporativa\src\RH\RH.Domain\obj\Debug\netcoreapp3.1\RH.Domain.pdb
+D:\Projetos\arquitetura-corporativa\src\RH\RH.Domain\bin\Debug\netcoreapp3.1\Infra.CrossCutting.Identity.dll
+D:\Projetos\arquitetura-corporativa\src\RH\RH.Domain\bin\Debug\netcoreapp3.1\Infra.CrossCutting.Identity.pdb

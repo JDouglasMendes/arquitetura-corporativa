@@ -14,3 +14,4 @@ D:\Projetos\arquitetura-corporativa\src\Calculo\CalculoFolhaDePagamento.Domain\o
 D:\Projetos\arquitetura-corporativa\src\Calculo\CalculoFolhaDePagamento.Domain\obj\Debug\netcoreapp3.1\CalculoFolhaDePagamento.Domain.csproj.CopyComplete
 D:\Projetos\arquitetura-corporativa\src\Calculo\CalculoFolhaDePagamento.Domain\obj\Debug\netcoreapp3.1\CalculoFolhaDePagamento.Domain.dll
 D:\Projetos\arquitetura-corporativa\src\Calculo\CalculoFolhaDePagamento.Domain\obj\Debug\netcoreapp3.1\CalculoFolhaDePagamento.Domain.pdb
+D:\Projetos\arquitetura-corporativa\src\Calculo\CalculoFolhaDePagamento.Domain\obj\Debug\netcoreapp3.1\CalculoFolhaDePagamento.Domain.csprojAssemblyReference.cache

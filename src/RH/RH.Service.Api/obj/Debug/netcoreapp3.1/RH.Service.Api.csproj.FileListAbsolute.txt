@@ -35,7 +35,6 @@ D:\Projetos\arquitetura-corporativa\src\RH\RH.Service.Api\bin\Debug\netcoreapp3.
 D:\Projetos\arquitetura-corporativa\src\RH\RH.Service.Api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
 D:\Projetos\arquitetura-corporativa\src\RH\RH.Service.Api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
 D:\Projetos\arquitetura-corporativa\src\RH\RH.Service.Api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
-D:\Projetos\arquitetura-corporativa\src\RH\RH.Service.Api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
 D:\Projetos\arquitetura-corporativa\src\RH\RH.Service.Api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.FileExtensions.dll
 D:\Projetos\arquitetura-corporativa\src\RH\RH.Service.Api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Json.dll
 D:\Projetos\arquitetura-corporativa\src\RH\RH.Service.Api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
@@ -44,7 +43,6 @@ D:\Projetos\arquitetura-corporativa\src\RH\RH.Service.Api\bin\Debug\netcoreapp3.
 D:\Projetos\arquitetura-corporativa\src\RH\RH.Service.Api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
 D:\Projetos\arquitetura-corporativa\src\RH\RH.Service.Api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll
 D:\Projetos\arquitetura-corporativa\src\RH\RH.Service.Api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll
-D:\Projetos\arquitetura-corporativa\src\RH\RH.Service.Api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Hosting.Abstractions.dll
 D:\Projetos\arquitetura-corporativa\src\RH\RH.Service.Api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
 D:\Projetos\arquitetura-corporativa\src\RH\RH.Service.Api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
 D:\Projetos\arquitetura-corporativa\src\RH\RH.Service.Api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
@@ -61,7 +59,6 @@ D:\Projetos\arquitetura-corporativa\src\RH\RH.Service.Api\bin\Debug\netcoreapp3.
 D:\Projetos\arquitetura-corporativa\src\RH\RH.Service.Api\bin\Debug\netcoreapp3.1\MongoDB.Driver.Core.dll
 D:\Projetos\arquitetura-corporativa\src\RH\RH.Service.Api\bin\Debug\netcoreapp3.1\MongoDB.Libmongocrypt.dll
 D:\Projetos\arquitetura-corporativa\src\RH\RH.Service.Api\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
-D:\Projetos\arquitetura-corporativa\src\RH\RH.Service.Api\bin\Debug\netcoreapp3.1\Polly.dll
 D:\Projetos\arquitetura-corporativa\src\RH\RH.Service.Api\bin\Debug\netcoreapp3.1\RabbitMQ.Client.dll
 D:\Projetos\arquitetura-corporativa\src\RH\RH.Service.Api\bin\Debug\netcoreapp3.1\Serilog.dll
 D:\Projetos\arquitetura-corporativa\src\RH\RH.Service.Api\bin\Debug\netcoreapp3.1\Serilog.AspNetCore.dll

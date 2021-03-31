@@ -21,3 +21,9 @@ D:\Projetos\arquitetura-corporativa\src\Calculo\CalculoFolhaDePagamento.Infra.Cr
 D:\Projetos\arquitetura-corporativa\src\Calculo\CalculoFolhaDePagamento.Infra.CrossCutting.IoC\obj\Debug\netcoreapp3.1\CalculoFolhaDePagamento.Infra.CrossCutting.IoC.csproj.CopyComplete
 D:\Projetos\arquitetura-corporativa\src\Calculo\CalculoFolhaDePagamento.Infra.CrossCutting.IoC\obj\Debug\netcoreapp3.1\CalculoFolhaDePagamento.Infra.CrossCutting.IoC.dll
 D:\Projetos\arquitetura-corporativa\src\Calculo\CalculoFolhaDePagamento.Infra.CrossCutting.IoC\obj\Debug\netcoreapp3.1\CalculoFolhaDePagamento.Infra.CrossCutting.IoC.pdb
+D:\Projetos\arquitetura-corporativa\src\Calculo\CalculoFolhaDePagamento.Infra.CrossCutting.IoC\bin\Debug\netcoreapp3.1\Infra.CrossCutting.Bus.dll
+D:\Projetos\arquitetura-corporativa\src\Calculo\CalculoFolhaDePagamento.Infra.CrossCutting.IoC\bin\Debug\netcoreapp3.1\Domain.SharedKernel.dll
+D:\Projetos\arquitetura-corporativa\src\Calculo\CalculoFolhaDePagamento.Infra.CrossCutting.IoC\bin\Debug\netcoreapp3.1\Infra.CrossCutting.Bus.pdb
+D:\Projetos\arquitetura-corporativa\src\Calculo\CalculoFolhaDePagamento.Infra.CrossCutting.IoC\bin\Debug\netcoreapp3.1\Infra.CrossCutting.Bus.xml
+D:\Projetos\arquitetura-corporativa\src\Calculo\CalculoFolhaDePagamento.Infra.CrossCutting.IoC\bin\Debug\netcoreapp3.1\Domain.SharedKernel.pdb
+D:\Projetos\arquitetura-corporativa\src\Calculo\CalculoFolhaDePagamento.Infra.CrossCutting.IoC\bin\Debug\netcoreapp3.1\Domain.SharedKernel.xml

@@ -49,7 +49,6 @@ D:\Projetos\arquitetura-corporativa\src\RH\test\RH.API.Integration.Test\bin\Debu
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.API.Integration.Test\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.API.Integration.Test\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.API.Integration.Test\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
-D:\Projetos\arquitetura-corporativa\src\RH\test\RH.API.Integration.Test\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.API.Integration.Test\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.FileExtensions.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.API.Integration.Test\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Json.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.API.Integration.Test\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
@@ -58,7 +57,6 @@ D:\Projetos\arquitetura-corporativa\src\RH\test\RH.API.Integration.Test\bin\Debu
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.API.Integration.Test\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.API.Integration.Test\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.API.Integration.Test\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll
-D:\Projetos\arquitetura-corporativa\src\RH\test\RH.API.Integration.Test\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Hosting.Abstractions.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.API.Integration.Test\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.API.Integration.Test\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.API.Integration.Test\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
@@ -83,7 +81,6 @@ D:\Projetos\arquitetura-corporativa\src\RH\test\RH.API.Integration.Test\bin\Debu
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.API.Integration.Test\bin\Debug\netcoreapp3.1\MongoDB.Libmongocrypt.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.API.Integration.Test\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.API.Integration.Test\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
-D:\Projetos\arquitetura-corporativa\src\RH\test\RH.API.Integration.Test\bin\Debug\netcoreapp3.1\Polly.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.API.Integration.Test\bin\Debug\netcoreapp3.1\RabbitMQ.Client.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.API.Integration.Test\bin\Debug\netcoreapp3.1\Serilog.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.API.Integration.Test\bin\Debug\netcoreapp3.1\Serilog.AspNetCore.dll
@@ -108,7 +105,6 @@ D:\Projetos\arquitetura-corporativa\src\RH\test\RH.API.Integration.Test\bin\Debu
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.API.Integration.Test\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.API.Integration.Test\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.API.Integration.Test\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
-D:\Projetos\arquitetura-corporativa\src\RH\test\RH.API.Integration.Test\bin\Debug\netcoreapp3.1\System.Threading.Channels.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.API.Integration.Test\bin\Debug\netcoreapp3.1\xunit.abstractions.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.API.Integration.Test\bin\Debug\netcoreapp3.1\xunit.assert.dll
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.API.Integration.Test\bin\Debug\netcoreapp3.1\xunit.core.dll
@@ -222,3 +218,4 @@ D:\Projetos\arquitetura-corporativa\src\RH\test\RH.API.Integration.Test\obj\Debu
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.API.Integration.Test\obj\Debug\netcoreapp3.1\RH.API.Integration.Test.xml
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.API.Integration.Test\obj\Debug\netcoreapp3.1\RH.API.Integration.Test.pdb
 D:\Projetos\arquitetura-corporativa\src\RH\test\RH.API.Integration.Test\obj\Debug\netcoreapp3.1\RH.API.Integration.Test.genruntimeconfig.cache
+D:\Projetos\arquitetura-corporativa\src\RH\test\RH.API.Integration.Test\bin\Debug\netcoreapp3.1\System.Threading.Channels.dll

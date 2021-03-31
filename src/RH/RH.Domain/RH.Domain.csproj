@@ -23,8 +23,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Infra\Domain.SharedKernel\Domain.SharedKernel.csproj" />
-    <ProjectReference Include="..\..\Infra\Infra.CrossCutting.EventBusRabbitMQ\Infra.CrossCutting.EventBusRabbitMQ.csproj" />
+    <Reference Include="Domain.SharedKernel">
+      <HintPath>..\package-infra\netcoreapp3.1\Domain.SharedKernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Infra.CrossCutting.EventBusRabbitMQ">
+      <HintPath>..\package-infra\netcoreapp3.1\Infra.CrossCutting.EventBusRabbitMQ.dll</HintPath>
+    </Reference>
+    <Reference Include="Infra.CrossCutting.Identity">
+      <HintPath>..\package-identity\netcoreapp3.1\Infra.CrossCutting.Identity.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>

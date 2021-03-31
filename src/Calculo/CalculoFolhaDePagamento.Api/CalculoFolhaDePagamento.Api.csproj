@@ -20,10 +20,10 @@
 
   <ItemGroup>
     <Reference Include="Infra.CrossCutting.EventBusRabbitMQ">
-      <HintPath>..\..\Infra\package\netcoreapp3.1\Infra.CrossCutting.EventBusRabbitMQ.dll</HintPath>
+      <HintPath>..\package-infra\netcoreapp3.1\Infra.CrossCutting.EventBusRabbitMQ.dll</HintPath>
     </Reference>
     <Reference Include="Infra.CrossCutting.Identity">
-      <HintPath>..\..\Identity\package\netcoreapp3.1\Infra.CrossCutting.Identity.dll</HintPath>
+      <HintPath>..\package-identity\netcoreapp3.1\Infra.CrossCutting.Identity.dll</HintPath>
     </Reference>
   </ItemGroup>
 

@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "FluentValidation/9.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/FluentValidation.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/FluentValidation.dll": {}
+        }
+      },
       "MediatR/8.0.2": {
         "type": "package",
         "compile": {
@@ -13,10 +22,39 @@
       },
       "StyleCop.Analyzers/1.1.118": {
         "type": "package"
+      },
+      "Domain.SharedKernel/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "FluentValidation": "9.0.1",
+          "MediatR": "8.0.2"
+        },
+        "compile": {
+          "bin/placeholder/Domain.SharedKernel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.SharedKernel.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "FluentValidation/9.0.1": {
+      "sha512": "GeF+cPknUFFJ5FkCybmQShaXWwJowBuJozgns6In37wiP2zOWx+kdNPBAN9BlDyhcORdxtXeGnkLZ+OFT85onQ==",
+      "type": "package",
+      "path": "fluentvalidation/9.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fluentvalidation.9.0.1.nupkg.sha512",
+        "fluentvalidation.nuspec",
+        "lib/net461/FluentValidation.dll",
+        "lib/net461/FluentValidation.xml",
+        "lib/netstandard2.0/FluentValidation.dll",
+        "lib/netstandard2.0/FluentValidation.xml"
+      ]
+    },
     "MediatR/8.0.2": {
       "sha512": "6mexVNDRj2T/z0OkxO5H5HPKowTP1iyToCACV/bZ/mU1X4MbzcBlqqQwGF40k+rfi+1ePcTYzSZLsFp2zM4e7g==",
       "type": "package",
@@ -59,10 +97,16 @@
         "tools/install.ps1",
         "tools/uninstall.ps1"
       ]
+    },
+    "Domain.SharedKernel/1.0.0": {
+      "type": "project",
+      "path": "../Domain.SharedKernel/Domain.SharedKernel.csproj",
+      "msbuildProject": "../Domain.SharedKernel/Domain.SharedKernel.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Domain.SharedKernel >= 1.0.0",
       "MediatR >= 8.0.2",
       "StyleCop.Analyzers >= 1.1.118"
     ]
@@ -101,7 +145,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Projetos\\arquitetura-corporativa\\src\\Infra\\Domain.SharedKernel\\Domain.SharedKernel.csproj": {
+              "projectPath": "D:\\Projetos\\arquitetura-corporativa\\src\\Infra\\Domain.SharedKernel\\Domain.SharedKernel.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
