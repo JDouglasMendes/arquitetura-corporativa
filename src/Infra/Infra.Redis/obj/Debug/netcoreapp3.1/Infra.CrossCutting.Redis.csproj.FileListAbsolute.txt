@@ -1,6 +1,0 @@
-D:\Projetos\arquitetura-corporativa\src\Infra\Infra.Redis\bin\Debug\netcoreapp3.1\Infra.CrossCutting.Redis.deps.json
-D:\Projetos\arquitetura-corporativa\src\Infra\Infra.Redis\bin\Debug\netcoreapp3.1\Infra.CrossCutting.Redis.dll
-D:\Projetos\arquitetura-corporativa\src\Infra\Infra.Redis\bin\Debug\netcoreapp3.1\Infra.CrossCutting.Redis.pdb
-D:\Projetos\arquitetura-corporativa\src\Infra\Infra.Redis\bin\Debug\netcoreapp3.1\Infra.CrossCutting.Configuration.dll
-D:\Projetos\arquitetura-corporativa\src\Infra\Infra.Redis\bin\Debug\netcoreapp3.1\Infra.CrossCutting.Configuration.pdb
-D:\Projetos\arquitetura-corporativa\src\Infra\Infra.Redis\bin\Debug\netcoreapp3.1\Infra.CrossCutting.Configuration.xml
