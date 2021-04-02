@@ -1,11 +1,8 @@
 ﻿using CalculoFolhaDePagamento.Domain.Domain.Contratos;
 using CalculoFolhaDePagamento.Domain.Services.Repositories;
 using CalculoFolhaDePagamento.Domain.Services.ServiceDomain;
-using Infra.CrossCutting.EventBusRabbitMQ;
-using Infra.CrossCutting.Identity;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -18,8 +15,6 @@ namespace CalculoFolhaDePagamento.Domain.Domain.Calculo
         private readonly IFeedbackExecucaoCalculoServiceDomain _feedbackExecucaoCalculo;
         private readonly DateTime _referencia;
         private List<Contrato> _contratos;
-        // private readonly IRabbitMQBus _rabbitMQBus;
-        // private readonly IUser _user;
 
         public CalculoBuilder(DateTime referencia,
                               EnumFolhaDePagamento enumFolhaDePagamento,
@@ -30,14 +25,12 @@ namespace CalculoFolhaDePagamento.Domain.Domain.Calculo
             _calculoRepository = calculoRepository;
             _referencia = referencia;
             _feedbackExecucaoCalculo = feedbackExecucaoCalculo;
-            // _rabbitMQBus = rabbitMQBus;
-            // _user = user;
         }
 
         public CalculoBuilder InicieCalculo(List<Contrato> contratos)
         {
             _contratos = contratos;
-            _quantidadeTotal = _contratos.Count();
+            _quantidadeTotal = _contratos.Count;
             IdExecucao = Guid.NewGuid();
             _feedbackExecucaoCalculo.IniciarProcessamento(IdExecucao, _quantidadeTotal);
             return this;
@@ -53,8 +46,7 @@ namespace CalculoFolhaDePagamento.Domain.Domain.Calculo
 
         public async Task CalculeContratos()
         {
-            if (_contratos == null)
-                throw new ArgumentException();
+            CheckParameters();
 
             await Task.Run(() =>
             {
@@ -66,15 +58,12 @@ namespace CalculoFolhaDePagamento.Domain.Domain.Calculo
                     _feedbackExecucaoCalculo.AtualizarPercentualExecucao(IdExecucao, _quantidadeProcessada, _quantidadeTotal);
                 });
             });
-            /*
-            await _rabbitMQBus.Publisher(FactoryPublishable.Get<object>(IdExecucao,
-                "notificar-usuario",
-                new
-                {
-                    UserName = _user.Name,
-                    Message = "Processamento do cálculo finalizado",
-                }));
-            */
+        }
+
+        private void CheckParameters()
+        {
+            if (_contratos == null)
+                throw new ArgumentException(nameof(_contratos));
         }
     }
 }

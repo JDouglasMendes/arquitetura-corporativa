@@ -3,8 +3,6 @@ using CalculoFolhaDePagamento.Domain.Domain.Calculo;
 using CalculoFolhaDePagamento.Domain.Services.Repositories;
 using CalculoFolhaDePagamento.Domain.Services.ServiceDomain;
 using IdentityServer4;
-using Infra.CrossCutting.EventBusRabbitMQ;
-using Infra.CrossCutting.Identity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,20 +16,14 @@ namespace CalculoFolhaDePagamento.Api.Controllers
         private readonly ICalculoRepository _calculoRepository;
         private readonly IContratoRepository _contratoRepository;
         private readonly IFeedbackExecucaoCalculoServiceDomain _feedbackExecucaoCalculoServiceDomain;
-        private readonly IUser _user;
-        private readonly IRabbitMQBus _rabbitMQBus;
 
         public CalculoMensalController(ICalculoRepository calculoRepository,
                                        IContratoRepository contratoRepository,
-                                       IFeedbackExecucaoCalculoServiceDomain feedbackExecucaoCalculoServiceDomain,
-                                       IRabbitMQBus rabbitMQBus,
-                                       IUser user)
+                                       IFeedbackExecucaoCalculoServiceDomain feedbackExecucaoCalculoServiceDomain)
         {
             _calculoRepository = calculoRepository;
             _contratoRepository = contratoRepository;
             _feedbackExecucaoCalculoServiceDomain = feedbackExecucaoCalculoServiceDomain;
-            _user = user;
-            _rabbitMQBus = rabbitMQBus;
         }
 
         [HttpPost]

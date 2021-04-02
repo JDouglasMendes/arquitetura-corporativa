@@ -20,11 +20,11 @@ namespace CalculoFolhaDePagamento.Domain.Domain.Contratos
         public DateTime Inicio { get; }
         public DateTime? Fim { get; private set; }
 
-        public override bool Equals(object obj)
-            => obj is Vigencia vigencia && vigencia == this;
-
         public override int GetHashCode()
             => HashCode.Combine(Inicio, Fim);
+
+        public override bool Equals(object obj)
+            => obj is Vigencia vigencia && vigencia == this;
 
         public bool Equals([AllowNull] Vigencia other)
             => this.Inicio == other.Inicio && this.Fim == other.Fim;

@@ -2,7 +2,7 @@
 
 namespace CalculoFolhaDePagamento.Domain.Domain.Calculo
 {
-    internal class FabricaCalculo
+    internal static class FabricaCalculo
     {
         internal static ICalculo Crie(EnumFolhaDePagamento enumFolhaDePagamento, DateTime referencia)
         {
@@ -10,7 +10,7 @@ namespace CalculoFolhaDePagamento.Domain.Domain.Calculo
             {
                 EnumFolhaDePagamento.Mensal => new CalculoFolhaMensal(referencia),
                 EnumFolhaDePagamento.Ferias => throw new NotImplementedException(),
-                _ => throw new ArgumentException(),
+                _ => throw new ArgumentException(nameof(enumFolhaDePagamento)),
             };
 
             return calculo;

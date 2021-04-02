@@ -7,11 +7,11 @@ namespace CalculoFolhaDePagamento.Domain.Domain.ComponentesDeCalculo
 {
     public sealed class FabricaComponentesCalculo
     {
-        private static Dictionary<Type, IComponenteDeCalculo> _dicionarioDeComponentes;
+        private static Dictionary<Type, IComponenteDeCalculo> _dicionarioDeComponentes = new Dictionary<Type, IComponenteDeCalculo>();
 
         private FabricaComponentesCalculo()
         {
-            _dicionarioDeComponentes = new Dictionary<Type, IComponenteDeCalculo>();
+
             var types = Assembly.GetAssembly(typeof(FabricaComponentesCalculo))
             .GetTypes().Where(x => x.IsClass &&
                   x.GetInterface(typeof(IComponenteDeCalculo).Name, true) != null).ToList();

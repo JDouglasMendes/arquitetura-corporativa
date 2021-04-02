@@ -7,7 +7,7 @@ namespace CalculoFolhaDePagamento.Infra.Data.Converters
 {
     public static class TableToDomainConverter
     {
-        public static Func<ContratoTable, Contrato> Contrato = (table) =>
+        public readonly static Func<ContratoTable, Contrato> Contrato = (table) =>
             new Contrato(Guid.Parse(table.IdColaborador),
                          Guid.Parse(table.IdContrato),
                          table.DataFim != null && table.DataFim.Value > 0 ?

@@ -32,7 +32,7 @@ namespace CalculoFolhaDePagamento.Infra.Data.Repositories
                     IdValor = (int)c.Key,
                     c.Value.Valor
                 });
-            };
+            }
         }
     }
 }

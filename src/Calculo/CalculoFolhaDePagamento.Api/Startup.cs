@@ -1,3 +1,4 @@
+using CalculoFolhaDePagamento.Api.BackgoundTasks;
 using CalculoFolhaDePagamento.Api.Extensions;
 using CalculoFolhaDePagamento.Infra.CrossCutting.IoC;
 using Microsoft.AspNetCore.Builder;
@@ -20,9 +21,10 @@ namespace CalculoFolhaDePagamento.Api
             services.AddMvc();
             services.AddHttpContextAccessor();
             services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddHostedService<ContratoParaCalculoBackgroundService>();
             services.AddAuthentication(Configuration);
             services.AddControllers();
-            services.AddEventBus(Configuration);
+            services.MyAddEventBus(Configuration);
             NativeInjectorBootStrapper.RegisterServices(services);
         }
 
