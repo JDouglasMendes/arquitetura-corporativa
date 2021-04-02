@@ -11,9 +11,9 @@ namespace RH.Infra.Data.Repository
 {
     public class OcorrenciaDeFeriasRepository : IOcorrenciaDeDeriasRepository
     {
-        private readonly IOcorrenciaDeFeriasDAO _ocorrenciaDeFeriasDAO;
+        private readonly IOcorrenciaDeFeriasDao _ocorrenciaDeFeriasDAO;
 
-        public OcorrenciaDeFeriasRepository(IOcorrenciaDeFeriasDAO ocorrenciaDeFeriasDAO)
+        public OcorrenciaDeFeriasRepository(IOcorrenciaDeFeriasDao ocorrenciaDeFeriasDAO)
             => _ocorrenciaDeFeriasDAO = ocorrenciaDeFeriasDAO;
 
         public async Task<List<OcorrenciaDeFerias>> ObtenhaOcorrenciasDoPeriodoAquisitivo(Guid idContrato, DateTime periodoAquisitivo)

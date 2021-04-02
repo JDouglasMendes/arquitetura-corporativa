@@ -4,9 +4,9 @@ using RH.Infra.Data.DAO.Contracts;
 
 namespace RH.Infra.Data.DAO.Data
 {
-    public class ContratoDAO : GenericDAO<Contrato>, IContratoDAO
+    public class ContratoDao : GenericDao<Contrato>, IContratoDao
     {
-        public ContratoDAO(CodeiziContext db)
+        public ContratoDao(CodeiziContext db)
             : base(db) { }
     }
 }

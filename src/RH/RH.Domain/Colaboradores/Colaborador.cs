@@ -9,7 +9,7 @@ namespace RH.Domain.Colaboradores
 {
     public class Colaborador : Entity
     {
-        private readonly List<Contrato> _contratos = new List<Contrato>();
+        private readonly List<Contrato> _contratos;
         public NomePessoa Nome { get; }
         public DateTime DataDeNascimento { get; private set; }
         public string ObservacaoContratual { get; set; }
@@ -24,7 +24,9 @@ namespace RH.Domain.Colaboradores
 
         [ExcludeFromCodeCoverage]
         protected Colaborador()
-            => _contratos = new List<Contrato>();
+        {
+            _contratos = new List<Contrato>();
+        }
 
         [ExcludeFromCodeCoverage]
         public IReadOnlyCollection<Contrato> Contratos => _contratos.ToList();

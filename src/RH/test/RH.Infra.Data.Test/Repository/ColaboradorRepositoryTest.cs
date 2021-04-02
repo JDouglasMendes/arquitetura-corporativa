@@ -17,7 +17,7 @@ namespace Codeizi.Infra.Data.Test.Repository
         {
             var contexto = new InMemoryDBContext().Crie();
             var colaborador = new ColaboradorBuilder().CrieColaboradorSucesso().Get;
-            var contratoDAO = FabricGenericDAO<IContratoDAO>.Crie(contexto);
+            var contratoDAO = FabricGenericDAO<IContratoDao>.Crie(contexto);
             var colaboradorDAO = FabricGenericDAO<IColaboradorDAO>.Crie(contexto);
             var repository = new ColaboradorRepository(contratoDAO, colaboradorDAO);
             await repository.RealizeAdmissao(colaborador);
@@ -30,7 +30,7 @@ namespace Codeizi.Infra.Data.Test.Repository
         public async void BusqueTodosContratos()
         {
             var contexto = new InMemoryDBContext().Crie();
-            var contratoDAO = FabricGenericDAO<IContratoDAO>.Crie(contexto);
+            var contratoDAO = FabricGenericDAO<IContratoDao>.Crie(contexto);
             var colaboradorDAO = FabricGenericDAO<IColaboradorDAO>.Crie(contexto);
             var repository = new ColaboradorRepository(contratoDAO, colaboradorDAO);
             var chave = Guid.NewGuid();
@@ -51,7 +51,7 @@ namespace Codeizi.Infra.Data.Test.Repository
         {
             // Arrange
             var contexto = new InMemoryDBContext().Crie();
-            var contratoDAO = FabricGenericDAO<IContratoDAO>.Crie(contexto);
+            var contratoDAO = FabricGenericDAO<IContratoDao>.Crie(contexto);
             var colaboradorDAO = FabricGenericDAO<IColaboradorDAO>.Crie(contexto);
 
             var chave = Guid.NewGuid();

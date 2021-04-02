@@ -22,11 +22,11 @@ namespace RH.Domain.Colaboradores.EventHandlers
             _eventStore = eventStore;
         }
 
-        public Task Handle(NovoColaboradorParaCalculoEvent request, CancellationToken cancellationToken)
+        public Task Handle(NovoColaboradorParaCalculoEvent notification, CancellationToken cancellationToken)
         {
-            _rabbitMQBus.Publisher(FactoryPublishable.Get(request.AggregateId,
+            _rabbitMQBus.Publisher(FactoryPublishable.Get(notification.AggregateId,
                                                          "add-contrato",
-                                                         request));
+                                                         notification));
             return Task.CompletedTask;
         }
 

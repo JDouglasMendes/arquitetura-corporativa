@@ -6,20 +6,18 @@ namespace RH.Domain.Ocorrencias.Ferias.Events
 {
     public class AgendamentoDeFeriasQueryEvent : Event
     {
-        public AgendamentoDeFeriasQueryEvent(Guid idColaborador,
+        public AgendamentoDeFeriasQueryEvent(
+            Colaborador colaborador,
             Guid idContrato,
-            string nome,
-            string sobrenome,
             DateTime dataInicio,
             byte diasDeFerias,
             byte diasDeAbono,
             DateTime periodoAquisitivo,
             bool feriasParceladas)
         {
-            IdColaborador = idColaborador;
+            IdColaborador = colaborador.Id;
             IdContrato = idContrato;
-            Nome = nome;
-            Sobrenome = sobrenome;
+            Nome = colaborador.Nome.ToString();
             DataInicio = dataInicio;
             DiasDeFerias = diasDeFerias;
             DiasDeAbono = diasDeAbono;
@@ -27,11 +25,12 @@ namespace RH.Domain.Ocorrencias.Ferias.Events
             FeriasParceladas = feriasParceladas;
         }
 
-        public static AgendamentoDeFeriasQueryEvent Crie(Colaborador colaborador, Guid idContrato, OcorrenciaDeFerias ocorrenciaDeFerias)
-            => new AgendamentoDeFeriasQueryEvent(colaborador.Id,
+        public static AgendamentoDeFeriasQueryEvent Crie(
+            Colaborador colaborador,
+            Guid idContrato,
+            OcorrenciaDeFerias ocorrenciaDeFerias)
+            => new AgendamentoDeFeriasQueryEvent(colaborador,
                 idContrato,
-                colaborador.Nome.Nome,
-                colaborador.Nome.Sobrenome,
                 ocorrenciaDeFerias.DataDeInicio,
                 ocorrenciaDeFerias.DiasDeFerias,
                 ocorrenciaDeFerias.DiasDeAbono,
@@ -41,13 +40,11 @@ namespace RH.Domain.Ocorrencias.Ferias.Events
         public Guid IdColaborador { get; }
         public Guid IdContrato { get; }
         public string Nome { get; set; }
-        public string Sobrenome { get; }
         public DateTime DataInicio { get; }
         public byte DiasDeFerias { get; }
         public byte DiasDeAbono { get; }
         public DateTime PeriodoAquisitivo { get; }
         public bool FeriasParceladas { get; }
-
         public DateTime DataFim => DataInicio.AddDays(DiasDeFerias);
     }
 }

@@ -1,5 +1,5 @@
-using Infra.Identity.Data;
 using IdentityServer4.EntityFramework.DbContexts;
+using Infra.Identity.Data;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -11,13 +11,12 @@ using Serilog;
 using System;
 using System.IO;
 
-
 namespace Infra.Identity
 {
     public static class Program
     {
         public static readonly string Namespace = typeof(Program).Namespace;
-        public static readonly string AppName = Namespace.Substring(Namespace.LastIndexOf('.', Namespace.LastIndexOf('.') - 1) + 1);
+        public static readonly string AppName = Namespace[(Namespace.LastIndexOf('.', Namespace.LastIndexOf('.') - 1) + 1)..];
 
         public static int Main(string[] args)
         {
@@ -54,13 +53,11 @@ namespace Infra.Identity
 
                 return 0;
             }
-#pragma warning disable CA1031 // Do not catch general exception types
             catch (Exception ex)
             {
                 Log.Fatal(ex, "Program terminated unexpectedly ({ApplicationContext})!", AppName);
                 return 1;
             }
-#pragma warning restore CA1031 // Do not catch general exception types
             finally
             {
                 Log.CloseAndFlush();
@@ -80,15 +77,20 @@ namespace Infra.Identity
         {
             var seqServerUrl = configuration["Serilog:SeqServerUrl"];
             var logstashUrl = configuration["Serilog:LogstashgUrl"];
-            return new LoggerConfiguration()
+            var logger = new LoggerConfiguration()
                 .MinimumLevel.Verbose()
                 .Enrich.WithProperty("ApplicationContext", AppName)
                 .Enrich.FromLogContext()
-                .WriteTo.Console()
-                .WriteTo.Seq(string.IsNullOrWhiteSpace(seqServerUrl) ? "http://seq" : seqServerUrl)
-                .WriteTo.Http(string.IsNullOrWhiteSpace(logstashUrl) ? "http://localhost:8080" : logstashUrl)
-                .ReadFrom.Configuration(configuration)
-                .CreateLogger();
+                .WriteTo.Console();
+
+            if (!string.IsNullOrWhiteSpace(seqServerUrl))
+                logger.WriteTo.Seq(seqServerUrl);
+
+            if (!string.IsNullOrWhiteSpace(logstashUrl))
+                logger.WriteTo.Http(logstashUrl);
+
+            return logger.ReadFrom.Configuration(configuration)
+            .CreateLogger();
         }
 
         private static IConfiguration GetConfiguration()

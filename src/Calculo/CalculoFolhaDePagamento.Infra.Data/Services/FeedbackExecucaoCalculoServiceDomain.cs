@@ -38,9 +38,9 @@ namespace CalculoFolhaDePagamento.Infra.Data.Services
 
         public void AtualizarPercentualExecucao(Guid idExecucao, int quantidadeProcessada, int quantidadeTotalProcessamento)
         {
-            if (EhMultiplo(quantidadeProcessada * 100 / quantidadeTotalProcessamento, 10))
+            if (EhMultiplo((quantidadeProcessada * 100) / (double)quantidadeTotalProcessamento, 10))
             {
-                AtualizaStatusProcessamento(idExecucao, quantidadeProcessada * 100 / quantidadeTotalProcessamento);
+                AtualizaStatusProcessamento(idExecucao, (quantidadeProcessada * 100) / (double) quantidadeTotalProcessamento);
             }
         }
 

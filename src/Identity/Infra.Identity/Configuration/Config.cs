@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Infra.Identity.Configuration
 {
-    public sealed class Config
+    public static class Config
     {
         public static IEnumerable<ApiScope> GetApiScope()
         {

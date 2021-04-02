@@ -1,7 +1,7 @@
-﻿using Infra.Identity.Models;
-using IdentityModel;
+﻿using IdentityModel;
 using IdentityServer4.Models;
 using IdentityServer4.Services;
+using Infra.Identity.Models;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
@@ -23,9 +23,9 @@ namespace Infra.Identity.Services
 
         async public Task GetProfileDataAsync(ProfileDataRequestContext context)
         {
-            var subject = context.Subject ?? throw new ArgumentNullException(nameof(context.Subject));
+            var subject = context.Subject ?? throw new ArgumentNullException(nameof(context));
 
-            var subjectId = subject.Claims.Where(x => x.Type == "sub").FirstOrDefault().Value;
+            var subjectId = subject.Claims.FirstOrDefault(x => x.Type == "sub").Value;
 
             var user = await _userManager.FindByIdAsync(subjectId);
             if (user == null)
@@ -37,9 +37,9 @@ namespace Infra.Identity.Services
 
         async public Task IsActiveAsync(IsActiveContext context)
         {
-            var subject = context.Subject ?? throw new ArgumentNullException(nameof(context.Subject));
+            var subject = context.Subject ?? throw new ArgumentNullException(nameof(context));
 
-            var subjectId = subject.Claims.Where(x => x.Type == "sub").FirstOrDefault().Value;
+            var subjectId = subject.Claims.FirstOrDefault(x => x.Type == "sub").Value;
             var user = await _userManager.FindByIdAsync(subjectId);
 
             context.IsActive = false;
@@ -77,19 +77,8 @@ namespace Infra.Identity.Services
                 claims.Add(new Claim("name", user.Name));
 
             if (!string.IsNullOrWhiteSpace(user.LastName))
-                claims.Add(new Claim("last_name", user.LastName));            
-                     
-            /*
-            if (_userManager.SupportsUserEmail)
-            {
-                claims.AddRange(new[]
-                {
-                    new Claim(JwtClaimTypes.Email, user.Email),
-                    new Claim(JwtClaimTypes.EmailVerified, user.EmailConfirmed ? "true" : "false", ClaimValueTypes.Boolean)
-                });
-            }
-            */
-          
+                claims.Add(new Claim("last_name", user.LastName));
+
             return claims;
         }
     }

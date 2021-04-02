@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace RH.Infra.Data.DAO
 {
-    public interface IGenericDAO<TEntity> : IDisposable
+    public interface IGenericDao<TEntity> : IDisposable
         where TEntity : class
     {
         Task AddAsync(TEntity entity);

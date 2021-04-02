@@ -3,23 +3,31 @@ using RabbitMQ.Client;
 
 namespace RH.Service.Api.IntegrationFake
 {
-#pragma warning disable CA1063 // Implement IDisposable Correctly
-
     public class RabbitMQPersistentConnectionFake : IRabbitMQPersistentConnection
-#pragma warning restore CA1063 // Implement IDisposable Correctly
+
     {
+        private bool disposedValue;
+
         public bool IsConnected => true;
 
         public IModel CreateModel()
             => null;
 
-#pragma warning disable CA1063 // Implement IDisposable Correctly
-
-        public void Dispose()
-#pragma warning restore CA1063 // Implement IDisposable Correctly
-        { }
-
         public bool TryConnect()
             => true;
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposedValue)
+            {
+                disposedValue = true;
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(disposing: true);
+            System.GC.SuppressFinalize(this);
+        }
     }
 }

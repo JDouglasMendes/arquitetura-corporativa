@@ -10,12 +10,3 @@ D:\Projetos\arquitetura-corporativa\src\Identity\Codeizi.Curso.Infra.CrossCuttin
 D:\Projetos\arquitetura-corporativa\src\Identity\Infra.CrossCutting.Identity\bin\Debug\netcoreapp3.1\Infra.CrossCutting.Identity.deps.json
 D:\Projetos\arquitetura-corporativa\src\Identity\Infra.CrossCutting.Identity\bin\Debug\netcoreapp3.1\Infra.CrossCutting.Identity.dll
 D:\Projetos\arquitetura-corporativa\src\Identity\Infra.CrossCutting.Identity\bin\Debug\netcoreapp3.1\Infra.CrossCutting.Identity.pdb
-D:\Projetos\arquitetura-corporativa\src\Identity\Infra.CrossCutting.Identity\obj\Debug\netcoreapp3.1\Infra.CrossCutting.Identity.csprojAssemblyReference.cache
-D:\Projetos\arquitetura-corporativa\src\Identity\Infra.CrossCutting.Identity\obj\Debug\netcoreapp3.1\Infra.CrossCutting.Identity.AssemblyInfoInputs.cache
-D:\Projetos\arquitetura-corporativa\src\Identity\Infra.CrossCutting.Identity\obj\Debug\netcoreapp3.1\Infra.CrossCutting.Identity.AssemblyInfo.cs
-D:\Projetos\arquitetura-corporativa\src\Identity\Infra.CrossCutting.Identity\obj\Debug\netcoreapp3.1\Infra.CrossCutting.Identity.csproj.CoreCompileInputs.cache
-D:\Projetos\arquitetura-corporativa\src\Identity\Infra.CrossCutting.Identity\obj\Debug\netcoreapp3.1\Infra.CrossCutting.Identity.dll
-D:\Projetos\arquitetura-corporativa\src\Identity\Infra.CrossCutting.Identity\obj\Debug\netcoreapp3.1\Infra.CrossCutting.Identity.pdb
-D:\Projetos\arquitetura-corporativa\src\Identity\package\netcoreapp3.1\Infra.CrossCutting.Identity.deps.json
-D:\Projetos\arquitetura-corporativa\src\Identity\package\netcoreapp3.1\Infra.CrossCutting.Identity.dll
-D:\Projetos\arquitetura-corporativa\src\Identity\package\netcoreapp3.1\Infra.CrossCutting.Identity.pdb

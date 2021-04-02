@@ -2,7 +2,7 @@
 
 namespace RH.Infra.Data.DAO.Contracts
 {
-    public interface IContratoDAO : IGenericDAO<Contrato>
+    public interface IContratoDao : IGenericDao<Contrato>
     {
     }
 }

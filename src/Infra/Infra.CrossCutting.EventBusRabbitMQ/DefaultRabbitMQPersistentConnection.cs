@@ -117,8 +117,6 @@ namespace Infra.CrossCutting.EventBusRabbitMQ
             {
                 if (disposing)
                 {
-                    if (_disposed) return;
-
                     _disposed = true;
 
                     try

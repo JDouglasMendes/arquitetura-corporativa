@@ -27,7 +27,7 @@ namespace Infra.Identity.Controllers
     /// </summary>
     public class AccountController : Controller
     {
-        //private readonly InMemoryUserLoginService _loginService;
+
         private readonly ILoginService<ApplicationUser> _loginService;
         private readonly IIdentityServerInteractionService _interaction;
         private readonly IClientStore _clientStore;
@@ -37,7 +37,7 @@ namespace Infra.Identity.Controllers
 
         public AccountController(
 
-            //InMemoryUserLoginService loginService,
+
             ILoginService<ApplicationUser> loginService,
             IIdentityServerInteractionService interaction,
             IClientStore clientStore,
@@ -100,7 +100,7 @@ namespace Infra.Identity.Controllers
 
                         props.ExpiresUtc = DateTimeOffset.UtcNow.AddDays(permanentTokenLifetime);
                         props.IsPersistent = true;
-                    };
+                    }
 
                     await _loginService.SignInAsync(user, props);
 
@@ -153,7 +153,7 @@ namespace Infra.Identity.Controllers
         [HttpGet]
         public async Task<IActionResult> Logout(string logoutId)
         {
-            if (User.Identity.IsAuthenticated == false)
+            if (!User.Identity.IsAuthenticated)
             {
                 // if the user is not authenticated, then just show logged out page
                 return await Logout(new LogoutViewModel { LogoutId = logoutId });
@@ -267,7 +267,7 @@ namespace Infra.Identity.Controllers
                     PhoneNumber = model.User.PhoneNumber,
                 };
                 var result = await _userManager.CreateAsync(user, model.Password);
-                if (result.Errors.Count() > 0)
+                if (result.Errors.Any())
                 {
                     AddErrors(result);
                     // If we got this far, something failed, redisplay form
@@ -281,7 +281,7 @@ namespace Infra.Identity.Controllers
                     return Redirect(returnUrl);
                 else
                     if (ModelState.IsValid)
-                    return RedirectToAction("login", "account", new { returnUrl });
+                        return RedirectToAction("login", "account", new { returnUrl });
                 else
                     return View(model);
             }

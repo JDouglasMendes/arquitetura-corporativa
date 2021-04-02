@@ -40,7 +40,7 @@ namespace RH.Infra.Data.Migrations
                     DataDeInicio = table.Column<DateTime>(nullable: false),
                     DiasDeFerias = table.Column<byte>(nullable: false),
                     DiasDeAboino = table.Column<byte>(nullable: false),
-                    PeriodoAquisitivo = table.Column<DateTime>(nullable: false)
+                    PeriodoAquisitivo = table.Column<DateTime>(nullable: false),
                 },
                 constraints: table =>
                 {

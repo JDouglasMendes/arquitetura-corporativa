@@ -17,9 +17,9 @@ namespace Codeizi.Infra.Data.Test.Repository
             // Arrange
             var contexto = new InMemoryDBContext().Crie();
             var colaborador = new ColaboradorBuilder().CrieColaboradorSucesso().Get;
-            var contratoDAO = FabricGenericDAO<IContratoDAO>.Crie(contexto);
+            var contratoDAO = FabricGenericDAO<IContratoDao>.Crie(contexto);
             var colaboradorDAO = FabricGenericDAO<IColaboradorDAO>.Crie(contexto);
-            var ocorrenciaDeFeriasDAO = FabricGenericDAO<IOcorrenciaDeFeriasDAO>.Crie(contexto);
+            var ocorrenciaDeFeriasDAO = FabricGenericDAO<IOcorrenciaDeFeriasDao>.Crie(contexto);
             var repository = new ColaboradorRepository(contratoDAO, colaboradorDAO);
             await repository.RealizeAdmissao(colaborador);
 

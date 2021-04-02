@@ -1,11 +1,11 @@
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using IdentityServer4.Configuration;
+using IdentityServer4.Services;
 using Infra.Identity.Certificates;
 using Infra.Identity.Data;
 using Infra.Identity.Models;
 using Infra.Identity.Services;
-using IdentityServer4.Configuration;
-using IdentityServer4.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -90,7 +90,7 @@ namespace Infra.Identity
             .Services.AddTransient<IProfileService, ProfileService>();
 
             services.AddControllers();
-            services.AddControllersWithViews().AddRazorRuntimeCompilation(); ;
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddRazorPages();
 
             var container = new ContainerBuilder();
@@ -102,11 +102,6 @@ namespace Infra.Identity
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public static void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            //loggerFactory.AddConsole(Configuration.GetSection("Logging"));
-            //loggerFactory.AddDebug();
-            //loggerFactory.AddAzureWebAppDiagnostics();
-            //loggerFactory.AddApplicationInsights(app.ApplicationServices, LogLevel.Trace);
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -117,17 +112,9 @@ namespace Infra.Identity
             }
 
             app.UseStaticFiles();
-            /*
-            // Make work identity server redirections in Edge and lastest versions of browers. WARN: Not valid in a production environment.
-            app.Use(async (context, next) =>
-            {
-                context.Response.Headers.Add("Content-Security-Policy", "default-src 'self';script-src 'unsafe-inline'; script-src-elem 'unsafe-inline'");
-                await next();
-            });
-            */
 
             app.UseForwardedHeaders();
-           
+
             app.UseIdentityServer();
             app.UseCookiePolicy(new CookiePolicyOptions { MinimumSameSitePolicy = SameSiteMode.Lax });
             app.UseRouting();

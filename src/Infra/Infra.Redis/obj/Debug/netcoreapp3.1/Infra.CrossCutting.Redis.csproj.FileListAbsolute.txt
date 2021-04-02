@@ -4,13 +4,3 @@ D:\Projetos\arquitetura-corporativa\src\Infra\Infra.Redis\bin\Debug\netcoreapp3.
 D:\Projetos\arquitetura-corporativa\src\Infra\Infra.Redis\bin\Debug\netcoreapp3.1\Infra.CrossCutting.Configuration.dll
 D:\Projetos\arquitetura-corporativa\src\Infra\Infra.Redis\bin\Debug\netcoreapp3.1\Infra.CrossCutting.Configuration.pdb
 D:\Projetos\arquitetura-corporativa\src\Infra\Infra.Redis\bin\Debug\netcoreapp3.1\Infra.CrossCutting.Configuration.xml
-D:\Projetos\arquitetura-corporativa\src\Infra\Infra.Redis\obj\Debug\netcoreapp3.1\Infra.CrossCutting.Redis.csprojAssemblyReference.cache
-D:\Projetos\arquitetura-corporativa\src\Infra\Infra.Redis\obj\Debug\netcoreapp3.1\Infra.CrossCutting.Redis.AssemblyInfoInputs.cache
-D:\Projetos\arquitetura-corporativa\src\Infra\Infra.Redis\obj\Debug\netcoreapp3.1\Infra.CrossCutting.Redis.AssemblyInfo.cs
-D:\Projetos\arquitetura-corporativa\src\Infra\Infra.Redis\obj\Debug\netcoreapp3.1\Infra.CrossCutting.Redis.csproj.CoreCompileInputs.cache
-D:\Projetos\arquitetura-corporativa\src\Infra\Infra.Redis\obj\Debug\netcoreapp3.1\Infra.CrossCutting.Redis.csproj.CopyComplete
-D:\Projetos\arquitetura-corporativa\src\Infra\Infra.Redis\obj\Debug\netcoreapp3.1\Infra.CrossCutting.Redis.dll
-D:\Projetos\arquitetura-corporativa\src\Infra\Infra.Redis\obj\Debug\netcoreapp3.1\Infra.CrossCutting.Redis.pdb
-D:\Projetos\arquitetura-corporativa\src\Infra\package\netcoreapp3.1\Infra.CrossCutting.Redis.deps.json
-D:\Projetos\arquitetura-corporativa\src\Infra\package\netcoreapp3.1\Infra.CrossCutting.Redis.dll
-D:\Projetos\arquitetura-corporativa\src\Infra\package\netcoreapp3.1\Infra.CrossCutting.Redis.pdb

@@ -16,11 +16,14 @@ namespace Infra.Identity.Devspaces
 
         public Task<bool> IsPostLogoutRedirectUriValidAsync(string requestedUri, Client client)
         {
-            _logger.LogInformation("Client {ClientName} used post logout uri {RequestedUri}.", client.ClientName, requestedUri);
-            return Task.FromResult(true);
+            return LogInformationRequest(requestedUri, client);
         }
 
         public Task<bool> IsRedirectUriValidAsync(string requestedUri, Client client)
+        {
+            return LogInformationRequest(requestedUri, client);
+        }
+        private Task<bool> LogInformationRequest(string requestedUri, Client client)
         {
             _logger.LogInformation("Client {ClientName} used post logout uri {RequestedUri}.", client.ClientName, requestedUri);
             return Task.FromResult(true);

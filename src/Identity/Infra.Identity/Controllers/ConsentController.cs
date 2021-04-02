@@ -19,7 +19,7 @@ namespace Infra.Identity.Controllers
         private readonly IResourceStore _resourceStore;
         private readonly IIdentityServerInteractionService _interaction;
 
-        
+
         public ConsentController(
             ILogger<ConsentController> logger,
             IIdentityServerInteractionService interaction,
@@ -71,7 +71,7 @@ namespace Infra.Identity.Controllers
                 response = consentError;
             }
             // user clicked 'yes' - validate the data
-            else if (model.Button == "yes" && model != null)
+            else if (model.Button == "yes")
             {
                 // if the user consented to some scope, build the response model
                 if (model.ScopesConsented != null && model.ScopesConsented.Any())

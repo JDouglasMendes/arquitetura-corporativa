@@ -15,20 +15,15 @@ namespace CalculoFolhaDePagamento.Api.BackgoundTasks
     {
         private readonly ILogger<ContratoParaCalculoBackgroundService> _logger;
         private readonly BackgroundTaskConfigurations _settings;
-#pragma warning disable IDE0052 // Remove unread private members
-        private readonly IRabbitMQBus _rabbitMQBus;
-#pragma warning restore IDE0052 // Remove unread private members
 
         public IConfiguration Configuration { get; }
 
         public ContratoParaCalculoBackgroundService(IOptions<BackgroundTaskConfigurations> settings,
                                                     ILogger<ContratoParaCalculoBackgroundService> logger,
-                                                    IConfiguration configuration,
-                                                    IRabbitMQBus rabbitMQBus)
+                                                    IConfiguration configuration)
         {
             _settings = settings?.Value ?? throw new ArgumentNullException(nameof(settings));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-            _rabbitMQBus = rabbitMQBus;
             Configuration = configuration;
         }
 
@@ -37,7 +32,6 @@ namespace CalculoFolhaDePagamento.Api.BackgoundTasks
             _logger.LogDebug("Serviço de novos contratos iniciado.");
 
             stoppingToken.Register(() => _logger.LogDebug("#1 Serviço de novos contratos parado devido solicitação administrativa."));
-
             while (!stoppingToken.IsCancellationRequested)
                 await Task.Delay(_settings.CheckUpdateTime > 0 ? _settings.CheckUpdateTime : 1000,
                                 stoppingToken);

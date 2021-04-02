@@ -2,14 +2,3 @@ D:\Projetos\arquitetura-corporativa\src\Infra\Domain.SharedKernel\bin\Debug\netc
 D:\Projetos\arquitetura-corporativa\src\Infra\Domain.SharedKernel\bin\Debug\netcoreapp3.1\Domain.SharedKernel.dll
 D:\Projetos\arquitetura-corporativa\src\Infra\Domain.SharedKernel\bin\Debug\netcoreapp3.1\Domain.SharedKernel.pdb
 D:\Projetos\arquitetura-corporativa\src\Infra\Domain.SharedKernel\bin\Debug\netcoreapp3.1\Domain.SharedKernel.xml
-D:\Projetos\arquitetura-corporativa\src\Infra\Domain.SharedKernel\obj\Debug\netcoreapp3.1\Domain.SharedKernel.AssemblyInfoInputs.cache
-D:\Projetos\arquitetura-corporativa\src\Infra\Domain.SharedKernel\obj\Debug\netcoreapp3.1\Domain.SharedKernel.AssemblyInfo.cs
-D:\Projetos\arquitetura-corporativa\src\Infra\Domain.SharedKernel\obj\Debug\netcoreapp3.1\Domain.SharedKernel.csproj.CoreCompileInputs.cache
-D:\Projetos\arquitetura-corporativa\src\Infra\Domain.SharedKernel\obj\Debug\netcoreapp3.1\Domain.SharedKernel.dll
-D:\Projetos\arquitetura-corporativa\src\Infra\Domain.SharedKernel\obj\Debug\netcoreapp3.1\Domain.SharedKernel.xml
-D:\Projetos\arquitetura-corporativa\src\Infra\Domain.SharedKernel\obj\Debug\netcoreapp3.1\Domain.SharedKernel.pdb
-D:\Projetos\arquitetura-corporativa\src\Infra\Domain.SharedKernel\obj\Debug\netcoreapp3.1\Domain.SharedKernel.csprojAssemblyReference.cache
-D:\Projetos\arquitetura-corporativa\src\Infra\package\netcoreapp3.1\Domain.SharedKernel.deps.json
-D:\Projetos\arquitetura-corporativa\src\Infra\package\netcoreapp3.1\Domain.SharedKernel.dll
-D:\Projetos\arquitetura-corporativa\src\Infra\package\netcoreapp3.1\Domain.SharedKernel.pdb
-D:\Projetos\arquitetura-corporativa\src\Infra\package\netcoreapp3.1\Domain.SharedKernel.xml

@@ -9,7 +9,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Sockets;
-using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -151,33 +150,12 @@ namespace Infra.CrossCutting.EventBusRabbitMQ
         private async Task ProcessEvent(string eventName, string message)
         {
             _logger.LogTrace("Processing RabbitMQ event: {EventName}", eventName);
-            /*
-            var handle = _services
-                .BuildServiceProvider()
-                .GetRequiredService(GetTypeByName(eventName));
 
-            var publishable = JsonConvert.DeserializeObject<Publishable>(message);
-
-            await (Task)handle.GetType().GetMethod("Handle").Invoke(handle, new object[] { publishable });
-            */
             var publishable = JsonConvert.DeserializeObject<Publishable>(message);
             if (_consumers.ContainsKey(eventName))
                 await _consumers[eventName].Handle(publishable);
         }
-        /*
-        private Type GetTypeByName(string eventName)
-        {
-            var result = _type.Assembly.GetTypes().Where(t =>
-            {
-                if (t.GetCustomAttribute(typeof(ServiceMediatorBusAttribute)) != null)
-                    if ((t.GetCustomAttribute(typeof(ServiceMediatorBusAttribute)) as ServiceMediatorBusAttribute).Queue == eventName)
-                        return true;
-                return false;
-            }).FirstOrDefault();
 
-            return result;
-        }
-        */
         public Task Publisher<T>(T publishable) where T : Publishable
         {
             if (!_persistentConnection.IsConnected)
@@ -224,14 +202,11 @@ namespace Infra.CrossCutting.EventBusRabbitMQ
 
         protected virtual void Dispose(bool disposing)
         {
-            if (!disposedValue)
+            if (!disposedValue && disposing)
             {
-                if (disposing)
+                if (_consumerChannel != null)
                 {
-                    if (_consumerChannel != null)
-                    {
-                        _consumerChannel.Dispose();
-                    }
+                    _consumerChannel.Dispose();
                 }
                 disposedValue = true;
             }

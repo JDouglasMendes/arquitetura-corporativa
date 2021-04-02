@@ -10,10 +10,10 @@ namespace RH.Infra.Data.Repository
 {
     public class ColaboradorRepository : IColaboradorRepository
     {
-        private readonly IContratoDAO contratoDAO;
+        private readonly IContratoDao contratoDAO;
         private readonly IColaboradorDAO colaboradorDAO;
 
-        public ColaboradorRepository(IContratoDAO contratoDAO, IColaboradorDAO colaboradorDAO)
+        public ColaboradorRepository(IContratoDao contratoDAO, IColaboradorDAO colaboradorDAO)
         {
             this.contratoDAO = contratoDAO;
             this.colaboradorDAO = colaboradorDAO;
@@ -22,8 +22,8 @@ namespace RH.Infra.Data.Repository
         public async Task<Colaborador> BusqueColaborador(Guid idColaborador)
             => await colaboradorDAO.GetByIdAsync(idColaborador);
 
-        public IEnumerable<Contrato> BusqueTodosContratos(Guid guid)
-            => contratoDAO.GetQueryable().AsEnumerable().Where(x => x.ColaboradorId == guid).ToList();
+        public IEnumerable<Contrato> BusqueTodosContratos(Guid idColaborador)
+            => contratoDAO.GetQueryable().AsEnumerable().Where(x => x.ColaboradorId == idColaborador).ToList();
 
         public async Task<Contrato> ObtenhaContrato(Guid idContrato)
             => await contratoDAO.GetByIdAsync(idContrato);

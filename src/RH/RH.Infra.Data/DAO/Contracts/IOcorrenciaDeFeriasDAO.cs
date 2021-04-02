@@ -2,7 +2,7 @@
 
 namespace RH.Infra.Data.DAO.Contracts
 {
-    public interface IOcorrenciaDeFeriasDAO : IGenericDAO<OcorrenciaDeFerias>
+    public interface IOcorrenciaDeFeriasDao : IGenericDao<OcorrenciaDeFerias>
     {
     }
 }

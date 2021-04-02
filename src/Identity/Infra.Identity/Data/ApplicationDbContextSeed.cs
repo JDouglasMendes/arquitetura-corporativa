@@ -18,10 +18,10 @@ namespace Infra.Identity.Data
     {
         private readonly IPasswordHasher<ApplicationUser> _passwordHasher = new PasswordHasher<ApplicationUser>();
 
-        public async Task SeedAsync(ApplicationDbContext context, 
+        public async Task SeedAsync(ApplicationDbContext context,
                                     IWebHostEnvironment env,
-                                    ILogger<ApplicationDbContextSeed> logger, 
-                                    IOptions<AppSettings> settings, 
+                                    ILogger<ApplicationDbContextSeed> logger,
+                                    IOptions<AppSettings> settings,
                                     int? retry = 0)
         {
             int retryForAvaiability = retry.Value;
@@ -46,7 +46,6 @@ namespace Infra.Identity.Data
                     GetPreconfiguredImages(contentRootPath, webroot, logger);
                 }
             }
-#pragma warning disable CA1031 // Do not catch general exception types
             catch (Exception ex)
             {
                 if (retryForAvaiability < 10)
@@ -58,7 +57,6 @@ namespace Infra.Identity.Data
                     await SeedAsync(context, env, logger, settings, retryForAvaiability);
                 }
             }
-#pragma warning restore CA1031 // Do not catch general exception types
         }
 
         private IEnumerable<ApplicationUser> GetUsersFromFile(string contentRootPath, ILogger logger)
@@ -81,14 +79,12 @@ namespace Infra.Identity.Data
                 };
                 csvheaders = GetHeaders(requiredHeaders, csvFileUsers);
             }
-#pragma warning disable CA1031 // Do not catch general exception types
             catch (Exception ex)
             {
                 logger.LogError(ex, "EXCEPTION ERROR: {Message}", ex.Message);
 
                 return GetDefaultUser();
             }
-#pragma warning restore CA1031 // Do not catch general exception types
 
             List<ApplicationUser> users = File.ReadAllLines(csvFileUsers)
                         .Skip(1) // skip header column
@@ -105,22 +101,22 @@ namespace Infra.Identity.Data
         {
             if (column.Count() != headers.Count())
             {
-                throw new Exception($"column count '{column.Count()}' not the same as headers count'{headers.Count()}'");
+                throw new ArgumentException($"column count '{column.Count()}' not the same as headers count'{headers.Count()}'");
             }
 
             string cardtypeString = column[Array.IndexOf(headers, "cardtype")].Trim('"').Trim();
             if (!int.TryParse(cardtypeString, out _))
             {
-                throw new Exception($"cardtype='{cardtypeString}' is not a number");
+                throw new ArgumentException($"cardtype='{cardtypeString}' is not a number");
             }
 
             var user = new ApplicationUser
-            {                
+            {
                 Id = Guid.NewGuid().ToString(),
                 LastName = column[Array.IndexOf(headers, "lastname")].Trim('"').Trim(),
                 Name = column[Array.IndexOf(headers, "name")].Trim('"').Trim(),
                 PhoneNumber = column[Array.IndexOf(headers, "phonenumber")].Trim('"').Trim(),
-                UserName = column[Array.IndexOf(headers, "username")].Trim('"').Trim(),             
+                UserName = column[Array.IndexOf(headers, "username")].Trim('"').Trim(),
                 NormalizedEmail = column[Array.IndexOf(headers, "normalizedemail")].Trim('"').Trim(),
                 NormalizedUserName = column[Array.IndexOf(headers, "normalizedusername")].Trim('"').Trim(),
                 SecurityStamp = Guid.NewGuid().ToString("D"),
@@ -136,12 +132,12 @@ namespace Infra.Identity.Data
         {
             var user =
             new ApplicationUser()
-            {                
+            {
                 Id = Guid.NewGuid().ToString(),
                 LastName = "DemoLastName",
                 Name = "DemoUser",
                 PhoneNumber = "1234567890",
-                UserName = "demouser@microsoft.com",                
+                UserName = "demouser@microsoft.com",
                 NormalizedEmail = "DEMOUSER@MICROSOFT.COM",
                 NormalizedUserName = "DEMOUSER@MICROSOFT.COM",
                 SecurityStamp = Guid.NewGuid().ToString("D"),
@@ -155,27 +151,27 @@ namespace Infra.Identity.Data
             };
         }
 
-        static string[] GetHeaders(string[] requiredHeaders, string csvfile)
+        private static string[] GetHeaders(string[] requiredHeaders, string csvfile)
         {
             string[] csvheaders = File.ReadLines(csvfile).First().ToLowerInvariant().Split(',');
 
             if (csvheaders.Count() != requiredHeaders.Count())
             {
-                throw new Exception($"requiredHeader count '{ requiredHeaders.Count()}' is different then read header '{csvheaders.Count()}'");
+                throw new ArgumentException($"requiredHeader count '{ requiredHeaders.Count()}' is different then read header '{csvheaders.Count()}'");
             }
 
             foreach (var requiredHeader in requiredHeaders)
             {
                 if (!csvheaders.Contains(requiredHeader))
                 {
-                    throw new Exception($"does not contain required header '{requiredHeader}'");
+                    throw new ArgumentException($"does not contain required header '{requiredHeader}'");
                 }
             }
 
             return csvheaders;
         }
 
-        static void GetPreconfiguredImages(string contentRootPath, string webroot, ILogger logger)
+        private static void GetPreconfiguredImages(string contentRootPath, string webroot, ILogger logger)
         {
             try
             {
@@ -207,12 +203,10 @@ namespace Infra.Identity.Data
                     }
                 }
             }
-#pragma warning disable CA1031 // Do not catch general exception types
             catch (Exception ex)
             {
-                logger.LogError(ex, "EXCEPTION ERROR: {Message}", ex.Message); ;
+                logger.LogError(ex, "EXCEPTION ERROR: {Message}", ex.Message);
             }
-#pragma warning restore CA1031 // Do not catch general exception types
         }
     }
 }

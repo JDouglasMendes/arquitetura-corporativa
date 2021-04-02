@@ -46,7 +46,7 @@ namespace Api.Integration.Test.Controllers
         {
             // Arrange
             var context = InMemoryDBContext.Crie();
-            var contratoDAO = FabricGenericDAO<IContratoDAO>.Crie(context);
+            var contratoDAO = FabricGenericDAO<IContratoDao>.Crie(context);
             var contrato = new Contrato(
                 new Colaborador(Guid.NewGuid(), NomePessoa.Crie("Codeizi", "Treinamento"), DateTime.Now.AddYears(-34)),
                 DateTime.Now.AddYears(-1),
@@ -58,7 +58,7 @@ namespace Api.Integration.Test.Controllers
 
             var registroDeFeriasCadastrado = new OcorrenciaDeFerias(contrato, contrato.PeriodoAquisitivo, 30, 0);
 
-            var feriasDAO = FabricGenericDAO<IOcorrenciaDeFeriasDAO>.Crie(context);
+            var feriasDAO = FabricGenericDAO<IOcorrenciaDeFeriasDao>.Crie(context);
 
             await feriasDAO.AddAsync(registroDeFeriasCadastrado);
 

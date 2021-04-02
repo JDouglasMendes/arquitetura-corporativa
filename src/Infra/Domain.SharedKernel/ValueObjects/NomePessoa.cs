@@ -17,13 +17,6 @@ namespace Domain.SharedKernel.ValueObjects
         public static NomePessoa Crie(string nome, string sobrenome)
             => new NomePessoa(nome, sobrenome);
 
-        public override bool Equals(object obj)
-        {
-            return obj is NomePessoa pessoa &&
-              Nome == pessoa.Nome &&
-              Sobrenome == pessoa.Sobrenome;
-        }
-
         public override int GetHashCode()
             => HashCode.Combine(Nome, Sobrenome);
 
@@ -33,6 +26,13 @@ namespace Domain.SharedKernel.ValueObjects
         public bool Equals([AllowNull] NomePessoa other)
             => Nome == other.Nome &&
                     Sobrenome == other.Sobrenome;
+
+        public override bool Equals(object obj)
+        {
+            return obj is NomePessoa pessoa &&
+              Nome == pessoa.Nome &&
+              Sobrenome == pessoa.Sobrenome;
+        }
 
         public int CompareTo([AllowNull] NomePessoa other)
                 => ToString().CompareTo(other.ToString());

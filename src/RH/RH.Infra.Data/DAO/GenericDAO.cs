@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace RH.Infra.Data.DAO
 {
-    public abstract class GenericDAO<TEntity> : IGenericDAO<TEntity>
+    public abstract class GenericDao<TEntity> : IGenericDao<TEntity>
         where TEntity : class
     {
         private readonly CodeiziContext db;
         private readonly DbSet<TEntity> dbSetContext;
         private bool disposedValue;
 
-        protected GenericDAO(CodeiziContext db)
+        protected GenericDao(CodeiziContext db)
         {
             this.db = db;
             dbSetContext = this.db.Set<TEntity>();

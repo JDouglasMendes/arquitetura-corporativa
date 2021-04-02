@@ -16,7 +16,7 @@ namespace RH.Service.Api.Extensions
                     Version = "v1",
                     Title = "Codeizi Treinamentos",
                     Description = "Codeizi API Swagger surface",
-                    Contact = new OpenApiContact { Name = "Codeizi", Email = "codeizi.cursos@gmail.com", Url = new Uri("http://codeizi.com.br") },
+                    Contact = new OpenApiContact { Name = "Codeizi", Email = "codeizi.cursos@gmail.com" },
                 });
 
                 s.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme

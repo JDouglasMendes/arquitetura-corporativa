@@ -2,7 +2,7 @@
 
 namespace RH.Infra.Data.DAO.Contracts
 {
-    public interface IColaboradorDAO : IGenericDAO<Colaborador>
+    public interface IColaboradorDAO : IGenericDao<Colaborador>
     {
     }
 }

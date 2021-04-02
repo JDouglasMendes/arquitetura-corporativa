@@ -5,51 +5,33 @@ using System.Reflection;
 
 namespace CalculoFolhaDePagamento.Domain.Domain.ComponentesDeCalculo
 {
-    public sealed class FabricaComponentesCalculo
+    public static class FabricaComponentesCalculo
     {
-        private static Dictionary<Type, IComponenteDeCalculo> _dicionarioDeComponentes = new Dictionary<Type, IComponenteDeCalculo>();
+        private readonly static Dictionary<Type, IComponenteDeCalculo> _dicionarioDeComponentes = new Dictionary<Type, IComponenteDeCalculo>();
+        private static readonly object _lock = new object();
 
-        private FabricaComponentesCalculo()
+        private static void LoadComponents()
         {
+            lock (_lock)
+            {
+                if (_dicionarioDeComponentes.Any())
+                    return;
 
-            var types = Assembly.GetAssembly(typeof(FabricaComponentesCalculo))
-            .GetTypes().Where(x => x.IsClass &&
-                  x.GetInterface(typeof(IComponenteDeCalculo).Name, true) != null).ToList();
+                var types = Assembly.GetAssembly(typeof(FabricaComponentesCalculo))
+                .GetTypes().Where(x => x.IsClass &&
+                      x.GetInterface(typeof(IComponenteDeCalculo).Name, true) != null).ToList();
 
-            types.ForEach(t => _dicionarioDeComponentes.Add(t, (IComponenteDeCalculo)Activator.CreateInstance(t)));
+                types.ForEach(t => _dicionarioDeComponentes.Add(t, (IComponenteDeCalculo)Activator.CreateInstance(t)));
+            }
         }
 
-#pragma warning disable CA1822 // Mark members as static
-
-        public IComponenteDeCalculo Crie(Type type)
-#pragma warning restore CA1822 // Mark members as static
+        public static IComponenteDeCalculo Crie(Type type)
         {
+            LoadComponents();
             if (_dicionarioDeComponentes.ContainsKey(type))
                 return _dicionarioDeComponentes[type];
 
             throw new ArgumentException($"o tipo {type.FullName} não foi mapeado para calculo");
-        }
-
-        // singleton
-        private static volatile FabricaComponentesCalculo instance;
-
-        private static readonly object SyncRoot = new object();
-
-        public static FabricaComponentesCalculo Singleton
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    lock (SyncRoot)
-                    {
-                        if (instance == null)
-                            instance = new FabricaComponentesCalculo();
-                    }
-                }
-
-                return instance;
-            }
         }
     }
 }

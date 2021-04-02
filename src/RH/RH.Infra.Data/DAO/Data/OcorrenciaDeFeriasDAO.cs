@@ -4,9 +4,9 @@ using RH.Infra.Data.DAO.Contracts;
 
 namespace RH.Infra.Data.DAO.Data
 {
-    public class OcorrenciaDeFeriasDAO : GenericDAO<OcorrenciaDeFerias>, IOcorrenciaDeFeriasDAO
+    public class OcorrenciaDeFeriasDao : GenericDao<OcorrenciaDeFerias>, IOcorrenciaDeFeriasDao
     {
-        public OcorrenciaDeFeriasDAO(CodeiziContext db)
+        public OcorrenciaDeFeriasDao(CodeiziContext db)
             : base(db)
         { }
 

@@ -12,8 +12,6 @@ namespace RH.Service.Api.Controllers
         protected ApiController(INotificationHandler<DomainNotification> notifications)
             => _notifications = (DomainNotificationHandler)notifications;
 
-        // protected IEnumerable<DomainNotification> Notifications => _notifications.GetNotifications();
-
         protected bool IsValidOperation()
             => !_notifications.HasNotifications();
 
@@ -34,22 +32,5 @@ namespace RH.Service.Api.Controllers
                 errors = _notifications.GetNotifications().Select(n => n.Value),
             });
         }
-
-        /*
-        protected void NotifyModelStateErrors()
-        {
-            var erros = ModelState.Values.SelectMany(v => v.Errors);
-            foreach (var erro in erros)
-            {
-                var erroMsg = erro.Exception == null ? erro.ErrorMessage : erro.Exception.Message;
-                NotifyError(string.Empty, erroMsg);
-            }
-        }
-
-        protected void NotifyError(string code, string message)
-        {
-            _mediator.RaiseEvent(new DomainNotification(code, message));
-        }
-        */
     }
 }

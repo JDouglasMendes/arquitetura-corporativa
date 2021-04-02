@@ -14,7 +14,7 @@ namespace CalculoFolhaDePagamento.Domain.Domain.Calculo
 
         protected void AdicioneComponenteCalculo<T>()
             where T : IComponenteDeCalculo
-        => componenteDeCalculos.Add(FabricaComponentesCalculo.Singleton.Crie(typeof(T)));
+        => componenteDeCalculos.Add(FabricaComponentesCalculo.Crie(typeof(T)));
 
         protected IReadOnlyCollection<IComponenteDeCalculo> Componentes
         {

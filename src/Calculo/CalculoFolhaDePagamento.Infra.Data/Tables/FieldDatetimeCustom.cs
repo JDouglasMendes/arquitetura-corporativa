@@ -10,7 +10,7 @@ namespace CalculoFolhaDePagamento.Infra.Data.Tables
             => _data = dateTime;
 
         public FieldDatetimeCustom(DateTime? dateTime)
-            => _data = dateTime ?? null;
+            => _data = dateTime;
 
         public FieldDatetimeCustom(int data)
             => _data = ToDatetime(data);

@@ -16,7 +16,7 @@ namespace Infra.CrossCutting.EventBusRabbitMQ
 
         public T ToObject<T>()
             where T : class
-            => (T)JsonConvert.DeserializeObject<T>(Data);
+            => JsonConvert.DeserializeObject<T>(Data);
 
         public Guid Id { get; }
         public string EventName { get; }
