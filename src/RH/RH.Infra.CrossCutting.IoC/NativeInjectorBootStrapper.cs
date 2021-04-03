@@ -1,5 +1,4 @@
-﻿using Domain.SharedKernel.Events;
-using Domain.SharedKernel.IMediatorBus;
+﻿using Domain.SharedKernel.IMediatorBus;
 using Domain.SharedKernel.Notifications;
 using Infra.CrossCutting.Bus;
 using Infra.CrossCutting.Configuration;
@@ -17,9 +16,6 @@ using RH.Domain.Ocorrencias.Ferias.Commands;
 using RH.Domain.Ocorrencias.Ferias.Events;
 using RH.Domain.Ocorrencias.Ferias.EventsHandlers;
 using RH.Domain.Ocorrencias.Ferias.Validations;
-using RH.infra.Data.EventSource.Context;
-using RH.infra.Data.EventSource.EventSource;
-using RH.infra.Data.EventSource.EventStore;
 using RH.Infra.Data.Context;
 using RH.Infra.Data.DAO.Contracts;
 using RH.Infra.Data.Repository;
@@ -41,9 +37,6 @@ namespace RH.Infra.CrossCutting.IoC
             AdicioneCamadaDeDados(services);
 
             services.AddScoped<ICodeiziConfiguration, CodeiziConfiguration>();
-            services.AddScoped<IEventStoreRepository, EventStoreRepository>();
-            services.AddScoped<IEventStore, EventStoreMongoDB>();
-            services.AddScoped<DatabaseEventSource>();
             services.AddScoped<CodeiziContext>();
 
             services.AddScoped<IUser, UserContext>();

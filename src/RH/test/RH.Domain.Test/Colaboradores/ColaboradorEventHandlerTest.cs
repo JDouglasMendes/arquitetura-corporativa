@@ -1,4 +1,5 @@
 ﻿using Domain.SharedKernel.Events;
+using Infra.CrossCutting.Configuration;
 using Infra.CrossCutting.EventBusRabbitMQ;
 using Newtonsoft.Json;
 using NSubstitute;
@@ -30,9 +31,9 @@ namespace Domain.Test.Colaboradores
             var c = p2.ToObject<NovoColaboradorParaCalculoEvent>();
 
             Assert.Equal(colaboradorAdmitido.AggregateId, c.AggregateId);
-            var mockStore = Substitute.For<IEventStore>();
+            var mockICodeiziConfiguration = Substitute.For<ICodeiziConfiguration>();
 
-            var eventHandler = new ColaboradorEventHandler(mock, mockStore);
+            var eventHandler = new ColaboradorEventHandler(mock, mockICodeiziConfiguration);
             await eventHandler.Handle(colaboradorAdmitido, CancellationToken.None);
             Assert.True(true);
         }

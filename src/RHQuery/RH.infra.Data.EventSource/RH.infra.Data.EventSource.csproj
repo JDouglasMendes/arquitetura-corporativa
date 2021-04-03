@@ -16,6 +16,9 @@
     <Reference Include="Infra.CrossCutting.Configuration">
       <HintPath>..\package-infra\netcoreapp3.1\Infra.CrossCutting.Configuration.dll</HintPath>
     </Reference>
+    <Reference Include="Infra.CrossCutting.Identity">
+      <HintPath>..\package-identity\netcoreapp3.1\Infra.CrossCutting.Identity.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

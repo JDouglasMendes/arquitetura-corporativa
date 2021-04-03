@@ -2,18 +2,15 @@
 
 namespace CalculoFolhaDePagamento.Domain.Domain.Calculo
 {
-    internal static class FabricaCalculo
+    public static class FabricaCalculo
     {
-        internal static ICalculo Crie(EnumFolhaDePagamento enumFolhaDePagamento, DateTime referencia)
-        {
-            var calculo = enumFolhaDePagamento switch
+        public static ICalculo Crie(
+            EnumFolhaDePagamento enumFolhaDePagamento,
+            DateTime referencia) => enumFolhaDePagamento switch
             {
                 EnumFolhaDePagamento.Mensal => new CalculoFolhaMensal(referencia),
-                EnumFolhaDePagamento.Ferias => throw new NotImplementedException(),
+                EnumFolhaDePagamento.Ferias => new CalculoFolhaFerias(referencia),
                 _ => throw new ArgumentException(nameof(enumFolhaDePagamento)),
             };
-
-            return calculo;
-        }
     }
 }

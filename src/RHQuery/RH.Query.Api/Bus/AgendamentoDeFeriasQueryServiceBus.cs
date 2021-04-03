@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace RH.Query.Bus
 {
-    // [ServiceMediatorBus("agendamento-ferias-query")]
     public class AgendamentoDeFeriasQueryServiceBus
     {
         private readonly DatabaseQuery _databaseQuery;

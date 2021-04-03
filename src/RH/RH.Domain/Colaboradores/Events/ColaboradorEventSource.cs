@@ -12,6 +12,7 @@ namespace RH.Domain.Colaboradores.Events
         public DateTime DataNascimento { get; set; }
         public string ObservacaoContratual { get; set; }
         public List<ContratoEventSource> Contratos { get; set; }
+        public override string GetKeyQueues => "colaborador-event-source";
 
         public static ColaboradorEventSource Crie(Colaborador colaborador)
             => new ColaboradorEventSource

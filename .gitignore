@@ -1,4 +1,3 @@
-
 src/Calculo/CalculoFolhaDePagamento.Api/bin/*
 src/Calculo/CalculoFolhaDePagamento.Api/obj/*
 src/Calculo/CalculoFolhaDePagamento.Domain/bin/*
@@ -29,7 +28,6 @@ src/Infra/package/netcoreapp3.1/*
 src/Identity/package/netcoreapp3.1/*
 src/Infra/test/Domain.SharedKernel.Test/bin/*
 src/Infra/test/Domain.SharedKernel.Test/obj/*
-
 src/RH/RH.Application/bin/*
 src/RH/RH.Application/obj/*
 src/RH/RH.Domain/bin/*
@@ -46,9 +44,16 @@ src/RH/test/RH.Infra.Data.Test/bin/*
 src/RH/test/RH.Infra.Data.Test/obj/*
 src/RH/RH.Service.Api/bin/*
 src/RH/RH.Service.Api/obj/*
-src/RH/RH.Query.Api/bin/*
-src/RH/RH.Query.Api/obj/*
-src/RH/RH.infra.Data.EventSource/bin/*
-src/RH/RH.infra.Data.EventSource/obj/*
-
+src/RHQuery/RH.Query.Api/bin/*
+src/RHQuery/RH.Query.Api/obj/*
+src/RHQuery/RH.infra.Data.EventSource/bin/*
+src/RHQuery/RH.infra.Data.EventSource/obj/*
 .vs/*
+coverage.opencover.xml
+TestResults/*
+src/Calculo/test/CalculoFolhaDePagamento.Test/TestResults/*
+src/Infra/test/Domain.SharedKernel.Test/TestResults/*
+src/RH/test/RH.API.Integration.Test/TestResults/*
+src/RH/test/RH.Domain.Test/TestResults/*
+src/RH/test/RH.Infra.Data.Test/TestResults/*
+CoverageResults/*

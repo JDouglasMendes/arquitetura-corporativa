@@ -50,6 +50,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\RH.Application\RH.Application.csproj" />
+    <ProjectReference Include="..\..\RH.Infra.Data\RH.Infra.Data.csproj" />
     <ProjectReference Include="..\..\RH.Service.Api\RH.Service.Api.csproj" />
   </ItemGroup>
 

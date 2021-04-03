@@ -16,20 +16,14 @@ namespace CalculoFolhaDePagamento.Domain.Domain.Calculo
             where T : IComponenteDeCalculo
         => componenteDeCalculos.Add(FabricaComponentesCalculo.Crie(typeof(T)));
 
-        protected IReadOnlyCollection<IComponenteDeCalculo> Componentes
-        {
-            get
-            {
-                return componenteDeCalculos;
-            }
-        }
-
         protected ComponentesCalculados Calcule(Contrato contrato, DateTime referencia)
         {
             var tabela = new ComponentesCalculados(contrato, referencia);
 
-            foreach (var componente in Componentes)
+            foreach (var componente in componenteDeCalculos)
+            {
                 tabela.AdicioneValor(componente, componente.Calcule(contrato, tabela));
+            }
 
             return tabela;
         }

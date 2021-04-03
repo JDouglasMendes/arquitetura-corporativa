@@ -17,7 +17,6 @@
   <ItemGroup>
     <ProjectReference Include="..\RH.Application\RH.Application.csproj" />
     <ProjectReference Include="..\RH.Domain\RH.Domain.csproj" />
-    <ProjectReference Include="..\RH.infra.Data.EventSource\RH.infra.Data.EventSource.csproj" />
     <ProjectReference Include="..\RH.Infra.Data\RH.Infra.Data.csproj" />
   </ItemGroup>
 

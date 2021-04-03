@@ -10,10 +10,20 @@ namespace CalculoFolhaDePagamento.Test.Domain
     public class CalculoFolhaFeriasTest
     {
         [Fact]
-        public void CaculeFolhaFerias()
+        public void Calcula_folha_ferias()
         {
             var contrato = CenarioContrato.CrieCenarioConsistente(1000);
             var calculo = new CalculoFolhaFerias(DateTime.Now);
+            var result = calculo.Calcule(contrato);
+            Assert.True(result.ExisteValores);
+            new ValorComponenteCalculo(925).Should().Be(result.Valor(EnumComponentesCalculo.SalarioLiquido));
+        }
+
+        [Fact]
+        public void Calcula_folha_mensal()
+        {
+            var contrato = CenarioContrato.CrieCenarioConsistente(1000);
+            var calculo = new CalculoFolhaMensal(DateTime.Now);
             var result = calculo.Calcule(contrato);
             Assert.True(result.ExisteValores);
             new ValorComponenteCalculo(925).Should().Be(result.Valor(EnumComponentesCalculo.SalarioLiquido));

@@ -1,6 +1,9 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
+using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 
 namespace Infra.CrossCutting.Configuration
 {
@@ -38,6 +41,36 @@ namespace Infra.CrossCutting.Configuration
 
             builder.AddEnvironmentVariables();
             Configuration = builder.Build();
+        }
+
+        private readonly Dictionary<string, string> queuesName = new Dictionary<string, string>();
+
+        public string GetQueue(string name)
+        {
+            LoadQueues();
+            if (queuesName.ContainsKey(name))
+                return queuesName[name];
+
+            return string.Empty;
+        }
+
+        private void LoadQueues()
+        {
+            if (queuesName.Any())
+                return;
+
+            var queues = Configuration["QueuesName"];
+
+            if (string.IsNullOrEmpty(queues))
+                return;
+
+            Array.ForEach(queues.Split('|'), (item) =>
+            {
+                var keyValue = item.Split(':');
+
+                if (keyValue.Length == 2)
+                    queuesName.Add(keyValue[0], keyValue[1]);
+            });
         }
     }
 }

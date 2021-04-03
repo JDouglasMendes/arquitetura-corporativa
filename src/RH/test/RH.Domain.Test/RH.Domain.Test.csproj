@@ -37,6 +37,9 @@
     <Reference Include="Domain.SharedKernel">
       <HintPath>..\..\package-infra\netcoreapp3.1\Domain.SharedKernel.dll</HintPath>
     </Reference>
+    <Reference Include="Infra.CrossCutting.Configuration">
+      <HintPath>..\..\package-infra\netcoreapp3.1\Infra.CrossCutting.Configuration.dll</HintPath>
+    </Reference>
     <Reference Include="Infra.CrossCutting.EventBusRabbitMQ">
       <HintPath>..\..\package-infra\netcoreapp3.1\Infra.CrossCutting.EventBusRabbitMQ.dll</HintPath>
     </Reference>

@@ -33,7 +33,10 @@ namespace RH.Domain.Colaboradores.CommandHandlers
                 return false;
             }
 
-            var colaborador = new Colaborador(Guid.NewGuid(), NomePessoa.Crie(request.Nome, request.Sobrenome), request.DataNascimento)
+            var colaborador = new Colaborador(Guid.NewGuid(),
+                NomePessoa.Crie(request.Nome,
+                request.Sobrenome),
+                request.DataNascimento)
             {
                 ObservacaoContratual = request.ObservacaoContratual,
             };

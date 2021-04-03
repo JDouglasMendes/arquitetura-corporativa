@@ -6,6 +6,17 @@ namespace RH.Domain.Ocorrencias.Ferias.Events
 {
     public class AgendamentoDeFeriasQueryEvent : Event
     {
+        public Guid IdColaborador { get; }
+        public Guid IdContrato { get; }
+        public string Nome { get; set; }
+        public DateTime DataInicio { get; }
+        public byte DiasDeFerias { get; }
+        public byte DiasDeAbono { get; }
+        public DateTime PeriodoAquisitivo { get; }
+        public bool FeriasParceladas { get; }
+        public DateTime DataFim => DataInicio.AddDays(DiasDeFerias);
+        public override string GetKeyQueues => "agenda-ferias-query";
+
         public AgendamentoDeFeriasQueryEvent(
             Colaborador colaborador,
             Guid idContrato,
@@ -36,15 +47,5 @@ namespace RH.Domain.Ocorrencias.Ferias.Events
                 ocorrenciaDeFerias.DiasDeAbono,
                 ocorrenciaDeFerias.PeriodoArquisitivo,
                 ocorrenciaDeFerias.FeriasParcelada);
-
-        public Guid IdColaborador { get; }
-        public Guid IdContrato { get; }
-        public string Nome { get; set; }
-        public DateTime DataInicio { get; }
-        public byte DiasDeFerias { get; }
-        public byte DiasDeAbono { get; }
-        public DateTime PeriodoAquisitivo { get; }
-        public bool FeriasParceladas { get; }
-        public DateTime DataFim => DataInicio.AddDays(DiasDeFerias);
     }
 }

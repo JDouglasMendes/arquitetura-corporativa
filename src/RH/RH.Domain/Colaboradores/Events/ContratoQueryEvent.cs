@@ -1,5 +1,6 @@
 ﻿using Domain.SharedKernel.Events;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace RH.Domain.Colaboradores.Events
@@ -15,6 +16,7 @@ namespace RH.Domain.Colaboradores.Events
         public DateTime DataInicioContrato { get; set; }
         public DateTime? DataFimContrato { get; set; }
         public double SalarioContratual { get; set; }
+        public override string GetKeyQueues => "contrato-query";
 
         public static ContratoQueryEvent Crie(Colaborador colaborador)
          => new ContratoQueryEvent
